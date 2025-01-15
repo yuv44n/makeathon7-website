@@ -4,22 +4,20 @@
 
 Follow the steps below to set up and run the project on your local machine.
 
-### 1. Fork and Clone the Repository
-
 1. Fork the repository on GitHub to create your own copy.
 2. Clone the forked repository:
    ```bash
    git clone https://github.com/YOUR_USERNAME/makeathon7-website.git
     ```
 3. Navigate to the project directory:
-  ```bash
+    ```bash
     cd makeathon7-website
     ```
-### 2. Install dependencies
+4. Install dependencies
     ```bash 
     npm install
     ```
-### 3. Start the development server
+5. Start the development server
     ```bash
     npm run dev
     ```
