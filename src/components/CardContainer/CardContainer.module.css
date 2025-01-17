@@ -1,0 +1,9 @@
+.cardContainer {
+  position: relative; /* Ensure proper positioning */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1; /* Ensure it's above background but below banner */
+  padding-top: 32%; /* Adjust this to match the height of your banner */
+}

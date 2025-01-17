@@ -1,15 +1,15 @@
-import React from 'react'
-import styles from '../styles/Home.module.css'
+import React from "react";
+import styles from "../styles/Home.module.css";
+import CardContainer from "../components/CardContainer/CardContainer";
+import Banner from "../components/Banner/Banner"; // Import Banner
 
 const Home = () => {
   return (
-    <>
-        <div>
-            <h1 className={styles.home}>Home Page</h1>
-            <p>Welcome to the Home Page</p>
-        </div>
-    </>
-  )
-}
+    <div className={styles.home}>
+      <Banner />
+      <CardContainer />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
