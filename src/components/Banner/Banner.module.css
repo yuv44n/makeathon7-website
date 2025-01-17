@@ -3,13 +3,12 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 328.5px;  /* Adjust as needed */
-    height: 167.5px; /* Adjust as needed */
-    position: absolute; /* Keeps it fixed at the top */
-    top: 0; /* Start at the top */
-    left: 50%; /* Centers horizontally */
-    transform: translateX(-50%); /* Ensures perfect centering */
-    margin-top: 5vh; /* Ensures perfect centering */
-    z-index: 0; /* Ensure it's above the background but below other content */
-  }
-  
+    width: 328.5px;  
+    height: 167.5px; 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5vh;
+    z-index: 0;
+}
