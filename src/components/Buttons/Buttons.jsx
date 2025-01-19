@@ -15,7 +15,7 @@ function Buttons(props) {
         color: "#fff", // Text color
         border: "none", // Remove borders
         borderRadius: "4px", // Rounded corners
-        padding: "10px 20px", // Spacing inside the button
+        paddingRight: "10px", // Spacing inside button
         fontSize: "16px", // Font size
         display: "flex", // Use flexbox to align elements
         alignItems: "center", // Vertically center icon and text
@@ -23,24 +23,25 @@ function Buttons(props) {
         cursor: "pointer", // Pointer on hover
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)", // Subtle shadow
         transition: "background 0.3s ease, transform 0.2s ease", // Hover effect
+        background: "#456ff6", // Default button color
         ...style, // Inline styles passed from props
       }}
-      onClick={onClick}
-      onMouseOver={(e) => {
-        e.target.style.background = "#1976D2"; // Darken the background on hover
-      }}
-      onMouseOut={(e) => {
-        e.target.style.background = "#2196F3"; // Revert to the original color
-      }}
     >
-      {imageUrl && (
+     {imageUrl && (
         <img
-          src={imageUrl}
+          src={imageUrl} // Use the provided image URL
           alt="Button image"
-          style={{ width: "24px", height: "24px", marginLeft: "10px" }} // Adjust image size and spacing
+          style={{ width: "48px", height: "48px", marginRight: "10px" }} // Adjust image size and spacing
         />
       )}
-    <span>{children}</span>
+      <span
+        style={{
+          backgroundColor: "#456ff6", // Text highlighting color
+          paddingLeft: "10px", // Spacing between icon and text
+        }}
+      >
+        {children}
+      </span>
     </button>
   );
 }

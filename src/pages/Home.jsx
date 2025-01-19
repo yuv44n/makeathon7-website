@@ -4,16 +4,19 @@ import CardContainer from "../components/CardContainer/CardContainer";
 import Banner from "../components/Banner/Banner";
 import Buttons from "../components/Buttons/Buttons";
 
+import devfolioImg from "../assets/devfolio.png";
+
 const Home = () => {
   return (
     <div className={styles.home}>
       <Banner />
       <CardContainer />
       <Buttons
-        imageUrl="../assets/devfolio.png"
+        imageUrl={devfolioImg}
         position={{ type: "absolute", top: "50vh", left: "30vw" }}
         onClick={() => alert("Well.....i work for now?")}
-      >Making me work is Russian Roulette at its finest</Buttons>
+        style={{ size: "48px", height: "48px"}}
+      >Devfolio</Buttons>
     </div>
   );
 };
