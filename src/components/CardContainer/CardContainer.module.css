@@ -5,5 +5,5 @@
   align-items: center;
   flex-wrap: wrap;
   z-index: 1; 
-  padding-top: 33%; 
+  height: 150vh; /* Set a fixed height */
 }
