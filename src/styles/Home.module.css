@@ -2,9 +2,16 @@
   background-image: url("../assets/draft.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   height: 100vh;
   width: 100vw;
   position: relative;
   overflow: hidden; /* Ensures no unwanted overflow outside the viewport */
+}
+
+@media (max-width: 768px) {
+  .App {
+    background-size: contain;
+  }
 }
