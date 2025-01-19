@@ -12,8 +12,8 @@ const CardContainer = () => {
   const cards = [
     { angle: "-15deg", xOffset: "-10vw", backgroundImage: aboutImage, link: "/about" },
     { angle: "-5deg", xOffset: "-2.5vw", backgroundImage: sponsorsImage, link: "/sponsors" },
-    { angle: "5deg", xOffset: "2.5vw", backgroundImage: timelineImage, link: "/timeline" },
-    { angle: "15deg", xOffset: "10vw", backgroundImage: tracksImage, link: "/tracks" },
+    { angle: "5deg", xOffset: "2.5vw", backgroundImage: tracksImage, link: "/tracks" },
+    { angle: "15deg", xOffset: "10vw", backgroundImage: timelineImage, link: "/timeline" },
   ];
 
   return (
