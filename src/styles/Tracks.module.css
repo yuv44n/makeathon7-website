@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'KoPub Batang';
+    src: url('../assets/fonts/KoPubBatang-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Abhaya Libre ExtraBold';
+    src: url('../assets/fonts/AbhayaLibre-ExtraBold.ttf') format('truetype');
+}
+
+.tracksContainer {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Custom scrollbar for WebKit browsers */
+.tracksContainer::-webkit-scrollbar {
+    width: 16px; /* Width of the scrollbar */
+}
+
+.tracksContainer::-webkit-scrollbar-track {
+    background: #301a22; /* Background color of the scrollbar track */
+}
+
+.tracksContainer::-webkit-scrollbar-thumb {
+    background-color: #451724; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+    border: 3px solid #301a22; /* Padding around the scrollbar thumb */
+}
+
+/* Custom scrollbar for Firefox */
+.tracksContainer {
+    scrollbar-width: 16px; /* Width of the scrollbar */
+    scrollbar-color: #451724 #301a22; /* Color of the scrollbar thumb and track */
+}
+
+.tracks {
+    background-image: url('../assets/background.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    min-height: 120%; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    position: relative;
+}
+
+.line {
+    background-image: url('../assets/line.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 6px;
+    margin: 20px 0;
+    border: none;
+    position: absolute;
+    top: 269px;
+}
+
+.text {
+    color: #D2CBCB;
+    text-align: center;
+    font-family: 'KoPub Batang', serif;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 82px;
+}
+
+.removebgPreview {
+    width: 155px; 
+    height: 115px; 
+    flex-shrink: 0;
+    background: url('../assets/removebgPreview.png') no-repeat center center;
+    background-size: contain;
+    margin-top: 0px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%; 
+    max-width: 849px; 
+    height: 413px;
+    position: relative;
+    margin-top: 345px;
+    flex-shrink: 0;
+    background: rgba(25, 15, 15, 0.65);
+    border-radius: 20px;
+}
+
+.text1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #D9D9D9;
+    text-align: center;
+    font-family: "Abhaya Libre ExtraBold";
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    opacity: 1;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .text {
+        font-size: 50px; /* Adjust font size for smaller screens */
+    }
+
+    .box1 {
+        font-size: 50px; /* Adjust font size for smaller screens */
+    }
+
+    .removebgPreview {
+        top: 200px; /* Adjust position for smaller screens */
+    }
+}
