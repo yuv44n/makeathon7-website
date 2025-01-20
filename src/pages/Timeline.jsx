@@ -1,14 +1,16 @@
 import React from 'react'
 import styles from '../styles/Timeline.module.css'
+import eventcard from '../components/images/image1.png'
 
 const Timeline = () => {
   return (
     <>
-        <div>
-            <h1 className={styles.timeline}>Timeline Page</h1>
+        <div className={styles.background}>
+            <div className={styles.timeline}>Timeline Page</div>
         </div>
     </>
   )
 }
+
 
 export default Timeline
