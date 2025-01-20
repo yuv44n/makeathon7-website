@@ -36,6 +36,63 @@
     scrollbar-color: #451724 #301a22; /* Color of the scrollbar thumb and track */
 }
 
+.buttonContainer {
+    display: flex;
+    justify-content: space-around; /* Distribute buttons evenly */
+    align-items: center;
+    margin-top: 20px;
+    width: 884px;
+    height: 50px;
+    position: absolute;
+    top: 209px;
+}
+
+/* Button styles */
+.button1 {
+    width: 49px;
+    height: 49px;
+    background: url('../assets/buttons/Compass.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+.button2 {
+    width: 45px;
+    height: 45px;
+    background: url('../assets/buttons/Search_Magnifying_Glass.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+.button3 {
+    width: 45px;
+    height: 45px;
+    background: url('../assets/buttons/Close_Square.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+.button4 {
+    width: 45px;
+    height: 45px;
+    background: url('../assets/buttons/Swatches_Palette.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+.button5 {
+    width: 50px;
+    height: 50px;
+    background: url('../assets/buttons/Clock.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
 .tracks {
     background-image: url('../assets/background.png');
     background-size: cover; 
