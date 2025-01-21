@@ -12,32 +12,32 @@ function Buttons(props) {
         left: position?.left,
         right: position?.right,
         bottom: position?.bottom,
-        color: "#fff", // Text color
-        border: "none", // Remove borders
-        borderRadius: "4px", // Rounded corners
-        paddingRight: "10px", // Spacing inside button
-        fontSize: "16px", // Font size
-        display: "flex", // Use flexbox to align elements
-        alignItems: "center", // Vertically center icon and text
-        justifyContent: "space-between", // Space between text and image
-        cursor: "pointer", // Pointer on hover
-        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)", // Subtle shadow
-        transition: "background 0.3s ease, transform 0.2s ease", // Hover effect
-        background: "#456ff6", // Default button color
-        ...style, // Inline styles passed from props
+        color: "#fff",
+        border: "none",
+        borderRadius: "4px",
+        paddingRight: "10px",
+        fontSize: "16px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        cursor: "pointer",
+        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
+        transition: "background 0.3s ease, transform 0.2s ease",
+        background: "#456ff6",
+        ...style,
       }}
     >
      {imageUrl && (
         <img
-          src={imageUrl} // Use the provided image URL
+          src={imageUrl}
           alt="Button image"
-          style={{ width: "48px", height: "48px", marginRight: "10px" }} // Adjust image size and spacing
+          style={{ width: "48px", height: "48px", marginRight: "10px" }}
         />
       )}
       <span
         style={{
-          backgroundColor: "#456ff6", // Text highlighting color
-          paddingLeft: "10px", // Spacing between icon and text
+          backgroundColor: "#456ff6",
+          paddingLeft: "10px",
         }}
       >
         {children}
