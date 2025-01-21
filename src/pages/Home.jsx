@@ -4,19 +4,27 @@ import CardContainer from "../components/CardContainer/CardContainer";
 import Banner from "../components/Banner/Banner";
 import Buttons from "../components/Buttons/Buttons";
 
-import devfolioImg from "../assets/devfolio.png";
-
 const Home = () => {
   return (
     <div className={styles.home}>
       <Banner />
       <CardContainer />
       <Buttons
-        imageUrl={devfolioImg}
+        iconType="firstIcon"
         position={{ type: "absolute", top: "50vh", left: "30vw" }}
         onClick={() => alert("Well.....i work for now?")}
-        style={{ size: "48px", height: "48px"}}
-      >Devfolio</Buttons>
+        style={{ size: "48px", height: "6vh", width: "18vw" , marginTop: "20px"}}
+      >
+        Apply with DevFolio
+      </Buttons>
+      <Buttons
+        iconType="secondIcon"
+        position={{ type: "absolute", top: "50vh", right: "30vw" }}
+        onClick={() => alert("Well.....i work for now?")}
+        style={{ size: "48px", height: "6vh", width: "18vw",  marginTop: "20px"}}
+      >
+        Download Our App
+      </Buttons>
     </div>
   );
 };
