@@ -7,5 +7,5 @@
   align-items: center;
   flex-wrap: wrap;
   z-index: 1; 
-  height: 50vh; /* Set a fixed height */
+  height: 40vh; /* Set a fixed height */
 }
