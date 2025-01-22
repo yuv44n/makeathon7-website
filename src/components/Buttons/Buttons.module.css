@@ -4,36 +4,19 @@
     align-items: center;
     padding: 10px 15px;
     gap: 15px;
-    background-color: #3A3737;
-    outline: 3px #3A3737 solid;
     outline-offset: -3px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    transition: 400ms;
-  }
-  
-  .button .text {
+    transition: all .6s ease;
     color: white;
-    font-weight: 500;
-    font-size: 1em;
-    transition: 400ms;
-    font-family: Tahoma, sans-serif;
   }
-  
-  .button svg path {
-    transition: 400ms;
+  .button.text {
+    transition: all .6s ease;
   }
-  
+  .button.text:hover {
+    transform: scale(1.04);
+  }
   .button:hover {
-    background-color: #3a373749;
+    transform: scale(1.04);
   }
-  
-  .button:hover .text {
-    color: #ffffff;
-  }
-  
-  .button:hover svg path {
-    fill: #ffffff;
-  }
-  

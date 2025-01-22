@@ -11,15 +11,16 @@ const Home = () => {
       <CardContainer />
       <Buttons
         iconType="firstIcon"
-        position={{ type: "absolute", top: "50vh", left: "30vw" }}
+        position={{ type: "absolute", top: "45vh", left: "30vw" }}
         onClick={() => alert("Well.....i work for now?")}
         style={{ size: "48px", height: "6vh", width: "18vw" , marginTop: "20px"}}
+        backgroundColor="rgba(55, 112, 255, 1)"
       >
         Apply with DevFolio
       </Buttons>
       <Buttons
         iconType="secondIcon"
-        position={{ type: "absolute", top: "50vh", right: "30vw" }}
+        position={{ type: "absolute", top: "45vh", right: "30vw" }}
         onClick={() => alert("Well.....i work for now?")}
         style={{ size: "48px", height: "6vh", width: "18vw",  marginTop: "20px"}}
       >

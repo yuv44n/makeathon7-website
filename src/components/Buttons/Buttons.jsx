@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Buttons.module.css";
 
 function Buttons(props) {
-  const { children, style, onClick, className, position, iconType} = props;
+  const { children, style, onClick, className, position, iconType, backgroundColor} = props;
 
   const renderIcon = () => {
     if (iconType === "firstIcon") {
@@ -54,7 +54,7 @@ function Buttons(props) {
         </svg>
       );
     }
-    return null; // Return null if no icon type is passed
+    return null;
   };
 
   return (
@@ -66,6 +66,7 @@ function Buttons(props) {
         left: position?.left,
         right: position?.right,
         bottom: position?.bottom,
+        backgroundColor: backgroundColor || "#3A3737",
         ...style,
       }}
       onClick={onClick}
