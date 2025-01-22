@@ -7,13 +7,17 @@
 .timeline {
     position: absolute;
     top: 50%;
-    right: 10%;
+    right: 7%;
     transform: translateY(-50%);
-    color: #ffffff;
-    font-family: 'coburn',Arial, sans-serif;
-    font-size: 2.5em;
-    font-weight: bold;
+    color: #E4A700;
+    font-family: 'coburn', Arial, sans-serif;
+    font-size: 1.8em;
+    font-weight: 400;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    word-wrap: break-word;
+
+
 }
 
 .background {
@@ -22,7 +26,16 @@
     transform: scale(0.7);
     width: 800px;
     height: 488px;
-    
     flex-shrink: 0;
-    
+
+}
+
+.description {
+    color: #E4A700;
+    font-family: "Inria Serif";
+    font-size: 20.295px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
 }
