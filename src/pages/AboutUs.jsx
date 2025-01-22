@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/AboutUs.module.css'; 
 import logo from '../../public/mlsclogo.png';
 
-const AboutUs = () => {
+const HeaderPortion = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNav = () => {
@@ -84,6 +84,17 @@ const AboutUs = () => {
       </div>
     </div>
   );
+}
+
+const AboutUs = () => {
+  return (
+    <>
+    <div>
+
+    <HeaderPortion />
+    </div>
+    </>
+  )
 };
 
 export default AboutUs;
