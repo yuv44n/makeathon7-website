@@ -38,7 +38,7 @@
 
 .buttonContainer {
     display: flex;
-    justify-content: space-around; /* Distribute buttons evenly */
+    justify-content: space-between; /* Distribute buttons evenly */
     align-items: center;
     margin-top: 20px;
     width: 884px;
@@ -92,9 +92,20 @@
     border: none;
     cursor: pointer;
 }
+.button6 {
+    width: 50px;
+    height: 50px;
+    background: url('../assets/buttons/Arrow_Undo_Down_Left.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 84px;
+    left: 39px;
+}
 
 .tracks {
-    background-image: url('../assets/background.png');
+    background-image: url('../assets/background.JPEG');
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat; 
@@ -118,6 +129,7 @@
     border: none;
     position: absolute;
     top: 269px;
+    transition: all 0.5s ease;
 }
 
 .text {
@@ -130,6 +142,18 @@
     line-height: normal;
     position: absolute;
     top: 82px;
+}
+
+.text2 {
+    color: #D2CBCB;
+    text-align: center;
+    font-family: 'KoPub Batang', serif;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 284px;
 }
 
 .removebgPreview {
@@ -174,6 +198,71 @@
     font-weight: 800;
     line-height: normal;
     opacity: 1;
+}
+
+.text3 {
+    display: flex;
+    width: 818px;
+    height: 104px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: "Abhaya Libre ExtraBold";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    position: absolute;
+    top: 511px;
+    left: 311px;
+    opacity: 1; 
+    transition: opacity 0.5s ease; /* Same transition as TRACKS */
+}
+
+.text3.fade-in {
+    opacity: 0;
+}
+
+.text3.fade-out {
+    opacity: 1;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes morph {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50px); /* Adjust the final position as needed */
+    }
+}
+
+.morph {
+    transition: all 0.5s ease;
+    animation: morph 0.5s forwards;
 }
 
 /* Media queries for responsiveness */
