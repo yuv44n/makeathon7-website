@@ -12,7 +12,10 @@
     width: 100%;
     height: 100vh; /* Full viewport height */
     overflow-y: scroll; /* Enable vertical scrolling */
+    overflow-x: hidden;
     scroll-behavior: smooth; /* Smooth scrolling */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
 }
 
 /* Custom scrollbar for WebKit browsers */
@@ -36,6 +39,25 @@
     scrollbar-color: #451724 #301a22; /* Color of the scrollbar thumb and track */
 }
 
+.tracks {
+    background-image: url('../assets/background.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    min-height: 120vh; 
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .buttonContainer {
     display: flex;
     justify-content: space-between; /* Distribute buttons evenly */
@@ -48,6 +70,7 @@
 }
 
 /* Button styles */
+/* Button container styles */
 .button1 {
     width: 49px;
     height: 49px;
@@ -55,6 +78,27 @@
     background-size: contain;
     border: none;
     cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease; /* Important for positioning the popup */
+}
+
+.button1::after {
+    font-family: "KoPub Batang", serif; /* Font for the tooltip */
+    content: "This is Track 1"; /* Tooltip text */
+    position: absolute;
+    top: 75px; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(47, 42, 42, 0.8); /* Dark background for tooltip */
+    color: #fff; /* White text color */
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Hide by default */
+    pointer-events: none; /* Ignore mouse events */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+    z-index: 10; /* Ensure it appears above other elements */
 }
 
 .button2 {
@@ -64,6 +108,27 @@
     background-size: contain;
     border: none;
     cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease; /* Important for positioning the popup */
+}
+
+.button2::after {
+    font-family: "KoPub Batang", serif; /* Font for the tooltip */
+    content: "This is Track 2"; /* Tooltip text */
+    position: absolute;
+    top: 75px; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(47, 42, 42, 0.8); /* Dark background for tooltip */
+    color: #fff; /* White text color */
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Hide by default */
+    pointer-events: none; /* Ignore mouse events */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+    z-index: 10; /* Ensure it appears above other elements */
 }
 
 .button3 {
@@ -73,6 +138,27 @@
     background-size: contain;
     border: none;
     cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease; /* Important for positioning the popup */
+}
+
+.button3::after {
+    font-family: "KoPub Batang", serif; /* Font for the tooltip */
+    content: "This is Track 3"; /* Tooltip text */
+    position: absolute;
+    top: 75px; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(47, 42, 42, 0.8); /* Dark background for tooltip */
+    color: #fff; /* White text color */
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Hide by default */
+    pointer-events: none; /* Ignore mouse events */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+    z-index: 10; /* Ensure it appears above other elements */
 }
 
 .button4 {
@@ -82,6 +168,27 @@
     background-size: contain;
     border: none;
     cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease; /* Important for positioning the popup */
+}
+
+.button4::after {
+    font-family: "KoPub Batang", serif; /* Font for the tooltip */
+    content: "This is Track 4"; /* Tooltip text */
+    position: absolute;
+    top: 75px; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(47, 42, 42, 0.8); /* Dark background for tooltip */
+    color: #fff; /* White text color */
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Hide by default */
+    pointer-events: none; /* Ignore mouse events */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+    z-index: 10; /* Ensure it appears above other elements */
 }
 
 .button5 {
@@ -91,7 +198,70 @@
     background-size: contain;
     border: none;
     cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease; /* Important for positioning the popup */
 }
+
+.button5::after {
+    font-family: "KoPub Batang", serif; /* Font for the tooltip */
+    content: "This is Track 5"; /* Tooltip text */
+    position: absolute;
+    top: 75px; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(47, 42, 42, 0.8); /* Dark background for tooltip */
+    color: #fff; /* White text color */
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Prevent text wrapping */
+    opacity: 0; /* Hide by default */
+    pointer-events: none; /* Ignore mouse events */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.button1:hover,
+.button2:hover,
+.button3:hover,
+.button4:hover,
+.button5:hover {
+    transform: scale(1.2); /* Increase size by 20% on hover */
+}
+
+/* Triangular Tip */
+.button1::before,
+.button2::before,
+.button3::before,
+.button4::before,
+.button5::before {
+    content: "";
+    position: absolute;
+    top: 56px; /* Adjust triangle position */
+    left: 50%; /* Center it under the tooltip box */
+    transform: translateX(-50%);
+    border-width: 10px; /* Size of the triangle */
+    border-style: solid;
+    border-color: transparent transparent rgba(47, 42, 42, 0.8) transparent; /* Triangle color */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    z-index: 9; /* Ensure it appears below the tooltip box */
+}
+
+/* Hover Effect */
+.button1:hover::after,
+.button1:hover::before,
+.button2:hover::after,
+.button2:hover::before,
+.button3:hover::after,
+.button3:hover::before,
+.button4:hover::after,
+.button4:hover::before,
+.button5:hover::after,
+.button5:hover::before {
+    opacity: 1; /* Show tooltip and triangle on hover */
+}
+
 .button6 {
     width: 50px;
     height: 50px;
@@ -100,23 +270,8 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 84px;
+    top: 35px;
     left: 39px;
-}
-
-.tracks {
-    background-image: url('../assets/background.JPEG');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat; 
-    min-height: 120%; 
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    position: relative;
 }
 
 .line {
@@ -129,7 +284,9 @@
     border: none;
     position: absolute;
     top: 269px;
-    transition: all 0.5s ease;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.8s ease-in-out;
 }
 
 .text {
@@ -216,22 +373,15 @@
     line-height: normal;
     position: absolute;
     top: 511px;
-    left: 311px;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 1; 
     transition: opacity 0.5s ease; /* Same transition as TRACKS */
 }
 
-.text3.fade-in {
-    opacity: 0;
-}
-
-.text3.fade-out {
-    opacity: 1;
-}
-
 .fade-in {
     opacity: 0;
-    animation: fadeIn 0.5s forwards;
+    animation: fadeIn 1.5s forwards;
 }
 
 .fade-out {
@@ -256,13 +406,13 @@
         transform: translateY(0);
     }
     to {
-        transform: translateY(-50px); /* Adjust the final position as needed */
+        transform: translateY(50px); /* Adjust the final position as needed */
     }
 }
 
 .morph {
-    transition: all 0.5s ease;
-    animation: morph 0.5s forwards;
+    transition: 0.5s ease-in-out;
+    animation: morph 0.5s backwards;
 }
 
 /* Media queries for responsiveness */
@@ -272,10 +422,102 @@
     }
 
     .box1 {
+        width: 90%; /* Reduce box width for smaller screens */
         font-size: 50px; /* Adjust font size for smaller screens */
+    }
+
+    .buttonContainer {
+        width: 80%; /* Adjust width for smaller screens */
+        top: 150px; /* Adjust position for smaller screens */
+    }
+
+    .line {
+        top: 200px; /* Adjust position for smaller screens */
+    }
+
+    .text2 {
+        top: 250px; /* Adjust position for smaller screens */
+    }
+
+    .button1, .button2, .button3, .button4, .button5, .button6 {
+        width: 40px; /* Adjust button size for smaller screens */
+        height: 40px; /* Adjust button size for smaller screens */
     }
 
     .removebgPreview {
         top: 200px; /* Adjust position for smaller screens */
+    }
+
+    .button6 {
+        top: 45px; /* Adjust position for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+        font-size: 40px; /* Further adjust font size for very small screens */
+    }
+
+    .box1 {
+        width: 95%; /* Further reduce box width for very small screens */
+        font-size: 40px; /* Further adjust font size for very small screens */
+    }
+
+    .buttonContainer {
+        width: 90%; /* Further adjust width for very small screens */
+        top: 100px; /* Further adjust position for very small screens */
+    }
+
+    .line {
+        top: 150px; /* Further adjust position for very small screens */
+    }
+
+    .text2 {
+        top: 200px; /* Further adjust position for very small screens */
+    }
+
+    .button1, .button2, .button3, .button4, .button5, .button6 {
+        width: 35px; /* Further adjust button size for very small screens */
+        height: 35px; /* Further adjust button size for very small screens */
+    }
+
+    .removebgPreview {
+        width: 120px; /* Scale down the preview for smaller screens */
+        height: 90px; /* Adjust aspect ratio */
+        top: 0px; /* Adjust position for very small screens */
+    }
+}
+
+@media (max-width: 320px) {
+    .text {
+        font-size: 10px; /* Scale down font size for the smallest screens */
+    }
+
+    .box1 {
+        font-size: 30px; /* Scale down text inside the box */
+    }
+
+    .buttonContainer {
+        width: 95%; /* Maximize container width for small screens */
+        top: 80px; /* Position buttons closer to the top */
+    }
+
+    .line {
+        top: 120px; /* Adjust line position for compact devices */
+    }
+
+    .text2 {
+        top: 150px; /* Adjust position for the second text */
+    }
+
+    .button1, .button2, .button3, .button4, .button5, .button6 {
+        width: 30px; /* Further reduce button sizes */
+        height: 30px;
+    }
+
+    .removebgPreview {
+        width: 80px; /* Make preview more compact */
+        height: 45px;
+        top: 0px; /* Adjust position for smallest screens */
     }
 }

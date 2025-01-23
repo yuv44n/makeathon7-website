@@ -4,12 +4,10 @@ import styles from "../styles/Tracks.module.css";
 const Tracks = () => {
   const [trackText, setTrackText] = useState("TRACKS");
   const [clickedButton, setClickedButton] = useState(null); // Track clicked button
-  const [fadeClass, setFadeClass] = useState(""); // Track fade animation class
-  const [morphClass, setMorphClass] = useState(""); // Track morph animation class
+  const [fadeClass, setFadeClass] = useState("fade-in"); // Track fade animation class
 
   const handleButtonClick = (trackNumber) => {
     setFadeClass("fade-out");
-    setMorphClass("morph");
     setTimeout(() => {
       setTrackText(`TRACK ${trackNumber}`);
       setClickedButton(trackNumber);
@@ -19,7 +17,6 @@ const Tracks = () => {
 
   const handleReset = () => {
     setFadeClass("fade-out");
-    setMorphClass("");
     setTimeout(() => {
       setTrackText("TRACKS");
       setClickedButton(null);
@@ -35,32 +32,37 @@ const Tracks = () => {
             <h1 className={`${styles.text} ${styles[fadeClass]}`}>
               {trackText}
             </h1>
-            <div className={`${styles.buttonContainer} ${styles[morphClass]}`}>
+            <div className={`${styles.line} ${styles[fadeClass]}`}></div>
+            <div className={`${styles.buttonContainer} ${styles[fadeClass]}`}>
               <button
                 className={styles.button1}
+                aria-label="Track 1"
                 onClick={() => handleButtonClick(1)}
               ></button>
               <button
                 className={styles.button2}
                 onClick={() => handleButtonClick(2)}
+                aria-label="Track 2"
               ></button>
               <button
                 className={styles.button3}
                 onClick={() => handleButtonClick(3)}
+                aria-label="Track 3"
               ></button>
               <button
                 className={styles.button4}
                 onClick={() => handleButtonClick(4)}
+                aria-label="Track 4"
               ></button>
               <button
                 className={styles.button5}
                 onClick={() => handleButtonClick(5)}
+                aria-label="Track 5"
               ></button>
             </div>
-            <div className={`${styles.line} ${styles[morphClass]}`}></div>
-            <div className={styles.box1}>
+            <div className={`${styles.box1} ${styles[fadeClass]}`}>
               <div className={styles.removebgPreview}></div>
-              <div className={styles.text1}>
+              <div className={`${styles.text1} ${styles[fadeClass]}`}>
                 <p>Greetings Agent!</p>
                 <p>Choose Your Mission</p>
               </div>
@@ -71,8 +73,6 @@ const Tracks = () => {
             <h1
               className={`${styles.text} ${styles[fadeClass]}`}
               style={{
-                top: "50%",
-                transform: "translateY(-50%)",
                 position: "relative",
                 top: "284px",
               }}
@@ -83,34 +83,49 @@ const Tracks = () => {
               Additional Information for {trackText}
             </div>
             <div
-              className={`${styles.buttonContainer} ${styles[morphClass]}`}
-              style={{ top: "82px" }}
+              className={styles.line}
+              style={{
+                position: "absolute",
+                top: "132px",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+            ></div>
+            <div
+              className={styles.buttonContainer}
+              style={{
+                position: "absolute",
+                top: "75px",
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
             >
               <button
-                className={styles.button1}
+                className={`${styles.button1}`}
+                aria-label="Track 1"
                 onClick={() => handleButtonClick(1)}
               ></button>
               <button
                 className={styles.button2}
+                aria-label="Track 2"
                 onClick={() => handleButtonClick(2)}
               ></button>
               <button
                 className={styles.button3}
+                aria-label="Track 3"
                 onClick={() => handleButtonClick(3)}
               ></button>
               <button
                 className={styles.button4}
+                aria-label="Track 4"
                 onClick={() => handleButtonClick(4)}
               ></button>
               <button
                 className={styles.button5}
+                aria-label="Track 5"
                 onClick={() => handleButtonClick(5)}
               ></button>
             </div>
-            <div
-              className={`${styles.line} ${styles[morphClass]}`}
-              style={{ top: "132px" }}
-            ></div>
           </>
         )}
         {clickedButton !== null && (
