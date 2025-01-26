@@ -1,12 +1,12 @@
 import React from 'react'
-import EventCard from '../components/EventCard'
+import Eventcard from '../components/events_components/Eventcard.jsx'
 
 
 
 const Timeline =()=>  {
   
   return (
-    <EventCard name={"EVENT 4"} />
+    <Eventcard name={"EVENT 2"} />
   )
 }
 

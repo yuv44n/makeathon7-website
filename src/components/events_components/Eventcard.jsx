@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from '../styles/Timeline.module.css'
-import data from '../components/data.json'
-function EventCard  ({name}) {
-    const card= data.find(card => card.id === name);
+import styles from '../../styles/Timeline.module.css'
+import eventsdata from '../../data/eventsdata.json'
+function Eventcard  ({name}) {
+    const card= eventsdata.find(card => card.id === name);
     return (
         <div className={styles.background}>
             <div className={styles.timeline}>
@@ -17,4 +17,4 @@ function EventCard  ({name}) {
         </div>  
     )
 }
-export default EventCard
+export default Eventcard
