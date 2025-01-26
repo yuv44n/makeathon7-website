@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'coburn';
+    src: url(../components/fonts/Coburn.otf);
+}
+
 body {
     overflow: hidden; /* Prevents any scrollbars */
     display: flex;
@@ -14,3 +19,42 @@ img {
     object-fit: contain; /* Ensures the image fits inside without cropping */
     display: block;
 }
+
+
+
+.timeline {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    transform: translateY(-50%);
+    color: #E4A700;
+    font-family: 'coburn', Arial, sans-serif;
+    font-size: 1.8em;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    word-wrap: break-word;
+
+
+}
+
+.background {
+    background-image: url('../components/images/image1.png');
+    background-size: cover;
+    transform: scale(0.7);
+    width: 800px;
+    height: 488px;
+    flex-shrink: 0;
+
+}
+
+.description {
+    color: #E4A700;
+    font-family: "Inria Serif";
+    font-size: 20.295px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
