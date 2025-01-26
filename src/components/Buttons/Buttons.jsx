@@ -57,16 +57,19 @@ function Buttons(props) {
     return null;
   };
 
+  // Conditionally apply button1 or button2 class based on iconType
+  const buttonClass = iconType === "firstIcon" ? styles.button1 : styles.button2;
+
   return (
     <button
-      className={`${styles.button} ${className}`}
+      className={`${styles.button} ${className} ${buttonClass}`}
       style={{
         position: position?.type || "static",
         top: position?.top,
         left: position?.left,
         right: position?.right,
         bottom: position?.bottom,
-        backgroundColor: backgroundColor || "#3A3737",
+        //backgroundColor: backgroundColor || "#3A3737",       
         ...style,
       }}
       onClick={onClick}

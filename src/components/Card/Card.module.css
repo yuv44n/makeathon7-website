@@ -17,5 +17,6 @@
   .card:hover {
     transform: rotate(var(--angle)) translate(var(--x-offset), -25px);
     background-color: #c5c5c5;
+    box-shadow:rgba(65, 106, 46, 0.916) 0 4px 10px, rgba(65, 106, 46, 0.916) 0 7px 15px;
   }
   
