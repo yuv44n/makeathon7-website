@@ -1,0 +1,48 @@
+
+        .container {
+            background: url('bg.png') no-repeat center center;
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Ensure absolute elements like .lamp are relative to body */
+        }
+
+        .lamp {
+            position: absolute;
+            width: 25px; /* Slightly reduced to match the image */
+            height: 60px;
+            background-color: #ffeb85;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ffeb85;
+            animation: flicker 2s infinite;
+        }
+
+        /* Position the lamps precisely on the background */
+        .lamp1 {
+            top: 32%; /* Adjusted to align with the first wall-mounted lamp */
+            left: 24%; /* Adjusted to match the image alignment */
+        }
+
+        .lamp2 {
+            top: 32%; /* Matches height of the first */
+            right: 22.5%; /* Aligned with the second lamp on the right */
+        }
+
+        @keyframes flicker {
+            0%, 20%, 50%, 80%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 20px #ffeb85, 0 0 30px #ffd64d;
+            }
+            25%, 55%, 85% {
+                opacity: 0.7;
+                box-shadow: 0 0 10px #ffd64d, 0 0 15px #ffb52e;
+            }
+            40%, 75% {
+                opacity: 0.5;
+                box-shadow: 0 0 5px #ffb52e, 0 0 10px #ff7e00;
+            }
+        }
+   
