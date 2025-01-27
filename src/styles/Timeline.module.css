@@ -38,8 +38,8 @@ body{
     background-image: url('../components/images/image1.png');
     background-size: cover;
     transform: scale(0.7);
-    width: 844px;
-    height: 508px;
+    width: 800px;
+    height: 480px;
     flex-shrink: 0;
 
 }
