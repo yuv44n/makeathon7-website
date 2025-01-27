@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/AboutUs.module.css";
 import logo from "../../public/mlsclogo.png";
 import first_prize from "../../public/AboutUs/images/first_prize.png";
@@ -23,27 +23,27 @@ const BurgerAndNavPortion = () => {
         id="extension"
       >
         <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="#">
+          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
             Home
           </a>
         </div>
         <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="#">
+          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
             About
           </a>
         </div>
         <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="#">
+          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
             Tracks
           </a>
         </div>
         <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="#">
+          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
             Timeline
           </a>
         </div>
         <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="#">
+          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
             Sponsors
           </a>
         </div>
@@ -186,6 +186,7 @@ function RewardsSection() {
 
 
 
+
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -301,6 +302,11 @@ const Faq = () => {
   );
 };
 
+
+
+
+
+
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div
@@ -330,6 +336,195 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
 
 
 
+
+
+
+const Executive = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [direction, setDirection] = useState('next');
+  const [isPaused, setIsPaused] = useState(false);
+  
+  const images = [
+    {
+      id: 1,
+      src: "../../public/AboutUs/EBImages/tanmay.png",
+      name: "TANMAY MANN",
+      role: "GENERAL SECRETARY",
+      code: "AGENT MANN"
+    },
+    {
+      id: 2,
+      src: "../../public/AboutUs/EBImages/tanmay.png",
+      name: "MANKIRAT SINGH",
+      role: "TECHNICAL HEAD",
+      code: "AGENT SINGH"
+    },
+
+    {
+      id: 3,
+      src: "../../public/AboutUs/EBImages/tanmay.png",
+      name: "DEV MEHTA",
+      role: "JOINT SECRETARY",
+      code: "AGENT MEHTA"
+    },
+    {
+      id: 4,
+      src: "../../public/AboutUs/EBImages/tanmay.png",
+      name: "Agrim Goyal",
+      role: "FINANCE SECRETARY",
+      code: "AGENT GOYAL"
+    },
+    {
+      id: 5,
+      src: "../../public/AboutUs/EBImages/tanmay.png",
+      name: "ANANAY RAMPAL",
+      role: "EM & LOGISTICS HEAD",
+      code: "AGENT RAMPAL"
+    },
+    {
+      id: 6,
+      src: "../../public/AboutUs/EBImages/tanmay.png",
+      name: "Prisha Kandhari",
+      role: "JOINT SECRETARY",
+      code: "AGENT KANDHARI"
+    },
+  ];
+  
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      if (!isAnimating) {
+        nextSlide();
+      }
+    }, 1500); //1.5sec per slide
+
+    return () => clearInterval(interval);
+  }, [isAnimating, isPaused]);
+
+  const nextSlide = () => {
+    setIsAnimating(true);
+    setDirection('next');
+
+
+  setTimeout(() =>  { 
+    setCurrentIndex(oldIndex => {
+       let newIndex;
+       if (oldIndex === images.length - 1) {
+       newIndex = 0;
+       } else {
+        newIndex = oldIndex + 1;
+      }
+      return newIndex;
+    });
+    setIsAnimating(false);
+    }, 600);
+  };
+
+  return (
+
+  <div className={styles.carouselContainer}>
+
+      <h2 className={styles.carouselTitle}>
+        EXECUTIVE BOARD
+      </h2>
+      <div className={styles.carouselWrapper}>
+
+
+        <div className={styles.slidesContainer}>
+          {/* Previous Image (Angled) */}
+          <div className={`${styles.slide} ${styles.prevSlide} ${isAnimating && direction === 'prev' ? styles.movePrevToCenter : ''}`}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className={styles.imageCard}>
+              <img
+                src={images[(currentIndex - 1 + images.length) % images.length].src}
+                alt="Previous board member"
+              />
+              <div className={styles.cardInfo}>
+                <h2>{images[(currentIndex - 1 + images.length) % images.length].name}</h2>
+                <div className={styles.line}></div>
+                <p>{images[(currentIndex - 1 + images.length) % images.length].role}</p>
+                <p className={styles.agentCode}>{images[(currentIndex - 1 + images.length) % images.length].code}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Current Image (Center)*/}
+          <div className={`${styles.slide} ${styles.currentSlide} ${isAnimating ? (direction === 'next' ? styles.moveCurrentToLeft : styles.moveCurrentToRight) : ''}`}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}>
+            <div className={styles.imageCard}>
+              <img
+                src={images[currentIndex].src}
+                alt={images[currentIndex].name}
+              />
+              <div className={styles.cardInfo}>
+                <h2>{images[currentIndex].name}</h2>
+                <div className={styles.line}></div>
+                <p>{images[currentIndex].role}</p>
+                <p className={styles.agentCode}>{images[currentIndex].code}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Next Image (Angled) */}
+          <div className={`${styles.slide} ${styles.nextSlide} ${isAnimating && direction === 'next' ? styles.moveNextToCenter : ''}`}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}> 
+            <div className={styles.imageCard}>
+              <img
+                src={images[(currentIndex + 1) % images.length].src}
+                alt="Next board member"
+              />
+              <div className={styles.cardInfo}>
+              <h2>{images[(currentIndex + 1) % images.length].name}</h2>
+              <div className={styles.line}></div>
+              <p>{images[(currentIndex + 1) % images.length].role}</p>
+               <p className={styles.agentCode}>{images[(currentIndex + 1) % images.length].code}</p>                            
+              </div> 
+            </div>
+          </div>
+        </div>
+
+         {/* Next to Next slide */} 
+         <div className={`${styles.slide} ${styles.nextNextSlide} ${isAnimating && direction === 'next' ? styles.move2 : ''}`}> 
+            <div className={styles.imageCard}>
+              <img
+                src={images[(currentIndex + 2) % images.length].src}
+                alt="Next board member"
+              />
+              <div className={styles.cardInfo}>
+              <h2>{images[(currentIndex + 2) % images.length].name}</h2>
+              <div className={styles.line}></div>
+              <p className={styles.job}>{images[(currentIndex + 2) % images.length].role}</p>
+               <p className={styles.agentCode}>{images[(currentIndex + 2) % images.length].code}</p>                            
+              </div> 
+            </div>
+          </div>
+
+
+         {/* Previous to prev slide */} 
+         <div className={`${styles.slide} ${styles.prevPrevSlide} ${isAnimating && direction === 'prev' ? styles.move3 : ''}`}> 
+            <div className={styles.imageCard}>
+              <img
+                src={images[(currentIndex - 2 + images.length) % images.length].src}
+                alt="Next board member"
+              />
+              <div className={styles.cardInfo}>
+                <h2>{images[(currentIndex - 2 + images.length) % images.length].name}</h2>
+                <div className={styles.line}></div>
+                <p>{images[(currentIndex - 2 + images.length) % images.length].role}</p>
+                <p className={styles.agentCode}>{images[(currentIndex - 2 + images.length) % images.length].code}</p>                            
+              </div> 
+            </div>
+          </div>
+      </div>
+    </div>
+  );
+};
 
 
 
@@ -515,8 +710,8 @@ const AboutUs = () => {
         <PrizeContainer />
         <RewardsSection />
         <Faq />
+        <Executive />
         <MLSCCarousel />
-        <div className={styles.extra}></div>
       </div>
     </>
   );
