@@ -58,3 +58,95 @@ body{
     top: 0;
     left: 50%;
 }
+.icon1{
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline:none;
+    top: 90px;
+    left: 130px;   
+}
+.icon1 img{
+    width: 110px;
+    height: 110px;
+}
+.icon1:hover{
+    opacity: 0.8;
+}
+
+.icon2{
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline:none;
+    top: 220px;
+    left: 220px;   
+}
+.icon2 img{
+    width: 110px;
+    height: 110px;
+}
+.icon2:hover{
+    opacity: 0.8;
+}
+
+
+.icon3{
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline:none;
+    top: 360px;
+    left: 330px;   
+}
+.icon3 img{
+    width: 110px;
+    height: 110px;
+}
+.icon3:hover{
+    opacity: 0.8;
+}
+
+
+.icon4{
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline:none;
+    top: 490px;
+    left: 450px;   
+}
+.icon4 img{
+    width: 110px;
+    height: 110px;
+}
+.icon4:hover{
+    opacity: 0.8;
+}
+
+
+.icon5{
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline:none;
+    top: 600px;
+    left: 590px;   
+}
+.icon5 img{
+    width: 110px;
+    height: 110px;
+}
+.icon5:hover{
+    opacity: 0.8;
+}
