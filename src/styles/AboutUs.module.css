@@ -50,7 +50,7 @@
 .container {
   height: 100vh;
   width: 90vw;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .leftSide {
@@ -60,8 +60,8 @@
   justify-content: center;
   align-items: baseline;
   position: fixed;
-  background-color: lightgreen;
   z-index: 2;
+  /* background-color: lightgreen; */
 }
 
 .leftSide img {
@@ -81,7 +81,7 @@
   position: relative;
   left: 10vw;
   z-index: 1;
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }
 
 .header h1 {
@@ -90,7 +90,7 @@
   letter-spacing: 0.5rem;
   font-size: 6rem;
   font-family: "Casio", serif;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .header .casinoFont {
@@ -104,7 +104,7 @@
   font-size: 1.5rem;
   letter-spacing: 0.05rem;
   text-align: justify;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
 }
 
 .rightSide {
@@ -115,7 +115,7 @@
   position: fixed;
   right: 0;
   z-index: 2;
-  background-color: hotpink;
+  /* background-color: hotpink; */
 }
 
 .rightSide div {
@@ -128,7 +128,7 @@
   align-items: center;
   position: relative;
   z-index: 3;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .rightSide div .line {
@@ -188,7 +188,7 @@
   height: 4.5rem;
   width: 100%;
   margin: 1.5rem 0;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
 }
 
 .extension .navLink a {
@@ -202,7 +202,7 @@
   opacity: 0;
   transform: translateY(1.2rem);
   transition: all 0.2s ease-in-out;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .extension .navLink .up {
@@ -228,7 +228,7 @@
   height: 80vh;
   position: relative;
   left: 10%;
-  background-color: orange;
+  /* background-color: orange; */
 }
 
 .subheading {
@@ -237,7 +237,7 @@
   letter-spacing: 0.4rem;
   font-size: 5rem;
   font-weight: lighter;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .prizesContainer {
@@ -249,7 +249,7 @@
   --second-prize-background-color: #b9b9b9;
   --third-prize-background-color: #d0d0d0;
   margin-bottom: 3rem;
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
 }
 
 .prizeContainer {
@@ -258,7 +258,7 @@
   transform-style: preserve-3d;
   padding: 1rem;
   margin: 0 2.5rem;
-  background-color: brown;
+  /* background-color: brown; */
 }
 
 .prizeContainerParent:hover .prizeContainer {
@@ -337,7 +337,7 @@
   position: absolute;
   left: 10vw;
   margin-top: 3.2rem;
-  background-color: yellow;
+  /* background-color: yellow; */
   z-index: 2;
 }
 
@@ -349,7 +349,7 @@
   font-size: 5rem;
   margin: 2rem 0;
   font-family: "Casino", serif;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .faq {
@@ -397,7 +397,7 @@
   left: 10vw;
   z-index: 3;
   margin-top: 238vh;
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .carouselTitle {
@@ -406,7 +406,7 @@
   color: white;
   font-size: 5rem;
   font-weight: lighter;
-  background-color: hotpink;
+  /* background-color: hotpink; */
 }
 
 .carouselWrapper {
@@ -638,7 +638,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .carousel {
@@ -649,7 +649,7 @@
   align-items: center;
   overflow: hidden;
   z-index: 3;
-  background-color: green;
+  /* background-color: green; */
 }
 
 @keyframes slide {
@@ -674,7 +674,7 @@
   gap: 2rem;
   animation: slide 40s linear infinite;
   margin: 2rem;
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .carouselSlide img {
@@ -685,8 +685,468 @@
   flex-shrink: 0;
 }
 
-.carouselSlide:hover{
+.carouselSlide:hover {
   animation-play-state: paused;
 }
 
 /* ***** */
+
+
+/* Media for mobile viewport  */
+
+@media only screen and (max-width: 600px) {
+  /* ***Universal*** */
+
+  .BlackOverlay {
+    width: 70vw;
+    height: 100vh;
+    left: 15%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .backgroundImage {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 0;
+  }
+
+  /* ***** */
+
+  /* Header, Burger and Navigation section */
+
+  .container {
+    height: 100vh;
+    width: 85vw;
+    /* background-color: red; */
+  }
+
+  .leftSide {
+    width: 15vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    /* background-color: lightgreen; */
+  }
+
+  .leftSide img {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .header {
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    left: 15vw;
+    z-index: 1;
+    /* background-color: lightblue; */
+  }
+
+  .header h1 {
+    text-align: center;
+    margin: 2.5rem 0rem;
+    letter-spacing: 0.2rem;
+    font-size: 3rem;
+    /* background-color: red; */
+  }
+
+  .header p {
+    margin: 0rem 0.5rem;
+    padding: 0.25rem;
+    font-size: 1.2rem;
+    letter-spacing: 0rem;
+    text-align: justify;
+    /* background-color: blueviolet; */
+  }
+
+  .rightSide {
+    width: 15vw;
+    height: 100vh;
+    right: 0;
+    z-index: 2;
+    /* background-color: hotpink; */
+  }
+
+  .rightSide div {
+    width: 80%;
+    height: 8%;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    /* background-color: lightgreen; */
+  }
+
+  .rightSide div .line {
+    width: 80%;
+    height: 8%;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* ***** */
+
+  /* Extension of Burger */
+
+  .extension {
+    width: 85vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 4;
+  }
+
+  /* ***** */
+
+  .extension .navLink {
+    height: 3.25rem;
+    width: 100%;
+    margin: 2.5rem 0;
+    /* background-color: lightcoral; */
+  }
+
+  .extension .navLink a {
+    font-size: 1.25rem;
+    height: 100%;
+    width: 30%;
+    transform: translateY(0.8rem);
+    transition: all 0.2s ease-in-out;
+    /* background-color: blue; */
+  }
+
+  .extension .navLink .up {
+    transform: translateY(0rem);
+  }
+
+  .extension .navLink a:hover {
+    scale: 1.2;
+    filter: drop-shadow(white 0rem 0rem 20px);
+  }
+
+  /* ***** */
+
+  /* Rewards Section  (Very nicely written by Gurneet)*/
+
+  .mainContent {
+    width: 70vw;
+    height: auto;
+    position: relative;
+    bottom: 8vh;
+    left: 15vw;
+    /* background-color: orange; */
+  }
+
+  .subheading {
+    letter-spacing: 0.2rem;
+    font-size: 2.5rem;
+    font-weight: lighter;
+  }
+
+  .prizesContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: lightseagreen; */
+  }
+
+  .prizesContainer img{
+    width: 10rem;
+    height: auto;
+    margin: 2rem 0;
+  }
+
+  .prizeContainer {
+    display: inline-block;
+    transition: transform 0.5s linear 0s;
+    transform-style: preserve-3d;
+    padding: 0.5rem;
+    margin: 2rem 0rem;
+  }
+
+  .prizeContainerParent:hover .prizeContainer {
+    transform: rotateY(180deg);
+  }
+
+  .prizeContainerParent:hover .prizeContainer .prizeImage {
+    box-shadow: none;
+  }
+
+  .prizeContainerParent:hover .prizeContainer .prizeShow .prizeImage {
+    box-shadow: 0px 0px 10px 10px;
+  }
+
+  .prizeImage {
+    transition: box-shadow 0s linear 0.25s;
+  }
+
+  .prizeShow {
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    text-align: center;
+    color: white;
+    font-size: 1.35rem;
+    font-family: "Casino";
+  }
+
+  .prizeTextHeading {
+    font-weight: lighter;
+    margin-top: 5%;
+  }
+
+  .prizeTextDescription {
+    font-weight: lighter;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .prizeShowImage {
+    transform: scale(0.75) translateY(-30%);
+  }
+
+  /* ***** */
+
+  /* FAQs Section (Done by Sagar, edited by Me) */
+
+  .box {
+    height: auto;
+    width: 70vw;
+    position: absolute;
+    left: 15vw;
+    z-index: 2;
+    margin-top: -4rem;
+    /* background-color: yellow; */
+  }
+
+  .box h1 {
+    letter-spacing: 0.2rem;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    font-family: "Casino", serif;
+    /* background-color: red; */
+  }
+
+  .faq {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0.25rem 0;
+    background-color: rgb(81, 73, 60, 0.8);
+  }
+
+  .ques {
+    height: auto;
+    color: white;
+    padding: 0.5rem;
+  }
+
+  .ques h4 {
+    font-size: 1.05rem;
+  }
+
+  .ans {
+    color: #dbd4d4;
+    overflow: hidden;
+  }
+
+  .ans p {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  /* ***** */
+
+  /* EB cards Contains nearly all dimensions in px but it's working fine (Arnav work) */
+
+  .carouselContainer {
+    height: 65vh;
+    width: 70vw;
+    left: 15vw;
+    z-index: 3;
+    margin-top: 125vh;
+    /* background-color: pink; */
+  }
+
+  .carouselTitle {
+    font-size: 2.5rem;
+    font-weight: lighter;
+    /* background-color: hotpink; */
+  }
+
+  .imageCard {
+    position: relative;
+    width: 16rem;
+    height: 21rem;
+    border-radius: 5px;
+    overflow: hidden;
+    background-image: url(../../public//AboutUs/EBImages/card_bg.png);
+  }
+
+  .imageCard img {
+    width: 16rem;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .cardInfo {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-image: url(../../public//AboutUs/EBImages/cardtext.png);
+    background-size: cover;
+    text-align: center;
+  }
+
+  .cardInfo {
+    color: #030000;
+    font-size: 0.75rem;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .line {
+    width: 200px;
+    height: 1px;
+    background-color: black;
+    margin: 5px auto;
+  }
+
+  .cardInfo p {
+    margin: 8px 0;
+    font-size: 1.05rem;
+  }
+
+  .agentCode {
+    letter-spacing: 2px;
+    color: black;
+  }
+
+  .prevSlide {
+    transform: translateX(-300px) scale(0.9) rotateY(-30deg);
+    z-index: 0;
+  }
+
+  .prevSlide:hover {
+    transform: translateX(0) scale(1);
+    cursor: pointer;
+  }
+
+  .currentSlide {
+    transform: translateX(0) scale(1) rotateY(0);
+    z-index: 1;
+  }
+
+  .currentSlide:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .nextNextSlide {
+    transform: translateX(600px) scale(0.8) rotateY(45deg);
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
+  }
+
+  .prevPrevSlide {
+    transform: translateX(-300px) scale(0.8);
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
+  }
+
+  .moveCurrentToLeft {
+    animation: currentToLeft 0.6s ease-in-out forwards;
+  }
+
+  .moveNextToCenter {
+    animation: nextToCenter 0.6s ease-in-out forwards;
+  }
+
+  .moveCurrentToRight {
+    animation: currentToRight 0.6s ease-in-out forwards;
+  }
+
+  .movePrevToCenter {
+    animation: prevToCenter 0.6s ease-in-out forwards;
+  }
+
+  .move2 {
+    animation: additional 0.6s ease-in-out forwards;
+    visibility: visible;
+    will-change: transform, opacity;
+  }
+
+  .move3 {
+    animation: additionalBack 0.6s ease-in-out forwards;
+    visibility: visible;
+    will-change: transform, opacity;
+  }
+
+
+
+
+
+
+  /* Footer carousel  */
+
+  .footerBody {
+    height: auto;
+    width: 100%;
+    color: white;
+    /* background-color: red; */
+  }
+
+  .carousel {
+    width: 70vw;
+    overflow: hidden;
+    left: 15vw;
+    z-index: 3;
+    /* background-color: green; */
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(60%);
+    }
+
+    to {
+      transform: translateX(-60%);
+    }
+  }
+
+  .carouselLabel {
+    font-size: 1.6rem;
+  }
+
+  .carouselSlide {
+    display: flex;
+    gap: 1.25rem;
+    animation: slide 40s linear infinite;
+    margin: 1rem;
+    background-color: pink;
+  }
+
+  .carouselSlide img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+  }
+
+  .carouselSlide:hover {
+    animation-play-state: paused;
+  }
+
+}
