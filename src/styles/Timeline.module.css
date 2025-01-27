@@ -59,8 +59,8 @@
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 80px;
-    left: 120px;   
+    top: 90px;
+    left: 130px;   
 }
 .icon1 img{
     width: 110px;
@@ -77,7 +77,7 @@
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 210px;
+    top: 220px;
     left: 220px;   
 }
 .icon2 img{
@@ -96,7 +96,7 @@
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 350px;
+    top: 360px;
     left: 330px;   
 }
 .icon3 img{
@@ -134,7 +134,7 @@
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 610px;
+    top: 600px;
     left: 590px;   
 }
 .icon5 img{
