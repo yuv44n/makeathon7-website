@@ -8,8 +8,10 @@ const Timeline = () => {
     <>
         <div className={styles.timeline_container} style={{ backgroundImage: `url(${backimg})` }}>
             <h1 className={styles.timeline}>Timeline Page</h1>
+            <div className={styles.eventcard}>
+              <Eventcard name={"EVENT 2"} />
+            </div>
             
-            <Eventcard name={"EVENT 2"} />
         </div>
     </>
   )

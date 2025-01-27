@@ -2,8 +2,9 @@
     font-family: 'coburn';
     src: url(../components/fonts/Coburn.otf);
 }
-
-
+body{
+    overflow: hidden;
+}
 
 
 .timeline_container {
@@ -12,6 +13,7 @@
     width: 100%;
     background-size: cover;
     background-position: center;
+    
 }
 
 
@@ -51,4 +53,8 @@
     line-height: normal;
 
 }
-
+.eventcard{
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
