@@ -40,8 +40,7 @@ const Timeline = () => {
           <Eventcard name={selectedEvent} />
         </div>
       )}
-      <h1 className={styles.timeline}>TIMELINE PAGE</h1>
-
+      
       <button
         ref={(el) => (buttonRefs.current[0] = el)}
         className={styles.icon1}

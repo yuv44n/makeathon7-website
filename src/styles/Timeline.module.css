@@ -38,8 +38,8 @@ body{
     background-image: url('../components/images/image1.png');
     background-size: cover;
     transform: scale(0.7);
-    width: 875px;
-    height: 550px;
+    width: 55vw;
+    height: 72vh;
     flex-shrink: 0;
 
 }
@@ -55,8 +55,8 @@ body{
 }
 .eventcard{
     position: absolute;
-    top: -9%;
-    left: 45%;
+    top: -8vh;
+    left: 50vw;
 }
 .icon1{
     position: absolute;
@@ -65,12 +65,12 @@ body{
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 90px;
-    left: 130px;   
+    top: 10vh;
+    left: 9vw;   
 }
 .icon1 img{
-    width: 110px;
-    height: 110px;
+    width: 8vw;
+    height: 15vh;
 }
 .icon1:hover{
     opacity: 0.8;
@@ -83,12 +83,12 @@ body{
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 220px;
-    left: 220px;   
+    top: 29vh;
+    left: 14vw;   
 }
 .icon2 img{
-    width: 110px;
-    height: 110px;
+    width: 8vw;
+    height: 15vh;
 }
 .icon2:hover{
     opacity: 0.8;
@@ -102,12 +102,12 @@ body{
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 360px;
-    left: 330px;   
+    top: 48vh;
+    left: 21vw;   
 }
 .icon3 img{
-    width: 110px;
-    height: 110px;
+    width: 8vw;
+    height: 15vh;
 }
 .icon3:hover{
     opacity: 0.8;
@@ -121,12 +121,12 @@ body{
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 490px;
-    left: 450px;   
+    top: 66vh;
+    left: 30vw;   
 }
 .icon4 img{
-    width: 110px;
-    height: 110px;
+    width: 8vw;
+    height: 15vh;
 }
 .icon4:hover{
     opacity: 0.8;
@@ -140,12 +140,12 @@ body{
     padding: 0;
     cursor: pointer;
     outline:none;
-    top: 600px;
-    left: 590px;   
+    top: 81vh;
+    left: 39vw;   
 }
 .icon5 img{
-    width: 110px;
-    height: 110px;
+    width: 8vw;
+    height: 15vh;
 }
 .icon5:hover{
     opacity: 0.8;
