@@ -1,14 +1,20 @@
 .banner {
-    background-image: url("../../../public/MakethonLogo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 328.5px;  
-    height: 167.5px; 
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 5vh;
-    z-index: 0;
+  background-image: url("../../../public/MakethonLogo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 328.5px;
+  height: 167.5px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5vh;
+  z-index: 0;
+}
+
+@media (max-width: 480px) {
+  .banner {
+    top: 6%;
+  }
 }
