@@ -12,7 +12,7 @@ const Timeline = () => {
     <>
         <div className={styles.timeline_container} style={{ backgroundImage: `url(${backimg})` }}>
               <div className={styles.eventcard}>
-                <Eventcard name='EVENT 1' />
+                <Eventcard name='EVENT 4' />
               </div>
             <h1 className={styles.timeline}>TIMELINE PAGE</h1>            
             <button className={styles.icon1} id="b1">
