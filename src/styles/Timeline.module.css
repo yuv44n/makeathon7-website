@@ -38,8 +38,8 @@ body{
     background-image: url('../components/images/image1.png');
     background-size: cover;
     transform: scale(0.7);
-    width: 800px;
-    height: 480px;
+    width: 875px;
+    height: 550px;
     flex-shrink: 0;
 
 }
@@ -55,8 +55,8 @@ body{
 }
 .eventcard{
     position: absolute;
-    top: -10%;
-    left: 50%;
+    top: -9%;
+    left: 45%;
 }
 .icon1{
     position: absolute;
