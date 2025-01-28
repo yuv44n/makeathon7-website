@@ -94,7 +94,7 @@ function HeaderPortion() {
       <div className={styles.container}>
         {/* Left Side */}
         <div className={styles.leftSide}>
-          <img src={logo} alt="MLSC Logo" />
+          <img src={logo} alt="MLSC Logo" className={styles.mlscLogo}/>
         </div>
 
         {/* Header Section */}
@@ -128,17 +128,20 @@ function HeaderPortion() {
 
 
 function PrizeContainer({ img, alt, imgClass, text, prize }) {
+  const [showingSide, setShowingSide] = useState("front");
+  let frontImageClass = imgClass + (showingSide === "back" ? " " + styles.onClickFrontImage : "");
+  let backImageClass = imgClass + (showingSide === "back" ? " " + styles.onClickBackImage : "");
   return (
-    <span className={styles.prizeContainerParent}>
-      <span className={styles.prizeContainer}>
-        <img src={img} alt={alt} className={imgClass} />
+    <span className={styles.prizeContainerParent} onClick={()=>{setShowingSide(showingSide === "front" ? "back" : "front"); console.log("works")}}>
+      <span className={styles.prizeContainer + (showingSide === "back" ? " " + styles.prizeContainerBack : "")}>
+        <img src={img} alt={alt} className={frontImageClass} />
         <span className={styles.prizeShow}>
           <h3 className={styles.prizeTextHeading}>{text}</h3>
           <h5 className={styles.prizeTextDescription}>INR {prize}</h5>
           <img
             src={img}
             alt={alt}
-            className={styles.prizeShowImage + " " + imgClass}
+            className={styles.prizeShowImage + " " + backImageClass}
           />
         </span>
       </span>
@@ -532,11 +535,12 @@ const Executive = () => {
 
 
 const MLSCCarousel = () => {
+  const [animationState, setAnimationState] = useState("playing");
   return (
     <div className={styles.footerBody}>
       <div className={styles.carousel}>
         <div className={styles.carouselLabel}>MADE WITH ❤️ BY MLSC</div>
-        <div className={styles.carouselSlide}>
+        <div className={styles.carouselSlide + (animationState === "paused" ? " " + styles.carouselSlidePaused : "")} onClick={()=>{setAnimationState(animationState === "playing" ? "paused" : "playing"); console.log("works")}}>
           <img
             src="../../public/AboutUs/carouselImages/member1.png"
             alt="Member 1"

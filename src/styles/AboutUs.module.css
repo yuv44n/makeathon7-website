@@ -65,10 +65,10 @@
     /* background-color: lightgreen; */
 }
 
-.leftSide img {
-    width: 70%;
-    height: auto;
-    margin: 1rem 0;
+.mlscLogo {
+    position: fixed;
+    width: 10vw;
+    top: 18px;
 }
 
 .header {
@@ -103,7 +103,7 @@
 }
 
 .header p {
-    margin: 0rem 1.5rem;
+    margin: 0.4rem 1.5rem;
     padding: 0.5rem;
     font-size: 1.5rem;
     /* letter-spacing: 0.00rem; */
@@ -221,7 +221,7 @@
 
 /* ***** */
 
-/* Rewards Section  (Very nicely written by Gurneet)*/
+/* Rewards Section */
 
 .mainContent {
     display: flex;
@@ -248,6 +248,7 @@
 .prizesContainer {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     --first-prize-background-color: #5c544d;
@@ -267,8 +268,10 @@
     /* background-color: brown; */
 }
 
-.prizeContainerParent:hover .prizeContainer {
-    transform: rotateY(180deg);
+.prizeContainerParent:hover {
+    .prizeContainer {
+        transform: rotateY(180deg);
+    }
 }
 
 .prizeContainerParent:hover .prizeContainer .prizeImage {
@@ -327,6 +330,18 @@
 
 .prizeShowImage {
     transform: scale(0.5) translateY(-50%);
+}
+
+.prizeContainerBack {
+    transform: rotateY(180deg);
+}
+
+.onClickFrontImage {
+    box-shadow: none;
+}
+
+.onClickBackImage {
+    box-shadow: 0px 0px 10px 10px;
 }
 
 /* ***** */
@@ -404,10 +419,11 @@
     /* z-index: 3; */
     margin-top: var(--new-section-top-margin);
     /* background-color: pink; */
+    overflow: hidden;
 }
 
 .carouselTitle {
-    margin-bottom: 5%;
+    margin-bottom: 3rem;
     font-family: "Casino", serif;
     text-align: center;
     color: white;
@@ -694,7 +710,12 @@
     flex-shrink: 0;
 }
 
-.carouselSlide:hover {
+.carouselSlide:hover,
+.carouselSlide:active {
+    animation-play-state: paused;
+}
+
+.carouselSlidePaused {
     animation-play-state: paused;
 }
 
@@ -725,7 +746,7 @@
     /* Header, Burger and Navigation section */
 
     .container {
-        height: 100vh;
+        /* height: 100vh; */
         width: 85vw;
         /* background-color: red; */
     }
@@ -738,34 +759,36 @@
         /* background-color: lightgreen; */
     }
 
-    .leftSide img {
-        width: 100%;
-        height: auto;
-        margin: 1rem 0;
+    .mlscLogo {
+        position: fixed;
+        width: 10vw;
+        top: 18px;
     }
 
     .header {
         width: 70vw;
-        height: 100vh;
+        /* height: 100vh; */
         display: flex;
         left: 15vw;
-        z-index: 1;
+        /* z-index: 1; */
         /* background-color: lightblue; */
     }
 
     .header h1 {
         text-align: center;
         margin: 2.5rem 0rem;
+        margin-top: 4rem;
         letter-spacing: 0.2rem;
         font-size: 3rem;
         /* background-color: red; */
     }
 
     .header p {
-        margin: 0rem 0.5rem;
+        margin: 0.4rem 0.5rem;
         padding: 0.25rem;
         font-size: 1.2rem;
         letter-spacing: 0rem;
+        word-spacing: 0.1rem;
         text-align: justify;
         /* background-color: blueviolet; */
     }
@@ -849,6 +872,7 @@
         letter-spacing: 0.2rem;
         font-size: 2.5rem;
         font-weight: lighter;
+        margin-bottom: 1.5rem;
     }
 
     .prizesContainer {
@@ -989,6 +1013,7 @@
     .carouselTitle {
         font-size: 2.5rem;
         font-weight: lighter;
+        margin-bottom: 2rem;
         /* background-color: hotpink; */
     }
 
@@ -1148,6 +1173,10 @@
         /* background-color: pink; */
     }
 
+    .carouselSlidePaused {
+        animation-play-state: paused;
+    }
+
     .carouselSlide img {
         width: 5rem;
         height: 5rem;
@@ -1173,13 +1202,13 @@
         }
 
         to {
-            transform: translateX(-300px) scale(0.5) rotateY(-30deg);
+            transform: translateX(calc(-0.5 * var(--side-card-distance))) scale(0.5) rotateY(-30deg);
         }
     }
 
     @keyframes nextToCenter {
         from {
-            transform: translateX(600px) scale(1) rotateY(30deg);
+            transform: translateX(var(--side-card-distance)) scale(1) rotateY(30deg);
         }
 
         to {
@@ -1193,13 +1222,13 @@
         }
 
         to {
-            transform: translateX(600px) scale(0.5) rotateY(30deg);
+            transform: translateX(var(--side-card-distance)) scale(0.5) rotateY(30deg);
         }
     }
 
     @keyframes prevToCenter {
         from {
-            transform: translateX(-600px) scale(0.5) rotateY(-30deg);
+            transform: translateX((calc(-1 * var(--side-card-distance)))) scale(0.5) rotateY(-30deg);
         }
 
         to {
@@ -1209,13 +1238,13 @@
 
     @keyframes additional2 {
         0% {
-            transform: translateX(300px) scale(0.4) rotateY(100deg);
+            transform: translateX(calc(0.5 * var(--side-card-distance))) scale(0.4) rotateY(100deg);
             opacity: 0;
             visibility: hidden;
         }
 
         100% {
-            transform: translateX(300px) scale(0.5) rotateY(30deg);
+            transform: translateX(calc(0.5 * var(--side-card-distance))) scale(0.5) rotateY(30deg);
             opacity: 1;
             visibility: visible;
         }
@@ -1223,13 +1252,13 @@
 
     @keyframes additionalBack {
         0% {
-            transform: translateX(-300px) scale(0.4) rotateY(-100deg);
+            transform: translateX((calc(-0.5 * var(--side-card-distance)))) scale(0.4) rotateY(-100deg);
             opacity: 0;
             visibility: hidden;
         }
 
         100% {
-            transform: translateX(-300px) scale(0.5) rotateY(-30deg);
+            transform: translateX(calc(-0.5 * var(--side-card-distance))) scale(0.5) rotateY(-30deg);
             opacity: 0.7;
             visibility: visible;
         }
@@ -1242,11 +1271,11 @@
 
     .prevSlide {
         /* transform: translate(-300px); */
-        transform: translate(-600px) scale(1) rotateY(-30deg);
+        transform: translate(calc(-1 * var(--side-card-distance))) scale(1) rotateY(-30deg);
     }
 
     .nextSlide {
-        transform: translate(600px) scale(1) rotateY(30deg);
+        transform: translate(var(--side-card-distance)) scale(1) rotateY(30deg);
     }
 
 
@@ -1256,7 +1285,11 @@
         will-change: transform, opacity;
     }
 
-
+    @media (max-width: 760) {
+        .xhidden {
+            --side-card-distance: 300px;
+        }
+    }
 
     /* .nextSlide {
         display: none;
