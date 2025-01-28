@@ -3,12 +3,11 @@ import styles from "../styles/Home.module.css";
 import CardContainer from "../components/CardContainer/CardContainer";
 import Banner from "../components/Banner/Banner";
 import Buttons from "../components/Buttons/Buttons";
-import Lamp from "../components/Lamp/Lamp";
 
 const Home = () => {
   return (
     <div className={styles.home}>
-      <Lamp />
+
       <Banner />
       <CardContainer />
       <Buttons
