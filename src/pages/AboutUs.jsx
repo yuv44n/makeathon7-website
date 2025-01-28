@@ -707,7 +707,7 @@ const AboutUs = () => {
       <div className={styles.xhidden}>
         <BurgerAndNavPortion />
         <HeaderPortion />
-        <PrizeContainer />
+        {/* <PrizeContainer /> */}
         <RewardsSection />
         <Faq />
         <Executive />
