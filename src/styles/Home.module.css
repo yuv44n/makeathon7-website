@@ -10,8 +10,6 @@
   overflow: hidden; Ensures no unwanted overflow outside the viewport
 } */
 
-@media (max-width: 768px) {
-  .App {
-    background-size: contain;
-  }
+.App {
+  background-size: cover;
 }
