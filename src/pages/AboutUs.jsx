@@ -101,7 +101,7 @@ function HeaderPortion() {
         <div className={styles.header}>
           <h1 className={styles.casinoFont}>ABOUT US</h1>
           <p>
-            The Microsoft Learning Student Chapter (MLSC) at Thapar Institute of
+            The Microsoft Learn Student Chapter (MLSC) at Thapar Institute of
             Engineering and Technology, Patiala, stands as a beacon of technical
             excellence. With a dedicated team of mentors and enthusiasts, MLSC
             fosters an environment of collaboration and learning, where students
