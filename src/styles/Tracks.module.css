@@ -225,7 +225,8 @@
 .button2:hover,
 .button3:hover,
 .button4:hover,
-.button5:hover {
+.button5:hover,
+.button6:hover {
     transform: scale(1.2); /* Increase size by 20% on hover */
 }
 
@@ -272,6 +273,7 @@
     position: absolute;
     top: 35px;
     left: 39px;
+    transition: transform 0.3s ease; /* Important for positioning the popup */
 }
 
 .line {
@@ -415,8 +417,7 @@
     animation: morph 0.5s backwards;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1010px) {
     .text {
         font-size: 50px; /* Adjust font size for smaller screens */
     }
@@ -445,7 +446,47 @@
     }
 
     .removebgPreview {
+        top: 0px; /* Adjust position for smaller screens */
+    }
+
+    .button6 {
+        top: 45px; /* Adjust position for smaller screens */
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .text {
+        font-size: 50px; /* Adjust font size for smaller screens */
+    }
+
+    .box1 {
+        width: 90%; /* Reduce box width for smaller screens */
+        font-size: 50px; /* Adjust font size for smaller screens */
+    }
+
+    .buttonContainer {
+        width: 80%; /* Adjust width for smaller screens */
+        top: 150px; /* Adjust position for smaller screens */
+    }
+
+    .line {
         top: 200px; /* Adjust position for smaller screens */
+    }
+
+    .text1 {
+        top: 250px;
+        font-size: 60px; /* Adjust position for smaller screens */
+    }
+
+    .button1, .button2, .button3, .button4, .button5, .button6 {
+        width: 40px; /* Adjust button size for smaller screens */
+        height: 40px; /* Adjust button size for smaller screens */
+    }
+
+    .removebgPreview {
+        top: 0px;
+        height: 80px; /* Scale down the preview for smaller screens */
     }
 
     .button6 {
@@ -455,25 +496,28 @@
 
 @media (max-width: 480px) {
     .text {
-        font-size: 40px; /* Further adjust font size for very small screens */
+        font-size: 64px;
+        top: 154px;
     }
 
     .box1 {
-        width: 95%; /* Further reduce box width for very small screens */
-        font-size: 40px; /* Further adjust font size for very small screens */
+        top: 53px;
+        width: 351px; /* Further reduce box width for very small screens */
+        height: 211px; 
     }
 
     .buttonContainer {
         width: 90%; /* Further adjust width for very small screens */
-        top: 100px; /* Further adjust position for very small screens */
+        top: 754px; /* Further adjust position for very small screens */
     }
 
     .line {
-        top: 150px; /* Further adjust position for very small screens */
+        top: 738px; /* Further adjust position for very small screens */
     }
 
-    .text2 {
-        top: 200px; /* Further adjust position for very small screens */
+    .text1 {
+        font-size: 35px;
+        top: 100px; /* Further adjust position for very small screens */
     }
 
     .button1, .button2, .button3, .button4, .button5, .button6 {
@@ -482,42 +526,16 @@
     }
 
     .removebgPreview {
-        width: 120px; /* Scale down the preview for smaller screens */
-        height: 90px; /* Adjust aspect ratio */
-        top: 0px; /* Adjust position for very small screens */
+        width: 50px; /* Scale down the preview for smaller screens */
+        height: 48px; /* Adjust aspect ratio */
+        transform: rotate(-180deg);
+        top: 75%; /* Adjust position for very small screens */
+        left: 150px;
+        align-items: center;
     }
-}
-
-@media (max-width: 320px) {
-    .text {
-        font-size: 10px; /* Scale down font size for the smallest screens */
-    }
-
-    .box1 {
-        font-size: 30px; /* Scale down text inside the box */
-    }
-
-    .buttonContainer {
-        width: 95%; /* Maximize container width for small screens */
-        top: 80px; /* Position buttons closer to the top */
-    }
-
-    .line {
-        top: 120px; /* Adjust line position for compact devices */
-    }
-
-    .text2 {
-        top: 150px; /* Adjust position for the second text */
-    }
-
-    .button1, .button2, .button3, .button4, .button5, .button6 {
-        width: 30px; /* Further reduce button sizes */
-        height: 30px;
-    }
-
-    .removebgPreview {
-        width: 80px; /* Make preview more compact */
-        height: 45px;
-        top: 0px; /* Adjust position for smallest screens */
+    .tracks1 {
+        background: url('../assets/gradient.png') no-repeat center center;
+        align-items: center;
+        justify-content: center;
     }
 }
