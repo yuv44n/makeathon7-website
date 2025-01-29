@@ -1,22 +1,179 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    padding: 0;
+    outline:none;
+}
+
 @font-face {
     font-family: 'coburn';
     src: url(../components/fonts/Coburn.otf);
 }
 body{
+    background-color: black;
     overflow: hidden;
 }
 
+@keyframes rotateChip {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
 
-.timeline_container {
+@keyframes expander {
+    from {
+        top: 68.5%;
+        left: 72.7%;
+    }
+    to {
+        top: 0%;
+        left:0%;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        z-index: 1;
+    }
+    to {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes fadein2 {
+    0%{
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.2;
+        z-index: 1;
+    }
+    100% {
+        opacity: 0.5;
+        z-index: 1;
+    }
+}
+
+@keyframes fadein3 {
+    0%{
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.2;
+        z-index: 1;
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes rollin {
+    0%{
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+    50% {
+        opacity: 0.4;
+        z-index: 1;
+        transform: rotate(60deg);
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.lines::before {
+    background-color:black;
     position: absolute;
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
-    
+    z-index: -10;
 }
 
+.lines {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f8e89a;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    mask-image: url('../components/vectors/lines.svg'); /* Corrected path and syntax */
+    mask-size: cover;
+    mask-position: center;
+    -webkit-mask-image: url('../components/vectors/lines.svg'); /* For WebKit browsers */
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+}
 
+.spades{
+    position: absolute;
+    transform: rotate(-15deg);
+    top: -170px;
+    left: 650px; 
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.spades img{
+    height: 130vh;
+    width: 25vw;
+    animation: fadein2 1.5s ease-in-out forwards;
+}
+
+.diamonds1{
+    position: absolute;
+    transform: rotate(0deg);
+    top: 10px;
+    left: 0px; 
+    z-index: 2;
+}
+
+.diamonds1 img{
+    height: 100vh;
+    width: 30vw;
+    animation: fadein3 1.5s ease-in-out forwards;
+    z-index: 2;
+}
+
+.diamonds2{
+    position: absolute;
+    transform: rotate(-15deg);
+    top: 220px;
+    left: 1100px;
+    z-index: 2; 
+}
+
+.diamonds2 img{
+    height: 100vh;
+    width: 30vw;
+    animation: fadein3 1.5s ease-in-out forwards;
+}
+
+.timeline_container {
+    background-image: url('../components/vectors/background.svg');
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: fadein 1s ease-in-out forwards;
+    z-index: 1;
+}
+  
 
 .timeline {
     position: absolute;
@@ -30,7 +187,7 @@ body{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: left;
     word-wrap: break-word;
-
+    z-index: 5;
 
 }
 
@@ -38,9 +195,10 @@ body{
     background-image: url('../components/images/image1.png');
     background-size: cover;
     transform: scale(0.7);
-    width: 55vw;
-    height: 72vh;
+    width: 875px;
+    height: 550px;
     flex-shrink: 0;
+    z-index: 5;
 
 }
 
@@ -51,102 +209,69 @@ body{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
+    z-index: 5;
 }
+
 .eventcard{
     position: absolute;
-    top: -8vh;
-    left: 50vw;
+    top: -9%;
+    left: 45%;
+    z-index: 5;
 }
-.icon1{
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.menu ul{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: rollin 2s ease-in-out forwards;
+}
+
+.menu li button{
+    position: absolute;
+    left: 10px;
+    list-style: none;
+    transform: rotate(calc((35deg/5 * var(--icon))))
+    translateX(calc(-800px - var(--icon) * 40px))
+    translateY(calc(650px + var(--icon) * 34px));
+    transform-origin: 140px;
+    z-index: 10;
+}
+
+.icon img{
+    height: 90px;
+    width: 90px;
+}
+
+.icon img:hover{
+    height: 120px;
+    width: 120px;
+    opacity: 0.6;
+    transform: translateX(-20px) translateY(-50px);
+}
+
+.chip {
     position: absolute;
     background: none;
     border: none;
     padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 10vh;
-    left: 9vw;   
-}
-.icon1 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon1:hover{
-    opacity: 0.8;
-}
-
-.icon2{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 29vh;
-    left: 14vw;   
-}
-.icon2 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon2:hover{
-    opacity: 0.8;
-}
-
-
-.icon3{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 48vh;
-    left: 21vw;   
-}
-.icon3 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon3:hover{
-    opacity: 0.8;
-}
-
-
-.icon4{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 66vh;
-    left: 30vw;   
-}
-.icon4 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon4:hover{
-    opacity: 0.8;
-}
-
-
-.icon5{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 81vh;
-    left: 39vw;   
-}
-.icon5 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon5:hover{
-    opacity: 0.8;
+    top: 68.5%;
+    left: 72.7%;
+    z-index: 8; 
+    scale: 3;
+    width: 100px; /* Ensure the chip has a size */
+    height: 100px; /* Ensure the chip has a size */
+    animation: rotateChip 1.5s ease-in-out forwards;
+    z-index: 5;
 }
