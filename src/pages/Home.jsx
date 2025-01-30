@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Banner from "../components/Banner/Banner";
 import Buttons from "../components/Buttons/Buttons";
 import CardContainer from "../components/CardContainer/CardContainer";
@@ -8,13 +8,45 @@ import styles from "../styles/Home.module.css";
 
 const Home = () => {
   const homeRef = useRef(null);
+  const [isScrolledDown, setIsScrolledDown] = useState(false); // Track scroll state
 
+  useEffect(() => {
+    const flickerElement = document.querySelector(`.${styles.home}`);
+    let grayscale = 0;
+    let increasing = true;
+    const interval = setInterval(() => {
+      if (increasing) {
+        grayscale += 7.5;
+        if (grayscale >= 60) increasing = false;
+      } else {
+        grayscale -= 10;
+        if (grayscale <= 0) increasing = true;
+      }
+      flickerElement.style.filter = `grayscale(${grayscale}%)`;
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+    
+  
   const scrollToTop = () => {
-    homeRef?.current.scrollTo({
-      left: 0,
-      top: 95 * (window.innerHeight / 100),
-      behavior: "smooth",
-    });
+    if (isScrolledDown) {
+      // Scroll up to the top
+      homeRef?.current.scrollTo({
+        left: 0,
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      // Scroll down to a specific point (e.g., 90% of the page height)
+      homeRef?.current.scrollTo({
+        left: 0,
+        top: 95 * (window.innerHeight / 100),
+        behavior: "smooth",
+      });
+    }
+    // Toggle the scroll state
+    setIsScrolledDown(!isScrolledDown);
   };
 
   return (
@@ -24,11 +56,12 @@ const Home = () => {
       onScroll={(e) => handleScroll(homeRef, e)}
     >
       <img
-        src="../../public/mlsclogo.png"
+        src="../../mlsclogo.png"
         alt="mlsc_logo"
         className={styles.mlsc_logo}
       />
       <Banner />
+      <div className={styles.flickerEffect}></div>
       <div className={styles.button_container}>
         <Buttons
           iconType="devfolio"
