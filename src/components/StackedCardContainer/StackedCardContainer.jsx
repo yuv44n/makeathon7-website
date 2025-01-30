@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./StackedCardContainer.module.css";
 
 // Import images from assets folder
@@ -36,25 +36,6 @@ const StackedCardContainer = () => {
   ];
   let cardsRef = useRef(Array(cards.length).fill(null));
   let cardsPosition = Array(cards.length).fill(-1);
-  useEffect(() => {
-    const handleScroll = (e) => {
-      let cardsEl = cardsRef.current;
-      cardsEl.forEach((el, index) => {
-        cardsPosition[index] = el.getBoundingClientRect().top;
-      });
-
-      console.log(cardsPosition);
-    };
-
-    // Attach the scroll event listener
-    let cardsEl = cardsRef.current;
-    cardsEl.forEach((el) => el.addEventListener("scroll", handleScroll));
-
-    // Cleanup on unmount
-    return () => {
-      cardsEl.forEach((el) => el.removeEventListener("scroll", handleScroll));
-    };
-  }, [cardsPosition]);
 
   let currentZIndex = 0;
 
@@ -95,7 +76,7 @@ const StackedCardContainer = () => {
               // alignSelf: "stretch",
               // // width: "100%",
               // textAlign: "center",
-              overflowY: "scroll",
+              // overflowY: "scroll",
             }}
             onScroll={onScroll}
             className={styles.stackedCard3}
@@ -106,6 +87,9 @@ const StackedCardContainer = () => {
               style={{
                 width: "280px",
                 height: "auto",
+              }}
+              onClick={() => {
+                window.location.href = card.link;
               }}
             />
           </div>

@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
+import AngleUpIcon from "../components/AngleUpIcon/AngleUpIcon";
 import Banner from "../components/Banner/Banner";
 import Buttons from "../components/Buttons/Buttons";
 import CardContainer from "../components/CardContainer/CardContainer";
 import Lamp from "../components/Lamp/Lamp";
 import StackedCardContainer from "../components/StackedCardContainer/StackedCardContainer";
-import styles2 from "../components/StackedCardContainer/StackedCardContainer.module.css";
+import stackedStyles from "../components/StackedCardContainer/StackedCardContainer.module.css";
 import styles from "../styles/Home.module.css";
 
 const Home = () => {
+  const homeRef = useRef(null);
   return (
-    <div className={styles.home} onScroll={handleScroll}>
+    <div
+      ref={homeRef}
+      className={styles.home}
+      onScroll={(e) => handleScroll(homeRef, e)}
+    >
       <img
         src="../../public/mlsclogo.png"
         alt="mlsc_logo"
@@ -37,13 +43,24 @@ const Home = () => {
             size: "48px",
             height: "6vh",
             width: "207px",
-            // width: "18vw",
           }}
         >
           Download Our App
         </Buttons>
       </div>
       <CardContainer />
+      <div
+        className={styles.angleUpIcon}
+        onClick={() =>
+          homeRef?.current.scrollTo({
+            left: 0,
+            top: 105 * (window.innerHeight / 100), //110vh
+            behavior: "smooth",
+          })
+        }
+      >
+        <AngleUpIcon />
+      </div>
       <StackedCardContainer />
     </div>
   );
@@ -51,7 +68,17 @@ const Home = () => {
 
 let prevCardsPosition = Array(4).fill(-1);
 let cardsPosition = Array(4).fill(-1);
-const handleScroll = (event) => {
+const handleScroll = (homeRef, event) => {
+  // console.log(homeRef.current.scrollTop);
+  // if (homeRef.current.scrollTop > 0) {
+  //   const angleUpIcon = document.querySelector(`.${styles.angleUpIcon})`);
+  //   if (angleUpIcon) angleUpIcon.style.display = "none";
+  // }
+  let cardsEl = document.querySelectorAll(`.${stackedStyles.stackedCard3}`);
+  cardsEl.forEach((cardEl, index) => {
+    console.log(index, cardEl.getBoundingClientRect().top);
+  });
+  /*
   const centreY = window.innerHeight / 2;
   let cardsEl = document.querySelectorAll(`.${styles2.stackedCard3}`);
   cardsEl?.forEach((cardEl, index) => {
@@ -77,6 +104,7 @@ const handleScroll = (event) => {
   console.log(cardsEl);
   console.log(cardsPosition);
   prevCardsPosition = cardsPosition;
+  */
 };
 
 export default Home;

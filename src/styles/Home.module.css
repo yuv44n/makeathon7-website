@@ -8,7 +8,7 @@
   width: 100vw;
   position: relative;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 /* TODO: add animation as that of logo */
@@ -33,6 +33,10 @@
   width: 100%;
 }
 
+.angleUpIcon {
+  display: none;
+}
+
 @media (max-width: 480px) {
   .mlsc_logo {
     left: 50%;
@@ -45,6 +49,17 @@
     top: 60vh;
     flex-direction: column;
     row-gap: 2vh;
+  }
+
+  .angleUpIcon {
+    display: block;
+    position: absolute;
+    fill: #9f9999;
+    top: 93vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: auto;
   }
 }
 
