@@ -1,152 +1,542 @@
+/* ***Universal***  */
+
 @font-face {
-    font-family: 'coburn';
-    src: url(../components/fonts/Coburn.otf);
-}
-body{
-    overflow: hidden;
+  font-family: "coburn";
+  src: url(../components/fonts/Coburn.otf);
 }
 
+.timeline_container_SVP {
+  display: none;
+}
 
 .timeline_container {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    
+  display: block;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+  /* background-color: pink; */
 }
 
-
-
 .timeline {
-    position: absolute;
-    top: 50%;
-    right: 7%;
-    transform: translateY(-50%);
-    color: #E4A700;
-    font-family: 'coburn', Arial, sans-serif;
-    font-size: 1.8em;
-    font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: left;
-    word-wrap: break-word;
-
-
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  transform: translateY(-50%);
+  color: #e4a700;
+  font-family: "coburn", Arial, sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  word-wrap: break-word;
+  /* background-color: red; */
 }
 
 .background {
-    background-image: url('../components/images/image1.png');
-    background-size: cover;
-    transform: scale(0.7);
-    width: 55vw;
-    height: 72vh;
-    flex-shrink: 0;
-
+  background-image: url("../components/images/eventCardBigger.png");
+  background-size: cover;
+  transform: scale(0.7);
+  width: 55vw;
+  height: 72vh;
+  flex-shrink: 0;
+  /* background-color: yellow; */
 }
 
 .description {
-    color: #E4A700;
+  color: #e4a700;
+  font-family: "Inria Serif";
+  font-size: 20.295px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* background-color: lightblue; */
+}
+
+.eventcard {
+  position: absolute;
+  top: -8vh;
+  left: 50vw;
+  /* background-color: green; */
+}
+
+.icon1 {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  top: 10vh;
+  left: 9vw;
+}
+
+.icon1 img {
+  width: 8vw;
+  height: 15vh;
+}
+
+.icon1:hover {
+  opacity: 0.8;
+}
+
+.icon2 {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  top: 29vh;
+  left: 14vw;
+}
+
+.icon2 img {
+  width: 8vw;
+  height: 15vh;
+}
+
+.icon2:hover {
+  opacity: 0.8;
+}
+
+.icon3 {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  top: 48vh;
+  left: 21vw;
+}
+
+.icon3 img {
+  width: 8vw;
+  height: 15vh;
+}
+
+.icon3:hover {
+  opacity: 0.8;
+}
+
+.icon4 {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  top: 66vh;
+  left: 30vw;
+}
+
+.icon4 img {
+  width: 8vw;
+  height: 15vh;
+}
+
+.icon4:hover {
+  opacity: 0.8;
+}
+
+.icon5 {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  top: 81vh;
+  left: 39vw;
+}
+
+.icon5 img {
+  width: 8vw;
+  height: 15vh;
+}
+
+.icon5:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+/* ***Mobile view activated*** */
+
+
+@media only screen and (max-width: 600px) {
+  .timeline_container {
+    display: none;
+  }
+
+  .timeline_container_SVP {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+  }
+
+  @font-face {
+    font-family: "coburn";
+    src: url(../components/fonts/Coburn.otf);
+  }
+
+  .eventcard {
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    top: 15vh;
+    left: 10vw;
+  }
+
+  .background {
+    background-image: url("../components/images/eventCardSmaller.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 80vw;
+    height: 80vh;
+    flex-shrink: 0;
+    z-index: 3;
+    position: relative;
+    transform: scale(1);
+  }
+
+  .crossButton {
+    height: 10%;
+    width: 17%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .timeline {
+    width: 80%;
+    height: 35vh;
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    color: #e4a700;
+    font-family: "coburn", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    word-wrap: break-word;
+    transform: translateY(0);
+    /* background-color: red; */
+  }
+
+  .description {
+    color: #e4a700;
     font-family: "Inria Serif";
-    font-size: 20.295px;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    /* background-color: lightblue; */
+  }
 
-}
-.eventcard{
+  .leftHeader {
+    width: 20.5vw;
+    height: 8.5vh;
     position: absolute;
-    top: -8vh;
-    left: 50vw;
-}
-.icon1{
+    left: 0;
+    top: 0;
+    margin: 0.5rem;
+    /* background-color: rgba(255, 0, 0, 0.642); */
+  }
+
+  .leftHeader img {
+    width: 100%;
+    height: auto;
+  }
+
+  .rightSide {
+    width: 15vw;
+    height: 8.5vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    /* background-color: hotpink; */
+  }
+
+  .rightSide div {
+    width: 70%;
+    height: 70%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    /* background-color: lightgreen; */
+  }
+
+  .rightSide div .line {
+    width: 90%;
+    height: 10%;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+    margin: 0.25rem 0;
+  }
+
+  .rightSide div .absolute {
+    position: absolute;
+  }
+
+  /* Extension of Burger */
+
+  .extension {
+    width: 85vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.90);
+    position: fixed;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+  }
+
+  /* Burger line properties */
+
+  .leftToRight {
+    transform: translateX(0);
+  }
+
+  .tiltLeft {
+    transform: rotateZ(45deg);
+  }
+
+  .tiltRight {
+    transform: rotateZ(-45deg);
+  }
+
+  .disappear {
+    opacity: 0;
+  }
+
+  /* ***** */
+
+  .extension .navLink {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 3.25rem;
+    width: 100%;
+    margin: 2.5rem 0;
+    /* background-color: lightcoral; */
+  }
+
+  .extension .navLink a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    font-size: 1.25rem;
+    height: 100%;
+    width: 30%;
+    transform: translateY(0.8rem);
+    transition: all 0.2s ease-in-out;
+    /* background-color: blue; */
+  }
+
+  .extension .navLink .up {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  .extension .navLink a:hover {
+    scale: 1.2;
+    filter: drop-shadow(white 0rem 0rem 20px);
+  }
+
+  .icon1 {
     position: absolute;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    outline:none;
-    top: 10vh;
-    left: 9vw;   
-}
-.icon1 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon1:hover{
-    opacity: 0.8;
-}
+    outline: none;
+    top: 2vh;
+    left: 66vw;
+    /* background-color: white; */
+  }
 
-.icon2{
+  .icon1 img {
+    width: 14vw;
+    height: auto;
+  }
+
+  .icon1:hover {
+    opacity: 0.8;
+  }
+
+  .icon2 {
     position: absolute;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    outline:none;
-    top: 29vh;
-    left: 14vw;   
-}
-.icon2 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon2:hover{
+    outline: none;
+    top: 8.9vh;
+    left: 47vw;
+    /* background-color: white; */
+  }
+
+  .icon2 img {
+    width: 14vw;
+    height: auto;
+  }
+
+  .icon2:hover {
     opacity: 0.8;
-}
+  }
 
-
-.icon3{
+  .icon3 {
     position: absolute;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    outline:none;
-    top: 48vh;
-    left: 21vw;   
-}
-.icon3 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon3:hover{
+    outline: none;
+    top: 17.9vh;
+    left: 29vw;
+    /* background-color: white; */
+  }
+
+  .icon3 img {
+    width: 14vw;
+    height: auto;
+  }
+
+  .icon3:hover {
     opacity: 0.8;
-}
+  }
 
-
-.icon4{
+  .icon4 {
     position: absolute;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    outline:none;
-    top: 66vh;
-    left: 30vw;   
-}
-.icon4 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon4:hover{
+    outline: none;
+    top: 28.5vh;
+    left: 15vw;
+    /* background-color: white; */
+  }
+
+  .icon4 img {
+    width: 15vw;
+    height: auto;
+  }
+
+  .icon4:hover {
     opacity: 0.8;
-}
+  }
 
-
-.icon5{
+  .icon5 {
     position: absolute;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    outline:none;
-    top: 81vh;
-    left: 39vw;   
-}
-.icon5 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon5:hover{
+    outline: none;
+    top: 41vh;
+    left: 5.8vw;
+    /* background-color: white; */
+  }
+
+  .icon5 img {
+    width: 13vw;
+    height: auto;
+  }
+
+  .icon5:hover {
     opacity: 0.8;
+  }
+
+  .icon6 {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 54vh;
+    left: 2vw;
+    /* background-color: white; */
+  }
+
+  .icon6 img {
+    width: 11vw;
+    height: auto;
+  }
+
+  .icon6:hover {
+    opacity: 0.8;
+  }
+
+  .icon7 {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 73vh;
+    left: 8vw;
+    /* background-color: white; */
+  }
+
+  .icon7 img {
+    width: 14vw;
+    height: auto;
+  }
+
+  .icon7:hover {
+    opacity: 0.8;
+  }
+
+  .gun {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 15vh;
+    right: 1vw;
+    /* background-color: white; */
+  }
+
+  .gun img {
+    width: 24vw;
+    height: auto;
+  }
+
+  .gun:hover {
+    opacity: 0.8;
+  }
 }
