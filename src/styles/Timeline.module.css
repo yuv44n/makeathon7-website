@@ -11,7 +11,7 @@
 
 .timeline_container {
   display: block;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100%;
   background-size: cover;
@@ -162,12 +162,7 @@
   opacity: 0.8;
 }
 
-
-
-
-
 /* ***Mobile view activated*** */
-
 
 @media only screen and (max-width: 600px) {
   .timeline_container {
@@ -175,6 +170,7 @@
   }
 
   .timeline_container_SVP {
+    position: fixed;
     display: block;
     width: 100vw;
     height: 100vh;
@@ -183,6 +179,7 @@
     background-size: cover;
     background-position: center;
     text-decoration: none;
+    z-index: 0;
   }
 
   @font-face {
@@ -196,6 +193,7 @@
     position: absolute;
     top: 15vh;
     left: 10vw;
+    z-index: 4;
   }
 
   .background {
@@ -206,7 +204,7 @@
     width: 80vw;
     height: 80vh;
     flex-shrink: 0;
-    z-index: 3;
+    z-index: 1;
     position: relative;
     transform: scale(1);
   }
@@ -218,7 +216,7 @@
     top: 0;
     left: 0;
     cursor: pointer;
-    z-index: 4;
+    z-index: 5;
     transition: all 0.3s ease-in-out;
   }
 
@@ -231,18 +229,18 @@
     color: #e4a700;
     font-family: "coburn", Arial, sans-serif;
     font-weight: 400;
-    font-size: 2.2rem;
+    font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
     word-wrap: break-word;
     transform: translateY(0);
-    /* background-color: red; */
+    z-index: 4;
   }
 
   .description {
     color: #e4a700;
     font-family: "Inria Serif";
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -256,6 +254,7 @@
     left: 0;
     top: 0;
     margin: 0.5rem;
+    z-index: 5;
     /* background-color: rgba(255, 0, 0, 0.642); */
   }
 
@@ -272,7 +271,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 3;
+    z-index: 5;
     /* background-color: hotpink; */
   }
 
@@ -285,7 +284,7 @@
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    z-index: 3;
+    z-index: 6;
     /* background-color: lightgreen; */
   }
 
@@ -306,9 +305,9 @@
   .extension {
     width: 85vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.90);
+    background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
-    z-index: 4;
+    z-index: 6;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -381,6 +380,7 @@
     outline: none;
     top: 2vh;
     left: 66vw;
+    z-index: 3;
     /* background-color: white; */
   }
 
@@ -402,6 +402,7 @@
     outline: none;
     top: 8.9vh;
     left: 47vw;
+    z-index: 3;
     /* background-color: white; */
   }
 
@@ -423,6 +424,7 @@
     outline: none;
     top: 17.9vh;
     left: 29vw;
+    z-index: 3;
     /* background-color: white; */
   }
 
@@ -444,6 +446,7 @@
     outline: none;
     top: 28.5vh;
     left: 15vw;
+    z-index: 3;
     /* background-color: white; */
   }
 
@@ -465,6 +468,7 @@
     outline: none;
     top: 41vh;
     left: 5.8vw;
+    z-index: 3;
     /* background-color: white; */
   }
 
@@ -486,6 +490,7 @@
     outline: none;
     top: 54vh;
     left: 2vw;
+    z-index: 3;
     /* background-color: white; */
   }
 
@@ -507,6 +512,7 @@
     outline: none;
     top: 73vh;
     left: 8vw;
+    z-index: 3;
     /* background-color: white; */
   }
 
@@ -526,17 +532,63 @@
     padding: 0;
     cursor: pointer;
     outline: none;
-    top: 15vh;
+    top: 8vh;
     right: 1vw;
     /* background-color: white; */
   }
 
   .gun img {
-    width: 24vw;
+    width: 34vw;
     height: auto;
   }
 
   .gun:hover {
     opacity: 0.8;
+  }
+
+  .Hearts {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 10vh;
+    left: 17.1vw;
+    z-index: 1;
+  }
+  .Hearts img {
+    width: 82.9vw;
+    height: auto;
+  }
+  .Diamonds {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 51.8vh;
+    right: -0.5vw;
+    z-index: 1;
+
+  }
+  .Diamonds img {
+    width: 52.1vw;
+    height: auto;
+  }
+  .MakeathonLogo {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 70.2vh;
+    right: 12.5vw;
+  }
+  .MakeathonLogo img {
+    width: 29.5vw;
+    height: auto;
   }
 }

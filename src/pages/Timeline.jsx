@@ -7,11 +7,14 @@ import icon2 from '../components/images/spy.png';
 import icon3 from '../components/images/spyware.png';
 import icon4 from '../components/images/poker.png';
 import icon5 from '../components/images/gunIcon.png';
+import icon6 from '../components/images/man.png';
+import icon7 from '../components/images/poker.png';
 import gunRight from '../components/images/gun.png';
+import MakeathonLogo from '../components/images/MakeathonLogo.png';
+import Hearts from '../components/images/Hearts.png';
+import Diamonds from '../components/images/Diamonds.png';
 import Eventcard from '../components/events_components/Eventcard.jsx';
 import styles from '../styles/Timeline.module.css';
-// import icon6 from '../components/images/man.png';
-// import icon7 from '../components/images/poker-chip 4.png';
 
 
 // Bigger View port component has display block when media query does not hit
@@ -262,13 +265,22 @@ const SmallerViewPort = () => {
         <img src={icon7} alt="Air Event" />
       </button> */}
 
-      <button
-        ref={(el) => (buttonRefs.current[7] = el)}
-        className={styles.gun}
-        onClick={() => handleEventClick('EVENT 8')}
-      >
+      <div className={styles.gun}>
         <img src={gunRight} alt="Gun" />
-      </button>
+      </div>
+
+      <div className={styles.MakeathonLogo}>
+        <img src={MakeathonLogo} alt="MakeathonLogo" />
+      </div>
+
+      <div className={styles.Hearts}>
+        <img src={Hearts} alt="Hearts" />
+      </div>
+
+
+      <div className={styles.Diamonds}>
+        <img src={Diamonds} alt="Diamonds" />
+      </div>
     </div>
   );
 };
