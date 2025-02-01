@@ -122,29 +122,29 @@ body{
 .spades{
     position: absolute;
     transform: rotate(-15deg);
-    top: -170px;
-    left: 650px; 
+    top: -23%;
+    left: 43%; 
     opacity: 0.5;
     z-index: 2;
 }
 
 .spades img{
     height: 130vh;
-    width: 25vw;
+    aspect-ratio: 2/5;
     animation: fadein2 1.5s ease-in-out forwards;
 }
 
 .diamonds1{
     position: absolute;
     transform: rotate(0deg);
-    top: 10px;
-    left: 0px; 
+    top: 3vh;
+    left: -1vw; 
     z-index: 2;
 }
 
 .diamonds1 img{
-    height: 100vh;
-    width: 30vw;
+    height: 105vh;
+    aspect-ratio: 8/9;
     animation: fadein3 1.5s ease-in-out forwards;
     z-index: 2;
 }
@@ -152,14 +152,14 @@ body{
 .diamonds2{
     position: absolute;
     transform: rotate(-15deg);
-    top: 220px;
-    left: 1100px;
+    top: 31vh;
+    left: 71vw;
     z-index: 2; 
 }
 
 .diamonds2 img{
-    height: 100vh;
-    width: 30vw;
+    height: 105vh;
+    aspect-ratio: 8/9;
     animation: fadein3 1.5s ease-in-out forwards;
 }
 
@@ -170,7 +170,7 @@ body{
     width: 100%;
     background-size: cover;
     background-position: center;
-    animation: fadein 1s ease-in-out forwards;
+    animation: fadein 1.5s ease-in-out forwards;
     z-index: 1;
 }
   
@@ -184,7 +184,7 @@ body{
     font-family: 'coburn', Arial, sans-serif;
     font-size: 1.8em;
     font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.5);
     text-align: left;
     word-wrap: break-word;
     z-index: 5;
@@ -195,8 +195,8 @@ body{
     background-image: url('../components/images/image1.png');
     background-size: cover;
     transform: scale(0.7);
-    width: 875px;
-    height: 550px;
+    width: 50vw;
+    aspect-ratio: 29/18;
     flex-shrink: 0;
     z-index: 5;
 
@@ -205,7 +205,7 @@ body{
 .description {
     color: #E4A700;
     font-family: "Inria Serif";
-    font-size: 20.295px;
+    font-size: 0.9em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -214,8 +214,8 @@ body{
 
 .eventcard{
     position: absolute;
-    top: -9%;
-    left: 45%;
+    top: 0.5%;
+    left: 52%;
     z-index: 5;
 }
 
@@ -240,25 +240,25 @@ body{
 
 .menu li button{
     position: absolute;
-    left: 10px;
+    left: 1vw;
     list-style: none;
     transform: rotate(calc((35deg/5 * var(--icon))))
-    translateX(calc(-800px - var(--icon) * 40px))
-    translateY(calc(650px + var(--icon) * 34px));
+    translateX(calc(-50vw - var(--icon) * 3vw))
+    translateY(calc(101vh + var(--icon) * 2vh));
     transform-origin: 140px;
     z-index: 10;
 }
 
 .icon img{
-    height: 90px;
-    width: 90px;
+    height: 13vh;
+    aspect-ratio: 1;
 }
 
 .icon img:hover{
-    height: 120px;
-    width: 120px;
+    height: 15vh;
+    aspect-ratio: 1;
     opacity: 0.6;
-    transform: translateX(-20px) translateY(-50px);
+    transform: translateX(-1.2vh) translateY(-1.4vw);
 }
 
 .chip {
@@ -270,8 +270,8 @@ body{
     left: 72.7%;
     z-index: 8; 
     scale: 3;
-    width: 100px; /* Ensure the chip has a size */
-    height: 100px; /* Ensure the chip has a size */
+    width: 14.3vh;
+    aspect-ratio: 1;
     animation: rotateChip 1.5s ease-in-out forwards;
     z-index: 5;
 }
