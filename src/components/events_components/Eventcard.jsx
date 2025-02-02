@@ -25,13 +25,13 @@ function Eventcard  ({name}) {
             <div onClick={() => animate("card3")} className={`${styles.selectCards} ${styles.card3} ${Animation.card3 ? styles.card3Ani : ''}`}></div>
         
             <div className={styles.timeline}>
-              <p>EVENT: {card.id}</p>
-              <br/>
-              <p>DATE: {card.date}</p>
-              <p>TIME: {card.time}</p>
-              <p>VENUE: {card.venue}</p>
-              <br/>
-              <p className={styles.description}>{card.description}</p>  
+                <p>EVENT: {card.id}</p>
+                <br />
+                <p>DATE: {card.date}</p>
+                <p>TIME: {card.time}</p>
+                <p>VENUE: {card.venue}</p>
+                <br />
+                <p className={styles.description}>{card.description}</p>
             </div>
         </div> 
     )
