@@ -1,22 +1,179 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    padding: 0;
+    outline:none;
+}
+
 @font-face {
     font-family: 'coburn';
     src: url(../components/fonts/Coburn.otf);
 }
 body{
+    background-color: black;
     overflow: hidden;
 }
 
+@keyframes rotateChip {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
 
-.timeline_container {
+@keyframes expander {
+    from {
+        top: 68.5%;
+        left: 72.7%;
+    }
+    to {
+        top: 0%;
+        left:0%;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        z-index: 1;
+    }
+    to {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes fadein2 {
+    0%{
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.2;
+        z-index: 1;
+    }
+    100% {
+        opacity: 0.5;
+        z-index: 1;
+    }
+}
+
+@keyframes fadein3 {
+    0%{
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.2;
+        z-index: 1;
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+@keyframes rollin {
+    0%{
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+    50% {
+        opacity: 0.4;
+        z-index: 1;
+        transform: rotate(60deg);
+    }
+    100% {
+        opacity: 1;
+        z-index: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.lines::before {
+    background-color:black;
     position: absolute;
     height: 100vh;
     width: 100%;
     background-size: cover;
     background-position: center;
-    
+    z-index: -10;
 }
 
+.lines {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f8e89a;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    mask-image: url('../components/vectors/lines.svg'); /* Corrected path and syntax */
+    mask-size: cover;
+    mask-position: center;
+    -webkit-mask-image: url('../components/vectors/lines.svg'); /* For WebKit browsers */
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+}
 
+.spades{
+    position: absolute;
+    transform: rotate(-15deg);
+    top: -23%;
+    left: 43%; 
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.spades img{
+    height: 130vh;
+    aspect-ratio: 2/5;
+    animation: fadein2 1.5s ease-in-out forwards;
+}
+
+.diamonds1{
+    position: absolute;
+    transform: rotate(0deg);
+    top: 3vh;
+    left: -1vw; 
+    z-index: 2;
+}
+
+.diamonds1 img{
+    height: 105vh;
+    aspect-ratio: 8/9;
+    animation: fadein3 1.5s ease-in-out forwards;
+    z-index: 2;
+}
+
+.diamonds2{
+    position: absolute;
+    transform: rotate(-15deg);
+    top: 31vh;
+    left: 71vw;
+    z-index: 2; 
+}
+
+.diamonds2 img{
+    height: 105vh;
+    aspect-ratio: 8/9;
+    animation: fadein3 1.5s ease-in-out forwards;
+}
+
+.timeline_container {
+    background-image: url('../components/vectors/background.svg');
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: fadein 1.5s ease-in-out forwards;
+    z-index: 1;
+}
+  
 
 .timeline {
     position: absolute;
@@ -27,10 +184,10 @@ body{
     font-family: 'coburn', Arial, sans-serif;
     font-size: 1.8em;
     font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.5);
     text-align: left;
     word-wrap: break-word;
-
+    z-index: 5;
 
 }
 
@@ -43,6 +200,7 @@ body{
     height: 72vh;
     z-index: 0;
     flex-shrink: 0;
+    z-index: 5;
 
 }
 .card1 {
@@ -161,109 +319,75 @@ body{
 .description {
     color: #E4A700;
     font-family: "Inria Serif";
-    font-size: 20.295px;
+    font-size: 0.9em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
+    z-index: 5;
 }
+
 .eventcard{
     position: absolute;
     top: -8vh;
     left: 50vw;
     transform-origin: center;
 }
-.icon1{
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.menu ul{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: rollin 2s ease-in-out forwards;
+}
+
+.menu li button{
+    position: absolute;
+    left: 1vw;
+    list-style: none;
+    transform: rotate(calc((35deg/5 * var(--icon))))
+    translateX(calc(-50vw - var(--icon) * 3vw))
+    translateY(calc(101vh + var(--icon) * 2vh));
+    transform-origin: 140px;
+    z-index: 10;
+}
+
+.icon img{
+    height: 13vh;
+    aspect-ratio: 1;
+}
+
+.icon img:hover{
+    height: 15vh;
+    aspect-ratio: 1;
+    opacity: 0.6;
+    transform: translateX(-1.2vh) translateY(-1.4vw);
+}
+
+.chip {
     position: absolute;
     background: none;
     border: none;
     padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 10vh;
-    left: 9vw;   
-}
-.icon1 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon1:hover{
-    opacity: 0.8;
-}
-
-.icon2{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 29vh;
-    left: 14vw;   
-}
-.icon2 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon2:hover{
-    opacity: 0.8;
-}
-
-
-.icon3{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 48vh;
-    left: 21vw;   
-}
-.icon3 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon3:hover{
-    opacity: 0.8;
-}
-
-
-.icon4{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 66vh;
-    left: 30vw;   
-}
-.icon4 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon4:hover{
-    opacity: 0.8;
-}
-
-
-.icon5{
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline:none;
-    top: 81vh;
-    left: 39vw;   
-}
-.icon5 img{
-    width: 8vw;
-    height: 15vh;
-}
-.icon5:hover{
-    opacity: 0.8;
+    top: 68.5%;
+    left: 72.7%;
+    z-index: 8; 
+    scale: 3;
+    width: 14.3vh;
+    aspect-ratio: 1;
+    animation: rotateChip 1.5s ease-in-out forwards;
+    z-index: 5;
 }
 
 
