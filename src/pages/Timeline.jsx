@@ -19,19 +19,6 @@ const Timeline = () => {
     setSelectedEvent(eventId);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (cardRef.current && !cardRef.current.contains(event.target) && !buttonRefs.current.some((button) => button.contains(event.target))) {
-        setSelectedEvent(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   return (
     <div
