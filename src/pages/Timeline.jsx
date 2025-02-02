@@ -36,7 +36,7 @@ const Timeline = () => {
     style={{ backgroundImage: `url(${backimg})`}}
     >
       {selectedEvent && (
-        <div className={styles.eventcard} ref={cardRef}>
+        <div className={`${styles.eventcard} ${selectedEvent ? styles.show : ''}`} ref={cardRef}>
           <Eventcard name={selectedEvent} />
         </div>
       )}

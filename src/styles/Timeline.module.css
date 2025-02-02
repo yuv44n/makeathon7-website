@@ -35,14 +35,128 @@ body{
 }
 
 .background {
+    position: relative;
     background-image: url('../components/images/image1.png');
     background-size: cover;
     transform: scale(0.7);
     width: 55vw;
     height: 72vh;
+    z-index: 0;
     flex-shrink: 0;
 
 }
+.card1 {
+    position: absolute;
+    border-radius: 11.342px;
+    background: url('../components/images/card1.png') no-repeat center center / cover;
+    width: 11.578vw;
+    height: 37.35vh;
+    transform: scale(1.3);
+    left: 29%;
+    top: 29%;
+    z-index: 3;
+    flex-shrink: 0;
+}
+
+.card1:hover {
+    box-shadow: 0 0 20px yellow;
+    cursor: pointer;
+}
+
+.card2 {
+    position: absolute;
+    border-radius: 11.342px;
+    background: url('../components/images/card2.png') no-repeat center center / cover;
+    width: 11.578vw;
+    height: 37.35vh;
+    transform: scale(1.3) rotateZ(-11deg);
+    left: 24%;
+    top: 26%;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.card2:hover {
+    box-shadow: 0 0 20px yellow;
+    cursor: pointer;
+}
+
+.card3 {
+    position: absolute;
+    border-radius: 11.342px;
+    background: url('../components/images/card3.png') no-repeat center center / cover;
+    width: 11.578vw;
+    height: 37.35vh;
+    transform: scale(1.3) rotateZ(-23deg);
+    left: 19%;
+    top: 24%;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.card3:hover {
+    box-shadow: 0 0 20px yellow;
+    cursor: pointer;
+}
+
+.card1Ani {
+    animation: animation1 1s ease-in-out forwards;
+}
+
+.card2Ani {
+    animation: animation2 1s ease-in-out forwards;
+}
+
+.card3Ani {
+    animation: animation3 1s ease-in-out forwards;
+}
+
+.show {
+    animation: showEvent 2s ease-in-out forwards;
+}
+
+@keyframes animation1 {
+    from { 
+        transform: translateX(0px) rotateZ(0deg) scale(1.3);
+    }
+    to {
+        transform: translateX(100px) rotateZ(20deg) scale(1.3);
+    }
+
+}
+
+@keyframes animation2 {
+    from { 
+        transform: translateY(0px) scale(1.3) rotateZ(-11deg);
+    }
+    to {
+        transform: translateY(-100px) scale(1.3) rotateZ(-11deg);
+    }
+
+}
+
+@keyframes animation3 {
+    from { 
+        transform: translateX(0px) rotateZ(-23deg) scale(1.3);
+    }
+    to {
+        transform: translateX(-100px) rotateZ(-43deg) scale(1.3);
+    }
+
+}
+
+@keyframes showEvent {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+}
+
 
 .description {
     color: #E4A700;
@@ -57,6 +171,7 @@ body{
     position: absolute;
     top: -8vh;
     left: 50vw;
+    transform-origin: center;
 }
 .icon1{
     position: absolute;
@@ -150,3 +265,5 @@ body{
 .icon5:hover{
     opacity: 0.8;
 }
+
+
