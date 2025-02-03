@@ -1,226 +1,202 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-    background: none;
-    border: none;
-    padding: 0;
-    outline:none;
+/* Universal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+  text-decoration: none;
+  border: none;
 }
-
-@font-face {
-    font-family: 'coburn';
-    src: url(../components/fonts/Coburn.otf);
-}
-body{
-    background-color: black;
-    overflow: hidden;
-}
-
-@keyframes rotateChip {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(180deg);
-    }
-}
-
-@keyframes expander {
-    from {
-        top: 68.5%;
-        left: 72.7%;
-    }
-    to {
-        top: 0%;
-        left:0%;
-    }
-}
-
-@keyframes fadein {
-    from {
-        opacity: 0;
-        z-index: 1;
-    }
-    to {
-        opacity: 1;
-        z-index: 1;
-    }
-}
-
-@keyframes fadein2 {
-    0%{
-        opacity: 0;
-    }
-    75% {
-        opacity: 0.2;
-        z-index: 1;
-    }
-    100% {
-        opacity: 0.5;
-        z-index: 1;
-    }
-}
-
-@keyframes fadein3 {
-    0%{
-        opacity: 0;
-    }
-    75% {
-        opacity: 0.2;
-        z-index: 1;
-    }
-    100% {
-        opacity: 1;
-        z-index: 1;
-    }
-}
-
-@keyframes rollin {
-    0%{
-        opacity: 0;
-        transform: rotate(90deg);
-    }
-    50% {
-        opacity: 0.4;
-        z-index: 1;
-        transform: rotate(60deg);
-    }
-    100% {
-        opacity: 1;
-        z-index: 1;
-        transform: rotate(0deg);
-    }
-}
-
-.lines::before {
-    background-color:black;
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -10;
-}
-
-.lines {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #f8e89a;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    mask-image: url('../components/vectors/lines.svg'); /* Corrected path and syntax */
-    mask-size: cover;
-    mask-position: center;
-    -webkit-mask-image: url('../components/vectors/lines.svg'); /* For WebKit browsers */
-    -webkit-mask-size: cover;
-    -webkit-mask-position: center;
-}
-
-.spades{
-    position: absolute;
-    transform: rotate(-15deg);
-    top: -23%;
-    left: 43%; 
-    opacity: 0.5;
-    z-index: 2;
-}
-
-.spades img{
-    height: 130vh;
-    aspect-ratio: 2/5;
-    animation: fadein2 1.5s ease-in-out forwards;
-}
-
-.diamonds1{
-    position: absolute;
-    transform: rotate(0deg);
-    top: 3vh;
-    left: -1vw; 
-    z-index: 2;
-}
-
-.diamonds1 img{
-    height: 105vh;
-    aspect-ratio: 8/9;
-    animation: fadein3 1.5s ease-in-out forwards;
-    z-index: 2;
-}
-
-.diamonds2{
-    position: absolute;
-    transform: rotate(-15deg);
-    top: 31vh;
-    left: 71vw;
-    z-index: 2; 
-}
-
-.diamonds2 img{
-    height: 105vh;
-    aspect-ratio: 8/9;
-    animation: fadein3 1.5s ease-in-out forwards;
-}
-
-.timeline_container {
-    background-image: url('../components/vectors/background.svg');
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    animation: fadein 1.5s ease-in-out forwards;
-    z-index: 1;
-}
-  
-
-.timeline {
-    position: absolute;
-    top: 50%;
-    right: 7%;
-    transform: translateY(-50%);
-    color: #E4A700;
-    font-family: 'coburn', Arial, sans-serif;
-    font-size: 1.8em;
-    font-weight: 400;
-    text-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.5);
-    text-align: left;
-    word-wrap: break-word;
-    z-index: 5;
-
-}
-
-.background {
-    position: relative;
-    background-image: url('../components/images/image1.png');
-    background-size: cover;
-    transform: scale(0.7);
-    width: 55vw;
-    height: 72vh;
-    flex-shrink: 0;
-    z-index: 6;
-
-/* ***Universal***  */
 
 @font-face {
   font-family: "coburn";
   src: url(../components/fonts/Coburn.otf);
 }
 
-.timeline_container_SVP {
-  display: none;
+/* ***** */
+
+/* Lines Animation */
+
+.lines::before {
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
 }
 
+.lines {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #f8e89a;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  mask-image: url("../components/vectors/lines.svg"); /* Corrected path and syntax */
+  mask-size: cover;
+  mask-position: center;
+  -webkit-mask-image: url("../components/vectors/lines.svg"); /* For WebKit browsers */
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+}
+
+/* **** */
+
+/* Background Elements */
+
+.spades {
+  position: absolute;
+  transform: rotate(-15deg);
+  top: -23%;
+  left: 42%;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.spades img {
+  height: 130vh;
+  aspect-ratio: 2.25/5;
+  animation: fadein2 1.2s ease-in-out forwards;
+}
+
+.diamonds1 {
+  position: absolute;
+  transform: rotate(0deg);
+  top: 3vh;
+  left: -1vw;
+  z-index: 2;
+}
+
+.diamonds1 img {
+  height: 105vh;
+  aspect-ratio: 8/9;
+  animation: fadein3 1.5s ease-in-out forwards;
+  z-index: 2;
+}
+
+.diamonds2 {
+  position: absolute;
+  transform: rotate(-15deg);
+  top: 31vh;
+  left: 71vw;
+  z-index: 2;
+}
+
+.diamonds2 img {
+  height: 105vh;
+  aspect-ratio: 8/9;
+  animation: fadein3 1.5s ease-in-out forwards;
+}
+
+/* ****** */
+
+/* ************** Bigger View Port CSS ************** */
+
 .timeline_container {
-  display: block;
-  position: fixed;
+  background-image: url("../components/vectors/background.svg");
+  position: absolute;
   height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: center;
-  overflow-x: hidden;
-  /* background-color: pink; */
+  animation: fadein 1.2s ease-in-out forwards;
+  z-index: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.timeline_container_SVP,
+.extension {
+  display: none;
+}
+
+.background {
+  position: relative;
+  background-image: url("../components/images/eventCardBigger.png");
+  background-size: cover;
+  width: 50vw;
+  height: 60vh;
+  scale: 0.95;
+  flex-shrink: 0;
+  z-index: 6;
+  top: 10vh;
+  /* background-color: green; */
+}
+
+.card1 {
+  position: absolute;
+  border-radius: 12px;
+  background: url("../components/images/card1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 12vw;
+  height: 40vh;
+  transform: scale(1);
+  left: 29%;
+  top: 28%;
+  z-index: 6;
+  flex-shrink: 0;
+}
+
+.card1:hover {
+  box-shadow: 0 0 20px yellow;
+  cursor: pointer;
+}
+
+.card2 {
+  position: absolute;
+  border-radius: 12px;
+  background: url("../components/images/card2.png") no-repeat center center /
+    cover;
+  width: 12vw;
+  height: 40vh;
+  transform: rotateZ(-11deg);
+  left: 24%;
+  top: 25%;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.card2:hover {
+  box-shadow: 0 0 20px yellow;
+  cursor: pointer;
+}
+
+.card3 {
+  position: absolute;
+  border-radius: 12px;
+  background: url("../components/images/card3.png") no-repeat center center /
+    cover;
+  width: 12vw;
+  height: 40vh;
+  transform: rotateZ(-23deg);
+  left: 19%;
+  top: 22%;
+  z-index: 4;
+  flex-shrink: 0;
+}
+
+.card3:hover {
+  box-shadow: 0 0 20px yellow;
+  cursor: pointer;
+}
+
+.card1Ani {
+  animation: animation1 1s ease-in-out forwards;
+}
+
+.card2Ani {
+  animation: animation2 1s ease-in-out forwards;
+}
+
+.card3Ani {
+  animation: animation3 1s ease-in-out forwards;
 }
 
 .timeline {
@@ -230,251 +206,236 @@ body{
   transform: translateY(-50%);
   color: #e4a700;
   font-family: "coburn", Arial, sans-serif;
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: 400;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.5);
   text-align: left;
   word-wrap: break-word;
-  /* background-color: red; */
-}
-
-.background {
-  background-image: url("../components/images/eventCardBigger.png");
-  background-size: cover;
-  transform: scale(0.7);
-  width: 55vw;
-  height: 72vh;
-  flex-shrink: 0;
-  /* background-color: yellow; */
-}
-.card1 {
-    position: absolute;
-    border-radius: 11.342px;
-    background: url('../components/images/card1.png') no-repeat center center / cover;
-    width: 11.578vw;
-    height: 37.35vh;
-    transform: scale(1.3);
-    left: 29%;
-    top: 29%;
-    z-index: 14;
-    flex-shrink: 0;
-}
-
-.card1:hover {
-    box-shadow: 0 0 20px yellow;
-    cursor: pointer;
-}
-
-.card2 {
-    position: absolute;
-    border-radius: 11.342px;
-    background: url('../components/images/card2.png') no-repeat center center / cover;
-    width: 11.578vw;
-    height: 37.35vh;
-    transform: scale(1.3) rotateZ(-11deg);
-    left: 24%;
-    top: 26%;
-    z-index: 13;
-    flex-shrink: 0;
-}
-
-.card2:hover {
-    box-shadow: 0 0 20px yellow;
-    cursor: pointer;
-}
-
-.card3 {
-    position: absolute;
-    border-radius: 11.342px;
-    background: url('../components/images/card3.png') no-repeat center center / cover;
-    width: 11.578vw;
-    height: 37.35vh;
-    transform: scale(1.3) rotateZ(-23deg);
-    left: 19%;
-    top: 24%;
-    z-index: 12;
-    flex-shrink: 0;
-}
-
-.card3:hover {
-    box-shadow: 0 0 20px yellow;
-    cursor: pointer;
-}
-
-.card1Ani {
-    animation: animation1 1s ease-in-out forwards;
-}
-
-.card2Ani {
-    animation: animation2 1s ease-in-out forwards;
-}
-
-.card3Ani {
-    animation: animation3 1s ease-in-out forwards;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .show {
-    animation: showEvent 2s ease-in-out forwards;
+  animation: showEvent 1.25s ease-in-out forwards;
 }
-
-@keyframes animation1 {
-    from { 
-        transform: translateX(0px) rotateZ(0deg) scale(1.3);
-    }
-    to {
-        transform: translateX(100px) rotateZ(20deg) scale(1.3);
-    }
-
-}
-
-@keyframes animation2 {
-    from { 
-        transform: translateY(0px) scale(1.3) rotateZ(-11deg);
-    }
-    to {
-        transform: translateY(-100px) scale(1.3) rotateZ(-11deg);
-    }
-
-}
-
-@keyframes animation3 {
-    from { 
-        transform: translateX(0px) rotateZ(-23deg) scale(1.3);
-    }
-    to {
-        transform: translateX(-100px) rotateZ(-43deg) scale(1.3);
-    }
-
-}
-
-@keyframes showEvent {
-    0% {
-        transform: scaleX(0);
-        opacity: 0;
-      }
-
-      100% {
-        transform: scaleX(1);
-        opacity: 1;
-      }
-}
-
 
 .description {
   color: #e4a700;
   font-family: "Inria Serif";
-  font-size: 20.295px;
+  font-size: 0.75em;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: normal;
-  /* background-color: lightblue; */
+  z-index: 5;
 }
 
 .eventcard {
   position: absolute;
   top: -8vh;
   left: 50vw;
-  /* background-color: green; */
+  transform-origin: center;
+  z-index: 15;
 }
 
-.icon1 {
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.menu ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: rollin 2s ease-in-out forwards;
+}
+
+.menu li button {
+  position: absolute;
+  left: 1vw;
+  list-style: none;
+  transform: rotate(calc((35deg / 5 * var(--icon))))
+    translateX(calc(-50vw - var(--icon) * 3vw))
+    translateY(calc(101vh + var(--icon) * 2vh));
+  transform-origin: 140px;
+  z-index: 6;
+}
+
+.icon img {
+  height: 10vh;
+  width: auto;
+  transition: all 0.25s ease-in-out;
+}
+
+.icon img:hover {
+  height: 11.5vh;
+  opacity: 0.6;
+  transform: translateX(-1vh) translateY(-1vw);
+  cursor: pointer;
+}
+
+.chip {
   position: absolute;
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
-  outline: none;
-  top: 10vh;
-  left: 9vw;
+  top: 68.5%;
+  left: 72.7%;
+  z-index: 6;
+  scale: 3;
+  width: 14.3vh;
+  animation: rotateChip 1.5s ease-in-out forwards;
+  z-index: 6;
 }
 
-.icon1 img {
-  width: 8vw;
-  height: 15vh;
-}
-
-.icon1:hover {
-  opacity: 0.8;
-}
-
-.icon2 {
+.MakeathonLogoBigger {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  top: 29vh;
-  left: 14vw;
+  top: 68.5%;
+  left: 70%;
+  z-index: 8;
+  scale: 0.85;
 }
 
-.icon2 img {
-  width: 8vw;
-  height: 15vh;
-}
-
-.icon2:hover {
-  opacity: 0.8;
-}
-
-.icon3 {
+.MLSCLogoBigger {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  top: 48vh;
-  left: 21vw;
+  margin: 1rem;
+  z-index: 5;
+  height: 6rem;
+  width: auto;
 }
 
-.icon3 img {
-  width: 8vw;
-  height: 15vh;
-}
-
-.icon3:hover {
-  opacity: 0.8;
-}
-
-.icon4 {
+.backButton {
+  height: 5rem;
+  width: 5rem;
+  margin-top: 5.5rem;
+  margin-left: 2.5rem;
+  /* background-color: pink; */
   position: absolute;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  top: 66vh;
-  left: 30vw;
+  z-index: 7;
 }
 
-.icon4 img {
-  width: 8vw;
-  height: 15vh;
+@keyframes rotateChip {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
 }
 
-.icon4:hover {
-  opacity: 0.8;
+@keyframes expander {
+  from {
+    top: 68.5%;
+    left: 72.7%;
+  }
+  to {
+    top: 0%;
+    left: 0%;
+  }
 }
 
-.icon5 {
-  position: absolute;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  top: 81vh;
-  left: 39vw;
+@keyframes fadein {
+  from {
+    opacity: 0;
+    z-index: 1;
+  }
+  to {
+    opacity: 1;
+    z-index: 1;
+  }
 }
 
-.icon5 img {
-  width: 8vw;
-  height: 15vh;
+@keyframes fadein2 {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.2;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0.5;
+    z-index: 1;
+  }
 }
 
-.icon5:hover {
-  opacity: 0.8;
+@keyframes fadein3 {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.2;
+    z-index: 1;
+  }
+  100% {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+@keyframes rollin {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  50% {
+    opacity: 0.4;
+    z-index: 1;
+    transform: rotate(60deg);
+  }
+  100% {
+    opacity: 1;
+    z-index: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animation1 {
+  from {
+    transform: translateX(0px) rotateZ(0deg) scale(1.15);
+  }
+  to {
+    transform: translateX(80px) rotateZ(15deg) scale(1.15);
+  }
+}
+
+@keyframes animation2 {
+  from {
+    transform: translateY(0px) scale(1.15) rotateZ(-8deg);
+  }
+  to {
+    transform: translateY(-80px) scale(1.15) rotateZ(-8deg);
+  }
+}
+
+@keyframes animation3 {
+  from {
+    transform: translateX(0px) rotateZ(-20deg) scale(1.15);
+  }
+  to {
+    transform: translateX(-80px) rotateZ(-38deg) scale(1.15);
+  }
+}
+
+@keyframes showEvent {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 /* ***Mobile view activated*** */
@@ -506,9 +467,17 @@ body{
     width: 80vw;
     height: 80vh;
     position: absolute;
-    top: 15vh;
+    top: 10vh;
     left: 10vw;
     z-index: 4;
+  }
+
+  .selectCards {
+    visibility: hidden;
+  }
+
+  .display {
+    animation: displayEvent 1s ease-in-out forwards;
   }
 
   .background {
@@ -516,12 +485,12 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    width: 80vw;
-    height: 80vh;
-    flex-shrink: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     z-index: 1;
-    position: relative;
-    transform: scale(1);
+    top: 0;
+    scale: 1;
   }
 
   .crossButton {
@@ -531,8 +500,8 @@ body{
     top: 0;
     left: 0;
     cursor: pointer;
-    z-index: 5;
-    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    transition: all 0.2s ease-in-out;
   }
 
   .timeline {
@@ -544,7 +513,7 @@ body{
     color: #e4a700;
     font-family: "coburn", Arial, sans-serif;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.75rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
     word-wrap: break-word;
@@ -555,11 +524,10 @@ body{
   .description {
     color: #e4a700;
     font-family: "Inria Serif";
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    /* background-color: lightblue; */
   }
 
   .leftHeader {
@@ -796,71 +764,6 @@ body{
     opacity: 0.8;
   }
 
-  .icon6 {
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline: none;
-    top: 54vh;
-    left: 2vw;
-    z-index: 3;
-    /* background-color: white; */
-  }
-
-  .icon6 img {
-    width: 11vw;
-    height: auto;
-  }
-
-  .icon6:hover {
-    opacity: 0.8;
-  }
-
-  .icon7 {
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline: none;
-    top: 73vh;
-    left: 8vw;
-    z-index: 3;
-    /* background-color: white; */
-  }
-
-  .icon7 img {
-    width: 14vw;
-    height: auto;
-  }
-
-  .icon7:hover {
-    opacity: 0.8;
-  }
-
-  .gun {
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline: none;
-    top: 8vh;
-    right: 1vw;
-    /* background-color: white; */
-  }
-
-  .gun img {
-    width: 34vw;
-    height: auto;
-  }
-
-  .gun:hover {
-    opacity: 0.8;
-  }
-
   .Hearts {
     position: absolute;
     background: none;
@@ -872,10 +775,12 @@ body{
     left: 17.1vw;
     z-index: 1;
   }
+
   .Hearts img {
     width: 82.9vw;
     height: auto;
   }
+
   .Diamonds {
     position: absolute;
     background: none;
@@ -886,12 +791,13 @@ body{
     top: 51.8vh;
     right: -0.5vw;
     z-index: 1;
-
   }
+
   .Diamonds img {
     width: 52.1vw;
     height: auto;
   }
+
   .MakeathonLogo {
     position: absolute;
     background: none;
@@ -905,5 +811,17 @@ body{
   .MakeathonLogo img {
     width: 29.5vw;
     height: auto;
+  }
+
+  @keyframes displayEvent {
+    0% {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
   }
 }

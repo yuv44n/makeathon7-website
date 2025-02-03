@@ -1,29 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
+import styles from '../styles/Timeline.module.css';
 import logo from '../components/images/mlsclogo.png'
-import backgroundBiggerView from '../components/images/backgroundBiggerView.png';
 import backgroundSmallerView from '../components/images/backgroundSmallerView.png'
 import icon1 from '../components/images/search.png';
 import icon2 from '../components/images/spy.png';
 import icon3 from '../components/images/spyware.png';
 import icon4 from '../components/images/poker.png';
 import icon5 from '../components/images/gunIcon.png';
-import icon6 from '../components/images/man.png';
-import icon7 from '../components/images/poker.png';
 import gunRight from '../components/images/gun.png';
 import MakeathonLogo from '../components/images/MakeathonLogo.png';
 import Hearts from '../components/images/Hearts.png';
 import Diamonds from '../components/images/Diamonds.png';
 import Eventcard from '../components/events_components/Eventcard.jsx';
-import styles from '../styles/Timeline.module.css';
-import icon1 from '../components/images/search2 1.png';
-import icon2 from '../components/images/spy 2.png';
-import icon3 from '../components/images/spyware 3.png';
-import icon4 from '../components/images/gun 1.png';
-import icon5 from '../components/images/air2 1.png';
 import chip from '../components/images/chip.png';
 import spades from '../components/images/spades.png';
 import diamonds1 from '../components/images/diamonds 1.png';
 import diamonds2 from '../components/images/diamonds 2.png';
+
 
 
 // Bigger View port component has display block when media query does not hit
@@ -53,7 +46,6 @@ const BiggerViewPort = () => {
   return (
     <div
       className={styles.timeline_container}
-      style={{ backgroundImage: `url(${backgroundBiggerView})` }}
     >
       <div className={styles.lines} id="lines"></div>
       <div className={styles.spades} id="spiral1">
@@ -65,58 +57,79 @@ const BiggerViewPort = () => {
       <div className={styles.diamonds2} id="spiral3">
         <img src={diamonds2} alt="diamonds2"></img>
       </div>
+      <img className={styles.MLSCLogoBigger} src={logo} alt="MLSC Logo" />
       {selectedEvent && (
         <div className={`${styles.eventcard} ${selectedEvent ? styles.show : ''}`} ref={cardRef}>
           <Eventcard name={selectedEvent} />
         </div>
       )}
-
-      <button
-        ref={(el) => (buttonRefs.current[0] = el)}
-        className={styles.icon1}
-        onClick={() => handleEventClick('EVENT 1')}
-      >
-        <img src={icon1} alt="Search Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[1] = el)}
-        className={styles.icon2}
-        onClick={() => handleEventClick('EVENT 2')}
-      >
-        <img src={icon2} alt="Spy Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[2] = el)}
-        className={styles.icon3}
-        onClick={() => handleEventClick('EVENT 3')}
-      >
-        <img src={icon3} alt="Spyware Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[3] = el)}
-        className={styles.icon4}
-        onClick={() => handleEventClick('EVENT 4')}
-      >
-        <img src={icon4} alt="Gun Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[4] = el)}
-        className={styles.icon5}
-        onClick={() => handleEventClick('EVENT 5')}
-      >
-        <img src={icon5} alt="Air Event" />
-      </button>
-
+      {/* <h1 className={styles.timeline}>TIMELINE PAGE</h1> */}
+      <div className={styles.menu} id="menu">
+        <ul>
+          <li>
+            <button
+              ref={(el) => (buttonRefs.current[0] = el)}
+              style={{ '--icon': 1 }}
+              className={styles.icon}
+              id="b1"
+              onClick={() => handleEventClick('EVENT 1')}
+            >
+              <img src={icon1} alt="Event_1"></img>
+            </button>
+          </li>
+          <li>
+            <button
+              ref={(el) => (buttonRefs.current[1] = el)}
+              style={{ '--icon': 2 }}
+              className={styles.icon}
+              id="b2"
+              onClick={() => handleEventClick('EVENT 2')}
+            >
+              <img src={icon2} alt="Event_2"></img>
+            </button>
+          </li>
+          <li>
+            <button
+              ref={(el) => (buttonRefs.current[2] = el)}
+              style={{ '--icon': 3 }}
+              className={styles.icon}
+              id="b3"
+              onClick={() => handleEventClick('EVENT 3')}
+            >
+              <img src={icon3} alt="Event_3"></img>
+            </button>
+          </li>
+          <li>
+            <button
+              ref={(el) => (buttonRefs.current[3] = el)}
+              style={{ '--icon': 4 }}
+              className={styles.icon}
+              id="b4"
+              onClick={() => handleEventClick('EVENT 4')}
+            >
+              <img src={icon4} alt="Event_4"></img>
+            </button>
+          </li>
+          <li>
+            <button
+              ref={(el) => (buttonRefs.current[4] = el)}
+              style={{ '--icon': 5 }}
+              className={styles.icon}
+              id="b5"
+              onClick={() => handleEventClick('EVENT 5')}
+            >
+              <img src={icon5} alt="Event_5"></img>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div className={styles.loading_disc} id="disc">
+        <img className={styles.chip} src={chip} alt="Event_5"></img>
+        <img className={styles.MakeathonLogoBigger} src={MakeathonLogo} alt="Makeathon Logo" />
+      </div>
     </div>
   );
 };
-
-
-
 
 
 
@@ -199,6 +212,11 @@ const BurgerAndNavPortion = () => {
   );
 };
 
+
+
+
+
+
 const SmallerViewPort = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const cardRef = useRef(null);
@@ -220,9 +238,8 @@ const SmallerViewPort = () => {
         <img src={logo} alt="MLSC Logo" />
       </div>
 
-
       {selectedEvent && (
-        <div className={styles.eventcard} ref={cardRef}>
+        <div className={`${styles.eventcard} ${selectedEvent ? styles.display : ''}`} ref={cardRef}>
           <div className={styles.crossButton} onClick={() => crossEvent('event')}></div>
           <Eventcard name={selectedEvent} />
         </div>
@@ -268,26 +285,6 @@ const SmallerViewPort = () => {
         <img src={icon5} alt="Air Event" />
       </button>
 
-      {/* <button
-        ref={(el) => (buttonRefs.current[5] = el)}
-        className={styles.icon6}
-        onClick={() => handleEventClick('EVENT 6')}
-      >
-        <img src={icon6} alt="Gun Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[6] = el)}
-        className={styles.icon7}
-        onClick={() => handleEventClick('EVENT 7')}
-      >
-        <img src={icon7} alt="Air Event" />
-      </button> */}
-
-      <div className={styles.gun}>
-        <img src={gunRight} alt="Gun" />
-      </div>
-
       <div className={styles.MakeathonLogo}>
         <img src={MakeathonLogo} alt="MakeathonLogo" />
       </div>
@@ -295,7 +292,6 @@ const SmallerViewPort = () => {
       <div className={styles.Hearts}>
         <img src={Hearts} alt="Hearts" />
       </div>
-
 
       <div className={styles.Diamonds}>
         <img src={Diamonds} alt="Diamonds" />
