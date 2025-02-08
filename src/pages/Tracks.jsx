@@ -5,6 +5,8 @@ const Tracks = () => {
   const [trackText, setTrackText] = useState("TRACKS");
   const [clickedButton, setClickedButton] = useState(null); // Track clicked button
   const [fadeClass, setFadeClass] = useState("fade-in"); // Track fade animation class
+  const [lineWidth, setLineWidth] = useState("100%"); // Track line width
+  const [lineLeft, setLineLeft] = useState("50%");
 
   const handleButtonClick = (trackNumber) => {
     setFadeClass("fade-out");
@@ -12,6 +14,22 @@ const Tracks = () => {
       setTrackText(`TRACK ${trackNumber}`);
       setClickedButton(trackNumber);
       setFadeClass("fade-in");
+      if (trackNumber === 1) {
+        setLineWidth("10%");
+        setLineLeft("22.5%");
+      } else if (trackNumber === 2) {
+        setLineWidth("10%");
+        setLineLeft("37%");
+      } else if (trackNumber === 3) {
+        setLineWidth("10%");
+        setLineLeft("50%");
+      } else if (trackNumber === 4) {
+        setLineWidth("10%");
+        setLineLeft("64%");
+      } else if (trackNumber === 5) {
+        setLineWidth("10%");
+        setLineLeft("77.5%");
+      }
     }, 500); // Match the duration of the fade-out animation
   };
 
@@ -21,6 +39,8 @@ const Tracks = () => {
       setTrackText("TRACKS");
       setClickedButton(null);
       setFadeClass("fade-in");
+      setLineWidth("100%");
+      setLineLeft("50%");
     }, 500); // Match the duration of the fade-out animation
   };
 
@@ -32,7 +52,10 @@ const Tracks = () => {
             <h1 className={`${styles.text} ${styles[fadeClass]}`}>
               {trackText}
             </h1>
-            <div className={`${styles.line} ${styles[fadeClass]}`}></div>
+            <div
+              className={`${styles.line} ${styles[fadeClass]}`}
+              style={{ width: lineWidth, left: lineLeft }}
+            ></div>
             <div className={`${styles.buttonContainer} ${styles[fadeClass]}`}>
               <button
                 className={styles.button1}
@@ -87,8 +110,9 @@ const Tracks = () => {
               style={{
                 position: "absolute",
                 top: "132px",
-                left: "50%",
+                left: lineLeft,
                 transform: "translateX(-50%)",
+                width: lineWidth,
               }}
             ></div>
             <div
