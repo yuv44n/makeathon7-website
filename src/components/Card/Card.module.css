@@ -1,0 +1,21 @@
+.card {
+    position: absolute;
+    width: 155px;
+    height: 238px;
+    background-color: #d5d5d5;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(var(--angle)) translate(var(--x-offset), 0px);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: rotate(var(--angle)) translate(var(--x-offset), -25px);
+    background-color: #c5c5c5;
+  }
+  

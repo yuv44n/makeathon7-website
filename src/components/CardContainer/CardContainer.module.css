@@ -1,0 +1,17 @@
+.cardContainer {
+  position: absolute;
+  top: 55vh;
+  left: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  height: 40vh; /* Set a fixed height */
+}
+
+@media (max-width: 480px) {
+  .cardContainer {
+    display: none;
+  }
+}
