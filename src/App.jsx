@@ -8,7 +8,15 @@ import Sponsors from './pages/Sponsors';
 
 function App() {
   return (
-    <Timeline/>
+    <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/timeline" element={<Timeline />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/tracks" element={<Tracks />} />
+          <Route path="/sponsors" element={<Sponsors />} />
+        </Routes>
+    </Router>
   );
 }
 
