@@ -1,0 +1,46 @@
+.stackedCardContainer {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .stackedCardContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    position: relative;
+    top: 90vh;
+    left: 0;
+    justify-items: center;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 120vh;
+    overflow-y: scroll;
+    column-gap: 0;
+  }
+
+  .stackedCard3:active {
+    transform: scale(1.1);
+    transition: 0.5s;
+    z-index: 100;
+  }
+
+  .stackedCard {
+    position: absolute;
+    left: 50%;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    width: 80%;
+  }
+
+  .stackedCard2 {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+}
