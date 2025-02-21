@@ -1,0 +1,118 @@
+.home {
+  background-image: url("../assets/draft.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh; /* Ensure it covers the viewport */
+}
+
+.flickerEffect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 210vh; /* Span the entire height of the page */
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+  animation: flicker 8s infinite;
+  pointer-events: none; /* Allow interaction with other elements */
+  z-index: -1; /* Ensure it stays behind other content */
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.9;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+  15% {
+    opacity: 0.7;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.8) 100%);
+  }
+  30% {
+    opacity: 0.8;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.85) 100%);
+  }
+  45% {
+    opacity: 0.6;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.9) 100%);
+  }
+  60% {
+    opacity: 0.8;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.85) 100%);
+  }
+  75% {
+    opacity: 0.7;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.8) 100%);
+  }
+  100% {
+    opacity: 0.9;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+}
+
+.mlsc_logo {
+  position: fixed;
+  top: 0;
+  left: 5%;
+  width: 10%;
+  height: auto;
+  z-index: 0;
+  margin-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.button_container {
+  position: absolute;
+  top: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10vw;
+  width: 100%;
+}
+
+.angleUpIcon {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .home{
+  overflow-y: scroll;
+  }
+  .mlsc_logo {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    margin-top: 3vh;
+  }
+
+  .button_container {
+    top: 60vh;
+    flex-direction: column;
+    row-gap: 2vh;
+  }
+
+  .angleUpIcon {
+    display: block;
+    position: absolute;
+    fill: #9f9999;
+    top: 93vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: auto;
+  }
+}
+
+.App {
+  background-size: cover;
+}
+
+.element {
+  animation: flicker 8s infinite;
+}
