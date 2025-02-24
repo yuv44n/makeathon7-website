@@ -10,8 +10,8 @@ const LP = () => {
             <div className={styles.filespageL1}>
 
                 <div className={styles.filespageL2}>
-                <img className={styles.SpyGunLogo}  src="public\Sponsors\ClosedFile\007-Logo.png"  alt="007Logo"/>
-                <img className={styles.target}      src="public\Sponsors\ClosedFile\Crosshair.png"  alt="Crosshair"/>
+                <img className={styles.SpyGunLogo}  src="\Sponsors\ClosedFile\007-Logo.png"  alt="007Logo"/>
+                <img className={styles.target}      src="\Sponsors\ClosedFile\Crosshair.png"  alt="Crosshair"/>
                 <Power />                
                 </div>
 

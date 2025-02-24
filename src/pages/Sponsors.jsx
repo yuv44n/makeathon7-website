@@ -5,7 +5,7 @@ import PagesP from '../components/SponsorsPageInside/FullExport/PagesP.jsx';
 import PagesA from '../components/SponsorsPageInside/FullExport/PagesA.jsx';
 import ClosedFile from '../components/SponsorsPageInside/ClosedFiles/ClosedFile.jsx';
 import Whysus from '../components/SponsorsPageInside/Sus/WhySus.jsx';
-// import Image from 'public/Sponsors/Girl.png';
+// import Image from '/Sponsors/Girl.png';
 
 const Sponsors = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
