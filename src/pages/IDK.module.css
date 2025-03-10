@@ -5,22 +5,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(70%, 440%);
+  transform: translate(-50%, -400%);
 }
 
 .devfolio, .ethindia {
   width: 200px; /* Increase the size of the logos */
-  margin: 15px;
+  margin: 20px;
+  display: none; /* Make the logos invisible */
 }
 
-.devfolio {
-  top: 0%;
-  left: 50%;
-  transform: translate(180%, 0%); /* Adjust the position to be side by side */
-}
 
-.ethindia {
-  top: 0%;
-  left: 50%;
-  transform: translate(250%, 0%); /* Adjust the position to be side by side */
-}

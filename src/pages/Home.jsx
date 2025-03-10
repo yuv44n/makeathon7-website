@@ -5,6 +5,7 @@ import CardContainer from "../components/CardContainer/CardContainer";
 import StackedCardContainer from "../components/StackedCardContainer/StackedCardContainer";
 import stackedStyles from "../components/StackedCardContainer/StackedCardContainer.module.css";
 import styles from "../styles/Home.module.css";
+import stylesLogo from "./IDK.module.css";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -62,6 +63,10 @@ const Home = () => {
       />
       <Banner />
       <div className={styles.flickerEffect}></div>
+      <div className={stylesLogo.logoContainer}> {/* Wrap logos inside a div */}
+                    <img className={stylesLogo.devfolio} src="/Sponsors/Devfolio-white.png" alt="DEVFOLIO LOGO" />
+                    <img className={stylesLogo.ethindia} src="/Sponsors/ethindia-light.png" alt="ETHINDIA LOGO" />
+                  </div>
       <div className={styles.button_container}>
         <Buttons
           iconType="devfolio"
