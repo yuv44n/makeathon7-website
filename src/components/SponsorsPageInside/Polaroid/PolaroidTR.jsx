@@ -17,19 +17,9 @@ const SmallBox = () => {
         <img
           className={styles.image}
           src="/Sponsors/ethindia-dark.png" // Use the relative path from the  directory
-          alt="Ethidia"
+          alt="ETHINDIA LOGO"
         />
       </div>
-      <div className={styles.caption}>Ethidia</div>
-      
-      <div className={styles.blackBox}>
-        <img
-          className={styles.image}
-          src="/Sponsors/Polygon_Logo-Colored.png" // Use the relative path from the  directory
-          alt="Polygon"
-        />
-      </div>
-      <div className={styles.caption}>Polygon</div>
     </div>
   );
 };
