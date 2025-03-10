@@ -1,0 +1,26 @@
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(70%, 440%);
+}
+
+.devfolio, .ethindia {
+  width: 200px; /* Increase the size of the logos */
+  margin: 15px;
+}
+
+.devfolio {
+  top: 0%;
+  left: 50%;
+  transform: translate(180%, 0%); /* Adjust the position to be side by side */
+}
+
+.ethindia {
+  top: 0%;
+  left: 50%;
+  transform: translate(250%, 0%); /* Adjust the position to be side by side */
+}
