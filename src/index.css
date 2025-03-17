@@ -2,12 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url('/cursor.png'), auto;
 }
 
 html, body {
   width: 100%;
   height: 100%;
-}
-* {
-  cursor: url('../assets/cursor.png'), auto;
 }
