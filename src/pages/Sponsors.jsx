@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Sponsors.module.css';
 import PagesT from '../components/SponsorsPageInside/FullExport/PagesT.jsx';
+import PagesT1 from '../components/SponsorsPageInside/FullExport/PagesT1.jsx'; // <-- New Import
 import PagesP from '../components/SponsorsPageInside/FullExport/PagesP.jsx';
 import PagesA from '../components/SponsorsPageInside/FullExport/PagesA.jsx';
 import ClosedFile from '../components/SponsorsPageInside/ClosedFiles/ClosedFile.jsx';
 import Whysus from '../components/SponsorsPageInside/Sus/WhySus.jsx';
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-
 
 const Sponsors = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
