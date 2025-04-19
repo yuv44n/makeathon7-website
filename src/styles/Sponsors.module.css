@@ -23,6 +23,7 @@ body {
   background-size: cover; 
   background-position: top;
   background-attachment: fixed;
+  flex: 1;
 }
 
 .scrolled {
@@ -77,6 +78,7 @@ body {
   right: -2vw;
   width: 5vw; 
   height: auto;
+  visibility: hidden;
 }
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Tracks.module.css";
+import Footer from "../components/Footer/Footer.jsx"
 
 const Tracks = () => {
   const [trackText, setTrackText] = useState("TRACKS");
@@ -156,6 +157,7 @@ const Tracks = () => {
           <button className={styles.button6} onClick={handleReset}></button>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };

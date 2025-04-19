@@ -24,8 +24,9 @@
 }
 
 ul {
-  margin-top: 5vh;
+  margin-top: 3vh;
   list-style-type: none;
+  padding-bottom: 20vh;
 }
 
 
@@ -39,9 +40,11 @@ li p {
 .Girl{
   position: fixed;  
   bottom: -4vw; 
-  left: -1vw;
+  left: -3vw;
   width: 70vh; 
   height: auto;
+  z-index: -1;
+  top: 8vh;
 }
 
 @media screen and (max-width:431px) {
