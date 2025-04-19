@@ -9,80 +9,80 @@ import third_prize from "/AboutUs/images/third_prize.png";
 
 
 
-const BurgerAndNavPortion = () => {
-  const [isOpen, setIsOpen] = useState(false);
+// const BurgerAndNavPortion = () => {
+//   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleNav = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+//   const toggleNav = () => {
+//     setIsOpen((prevState) => !prevState);
+//   };
 
-  return (
-    <>
-      <div
-        className={`${styles.extension} ${isOpen ? styles.leftToRight : ""}`}
-        id="extension"
-      >
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Home
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            About
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Tracks
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Timeline
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Sponsors
-          </a>
-        </div>
-      </div>
+//   return (
+//     <>
+//       <div
+//         className={`${styles.extension} ${isOpen ? styles.leftToRight : ""}`}
+//         id="extension"
+//       >
+//         <div className={styles.navLink}>
+//           <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
+//             Home
+//           </a>
+//         </div>
+//         <div className={styles.navLink}>
+//           <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
+//             About
+//           </a>
+//         </div>
+//         <div className={styles.navLink}>
+//           <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
+//             Tracks
+//           </a>
+//         </div>
+//         <div className={styles.navLink}>
+//           <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
+//             Timeline
+//           </a>
+//         </div>
+//         <div className={styles.navLink}>
+//           <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
+//             Sponsors
+//           </a>
+//         </div>
+//       </div>
 
-      <div className={styles.rightSide}>
-        <div
-          className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ""
-            }`}
-          onClick={toggleNav}
-        >
-          <div
-            className={`${styles.line} ${isOpen ? styles.disappear : ""}`}
-            id="firstLine"
-          ></div>
-          <div
-            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.disappear : ""
-              }`}
-            id="secondLine"
-          ></div>
-          <div
-            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltLeft : ""
-              }`}
-            id="thirdLine"
-          ></div>
-          <div
-            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltRight : ""
-              }`}
-            id="fourLine"
-          ></div>
-          <div
-            className={`${styles.line} ${isOpen ? styles.disappear : ""}`}
-            id="fifthLine"
-          ></div>
-        </div>
-      </div>
-    </>
-  );
-};
+//       <div className={styles.rightSide}>
+//         <div
+//           className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ""
+//             }`}
+//           onClick={toggleNav}
+//         >
+//           <div
+//             className={`${styles.line} ${isOpen ? styles.disappear : ""}`}
+//             id="firstLine"
+//           ></div>
+//           <div
+//             className={`${styles.line} ${styles.absolute} ${isOpen ? styles.disappear : ""
+//               }`}
+//             id="secondLine"
+//           ></div>
+//           <div
+//             className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltLeft : ""
+//               }`}
+//             id="thirdLine"
+//           ></div>
+//           <div
+//             className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltRight : ""
+//               }`}
+//             id="fourLine"
+//           ></div>
+//           <div
+//             className={`${styles.line} ${isOpen ? styles.disappear : ""}`}
+//             id="fifthLine"
+//           ></div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
 
 
 
@@ -709,7 +709,7 @@ const AboutUs = () => {
       <div className={styles.backgroundImage} />
       <div className={styles.BlackOverlay} />
       <div className={styles.xhidden}>
-        <BurgerAndNavPortion />
+        {/* <BurgerAndNavPortion /> */}
         <HeaderPortion />
         {/* <PrizeContainer /> */}
         <RewardsSection />
