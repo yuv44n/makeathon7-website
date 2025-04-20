@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Tracks.module.css";
 
 const Tracks = () => {
@@ -14,21 +14,60 @@ const Tracks = () => {
       setTrackText(`TRACK ${trackNumber}`);
       setClickedButton(trackNumber);
       setFadeClass("fade-in");
-      if (trackNumber === 1) {
-        setLineWidth("10%");
-        setLineLeft("22.5%");
-      } else if (trackNumber === 2) {
-        setLineWidth("10%");
-        setLineLeft("37%");
-      } else if (trackNumber === 3) {
-        setLineWidth("10%");
-        setLineLeft("50%");
-      } else if (trackNumber === 4) {
-        setLineWidth("10%");
-        setLineLeft("64%");
-      } else if (trackNumber === 5) {
-        setLineWidth("10%");
-        setLineLeft("77.5%");
+
+      const viewportWidth = window.innerWidth;
+
+      if (viewportWidth <= 480) {
+        if (trackNumber === 1) {
+          setLineWidth("15%");
+          setLineLeft("9%");
+        } else if (trackNumber === 2) {
+          setLineWidth("15%");
+          setLineLeft("31%");
+        } else if (trackNumber === 3) {
+          setLineWidth("15%");
+          setLineLeft("50%");
+        } else if (trackNumber === 4) {
+          setLineWidth("15%");
+          setLineLeft("70%");
+        } else if (trackNumber === 5) {
+          setLineWidth("15%");
+          setLineLeft("91%");
+        }
+      } else if (viewportWidth <= 768) {
+        if (trackNumber === 1) {
+          setLineWidth("10%");
+          setLineLeft("12%");
+        } else if (trackNumber === 2) {
+          setLineWidth("10%");
+          setLineLeft("32%");
+        } else if (trackNumber === 3) {
+          setLineWidth("10%");
+          setLineLeft("50%");
+        } else if (trackNumber === 4) {
+          setLineWidth("10%");
+          setLineLeft("69%");
+        } else if (trackNumber === 5) {
+          setLineWidth("10%");
+          setLineLeft("88%");
+        }
+      } else {
+        if (trackNumber === 1) {
+          setLineWidth("10%");
+          setLineLeft("28%");
+        } else if (trackNumber === 2) {
+          setLineWidth("10%");
+          setLineLeft("39%");
+        } else if (trackNumber === 3) {
+          setLineWidth("10%");
+          setLineLeft("50%");
+        } else if (trackNumber === 4) {
+          setLineWidth("10%");
+          setLineLeft("61%");
+        } else if (trackNumber === 5) {
+          setLineWidth("10%");
+          setLineLeft("73%");
+        }
       }
     }, 500); // Match the duration of the fade-out animation
   };
