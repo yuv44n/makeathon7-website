@@ -4,6 +4,7 @@ import logo from "/mlsclogo.png";
 import first_prize from "/AboutUs/images/first_prize.png";
 import second_prize from "/AboutUs/images/second_prize.png";
 import third_prize from "/AboutUs/images/third_prize.png";
+import Footer from "../components/Footer/Footer";
 
 // const BurgerAndNavPortion = () => {
 //   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +87,9 @@ function HeaderPortion() {
       <div className={styles.container}>
         {/* Left Side */}
         <div className={styles.leftSide}>
+          <a href="https://makeathon7.mlsctiet.com" rel="noopener noreferrer">
           <img src={logo} alt="MLSC Logo" className={styles.mlscLogo} />
+          </a>
         </div>
 
         {/* Header Section */}
@@ -403,7 +406,7 @@ const Executive = () => {
       src: "/AboutUs/EBImages/krishnam.png",
       name: "KRISHNAM AGGARWAL",
       role: "DESIGNING HEAD",
-      code: "AGENT SIDHU",
+      code: "AGENT AGGARWAL",
     }
   ];
 
@@ -720,19 +723,24 @@ const MLSCCarousel = () => {
 
 const AboutUs = () => {
   return (
-    <>
+    <div className={styles.aboutUsContainer}>
       <div className={styles.backgroundImage} />
       <div className={styles.BlackOverlay} />
-      <div className={styles.xhidden}>
-        {/* <BurgerAndNavPortion /> */}
-        <HeaderPortion />
-        {/* <PrizeContainer /> */}
-        <RewardsSection />
-        <Faq />
-        <Executive />
-        <MLSCCarousel />
+      <div className={styles.contentWrapper}>
+        <div className={styles.xhidden}>
+          {/* <BurgerAndNavPortion /> */}
+          <HeaderPortion />
+          {/* <PrizeContainer /> */}
+          <RewardsSection />
+          <Faq />
+          <Executive />
+          <MLSCCarousel />
+        </div>
+        <div className={styles.footerWrapper}>
+          <Footer />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

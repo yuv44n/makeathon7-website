@@ -40,14 +40,14 @@ const Sponsors = () => {
 
   return (
     <>
-      <div
-        className={`${styles.wrapper} ${
-          scrollPosition > 150 ? styles.scrolled : ""
-        } ${scrollPosition > 600 ? styles.wrapperWSUS : ""}`}
-      >
+      <div className={`${styles.wrapper} ${
+        scrollPosition > 150 ? styles.scrolled : ""
+      } ${scrollPosition > 600 ? styles.wrapperWSUS : ""}`}>
         <div className={styles.container}>
           <div className={styles.AbsoluteFixed}>
+            <a href="https://makeathon7.mlsctiet.com" rel="noopener noreferrer">
             <img className={styles.logo} src="/mlsclogo.png" alt="MLSC Logo" />
+            </a>
             {/* <img className={styles.menu} src="/Sponsors/menu.png" alt="Menu" /> */}
             {/* Scroll Down Arrow (Only show if near top) */}
             {scrollPosition < 150 && (
@@ -77,14 +77,8 @@ const Sponsors = () => {
             </AnimatePresence>
           </div>
         </div>
-        
-        {/* Add padding at the bottom to create space for the footer */}
-        <div className={styles.footerSpacer}></div>
       </div>
-      
-      <div className={styles.footerWrapper}>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };

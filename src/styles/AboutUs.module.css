@@ -19,10 +19,20 @@
     src: url(/AboutUs/fonts/Jaro.ttf);
   }
 
+.aboutUsContainer {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
 .BlackOverlay {
     width: 80vw;
-    height: 100vh;
-    position: fixed;
+    min-height: 100%;
+    position: absolute;
     z-index: 0;
     left: 10%;
     background-color: rgba(0, 0, 0, 0.6);
@@ -43,6 +53,7 @@
     width: 100vw;
     position: fixed;
     z-index: 0;
+    min-height: 100vh;
 }
 
 .casinoFont {
@@ -626,7 +637,7 @@
 
 @keyframes prevToCenter {
     from {
-        transform: translateX(-300px) scale(0.9) rotateY(-30deg);
+        transform: translateX((calc(-1 * var(--side-card-distance)))) scale(0.9) rotateY(-30deg);
     }
 
     to {
@@ -666,7 +677,6 @@
 
 .footerBody {
     height: auto;
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -732,6 +742,15 @@
 
 /* ***** */
 
+/* Footer container styles */
+.footerWrapper {
+  width: 100vw;
+  margin-top: 2rem;
+  z-index: 1;
+  position: relative;
+
+  background-color: transparent;
+}
 
 /* Media for mobile viewport  */
 

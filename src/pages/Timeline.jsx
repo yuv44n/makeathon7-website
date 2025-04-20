@@ -58,7 +58,8 @@ const BiggerViewPort = () => {
       <div className={styles.diamonds2} id="spiral3">
         <img src={diamonds2} alt="diamonds2"></img>
       </div>
-      <img className={styles.MLSCLogoBigger} src={logo} alt="MLSC Logo" />
+      <a href="https://makeathon7.mlsctiet.com" rel="noopener noreferrer">
+      <img className={styles.MLSCLogoBigger} src={logo} alt="MLSC Logo" /> </a>
       {selectedEvent && (
         <div className={`${styles.eventcard} ${selectedEvent ? styles.show : ''}`} ref={cardRef}>
           <Eventcard name={selectedEvent} />
