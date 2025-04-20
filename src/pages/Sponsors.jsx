@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Sponsors.module.css';
 import PagesT from '../components/SponsorsPageInside/FullExport/PagesT.jsx';
-import PagesT1 from '../components/SponsorsPageInside/FullExport/PagesT1.jsx'; // <-- New Import
+import PagesT1 from '../components/SponsorsPageInside/FullExport/PagesT1.jsx';
 import PagesP from '../components/SponsorsPageInside/FullExport/PagesP.jsx';
 import PagesA from '../components/SponsorsPageInside/FullExport/PagesA.jsx';
 import ClosedFile from '../components/SponsorsPageInside/ClosedFiles/ClosedFile.jsx';
 import Whysus from '../components/SponsorsPageInside/Sus/WhySus.jsx';
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Footer from "../components/Footer/Footer.jsx"
 
 const Sponsors = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -47,36 +48,43 @@ const Sponsors = () => {
         <div className={styles.AbsoluteFixed}>
           <img className={styles.logo} src="/mlsclogo.png" alt="MLSC Logo" />
           {/* <img className={styles.menu} src="/Sponsors/menu.png" alt="Menu" /> */}
+            {/* Scroll Down Arrow (Only show if near top) */}
+            {scrollPosition < 150 && (
+              <motion.div
+                className={styles.scrollArrow}
+                animate={{ y: [0, 30, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.2,
+                  ease: "easeInOut",
+                }}
+              >
+                <ChevronDown size={32} color="#fff" />
+              </motion.div>
+            )}
 
-          {/* Scroll Down Arrow (Only show if near top) */}
-          {scrollPosition < 150 && (
-            <motion.div
-              className={styles.scrollArrow}
-              animate={{ y: [0, 30, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.2,
-                ease: "easeInOut",
-              }}
-            >
-              <ChevronDown size={32} color="#fff" />
-            </motion.div>
-          )}
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={getComponent()?.key} // Key based on component identity
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              {getComponent()}
-            </motion.div>
-          </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={getComponent()?.key}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                {getComponent()}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
+        
+        {/* Add padding at the bottom to create space for the footer */}
+        <div className={styles.footerSpacer}></div>
       </div>
-    </div>
+      
+      <div className={styles.footerWrapper}>
+        <Footer />
+      </div>
+    </>
   );
 };
 

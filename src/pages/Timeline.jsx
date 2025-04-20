@@ -16,6 +16,7 @@ import chip from '../components/images/chip.png';
 import spades from '../components/images/spades.png';
 import diamonds1 from '../components/images/diamonds 1.png';
 import diamonds2 from '../components/images/diamonds 2.png';
+import Footer from "../components/Footer/Footer.jsx"
 
 
 
@@ -302,13 +303,26 @@ const SmallerViewPort = () => {
 
 const Timeline = () => {
   return (
-    <>
-      <BiggerViewPort />
-      <BurgerAndNavPortion />
-      <SmallerViewPort />
-    </>
-  )
-}
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh",
+    }}>
+      <div style={{ 
+        flexGrow: 1,
+        marginBottom: "20px" // Add space between content and footer
+      }}>
+        <BiggerViewPort />
+        <BurgerAndNavPortion />
+        <SmallerViewPort />
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
-export default Timeline;
+
+
+export default Timeline
+
 

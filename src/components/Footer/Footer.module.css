@@ -1,0 +1,86 @@
+.footer {
+    background-color: rgba(0, 0, 0, 0.682);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1000; /* Push it above overlapping elements */
+  }
+  
+  
+  .line {
+    border-top: 1px solid #333;
+    margin-bottom: 2rem;
+  }
+  
+  
+  .footerMain {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footerLeft,
+  .footerRight {
+    flex: 1;
+    margin: 1rem;
+  }
+  
+  .branding {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    margin-right: 1rem;
+  }
+  
+  .textBlock h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .textBlock p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .socialIcons img {
+    width: 24px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    left: -12vw;
+  }
+  
+  .contactContainer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: -8vw;
+  }
+  
+  .contactLeft,
+  .contactRight {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contactItem img {
+    width: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  .role {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #ccc;
+  }
+  
