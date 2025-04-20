@@ -16,10 +16,11 @@ function AppContent() {
       <div className="content-container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/timeline" element={<Timeline />} />
+          <Route path="/timeline" element={<Navigate to="/" />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/tracks" element={<Tracks />} />
-          <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/tracks" element={<Navigate to="/" />} />
+          {/* Redirect /sponsors to the home page */}
+          <Route path="/sponsors" element={<Navigate to="/" />} />
           <Route path="/policy" element={<AppPolicy />} />
         </Routes>
       </div>
