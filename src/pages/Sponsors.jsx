@@ -46,7 +46,7 @@ const Sponsors = () => {
       <div className={styles.container}>
         <div className={styles.AbsoluteFixed}>
           <img className={styles.logo} src="/mlsclogo.png" alt="MLSC Logo" />
-          <img className={styles.menu} src="/Sponsors/menu.png" alt="Menu" />
+          {/* <img className={styles.menu} src="/Sponsors/menu.png" alt="Menu" /> */}
 
           {/* Scroll Down Arrow (Only show if near top) */}
           {scrollPosition < 150 && (
