@@ -130,7 +130,7 @@
 .rightSide div {
     width: 50%;
     height: 10%;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -270,6 +270,7 @@
     transform-style: preserve-3d;
     padding: 1rem;
     margin: 0 2.5rem;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     /* background-color: brown; */
 }
 
@@ -303,6 +304,7 @@
     color: white;
     font-size: 3rem;
     font-family: "Casino";
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .prizeImage,
@@ -383,7 +385,7 @@
     flex-direction: column;
     width: 95%;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     margin: 0.5rem 0;
     background-color: rgb(81, 73, 60, 0.8);
 }
@@ -392,10 +394,12 @@
     height: auto;
     color: white;
     padding: 1rem;
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .ques h4 {
     font-size: 1.4rem;
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .ans {
@@ -468,6 +472,7 @@
     background-image: url(/AboutUs/EBImages/card_bg.png);
     background-size: cover;
     box-shadow: 0 0 5rem rgba(255, 215, 0, 0.2);
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .imageCard img {
@@ -519,7 +524,7 @@
 
 .prevSlide:hover {
     transform: translateX(-350px) scale(1.1);
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .currentSlide {
@@ -529,7 +534,7 @@
 
 .currentSlide:hover {
     transform: scale(1.1);
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .nextSlide {
@@ -539,12 +544,12 @@
 
 .nextSlide:hover {
     transform: translateX(300px) scale(1.1) rotateY(30);
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .nextSlide:hover {
     transform: translateX(350px) scale(1.1);
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
 }
 
 .nextNextSlide {
@@ -810,7 +815,7 @@
     .rightSide div {
         width: 80%;
         height: 8%;
-        cursor: pointer;
+        cursor: url('/the-green-spades-hand.png'), pointer;
         position: relative;
         z-index: 3;
         /* background-color: lightgreen; */
@@ -889,6 +894,7 @@
         align-items: center;
         margin-top: 0;
         margin-bottom: 4rem;
+        cursor: url('/the-green-spades-hand.png'), pointer;
         /* background-color: lightseagreen; */
     }
 
@@ -978,7 +984,7 @@
         flex-direction: column;
         width: 95%;
         border-radius: 10px;
-        cursor: pointer;
+        cursor: url('/the-green-spades-hand.png'), pointer;
         margin: 0.25rem 0;
         background-color: rgb(81, 73, 60, 0.8);
     }
@@ -987,6 +993,7 @@
         height: auto;
         color: white;
         padding: 0.5rem;
+        cursor: url('/the-green-spades-hand.png'), pointer;
     }
 
     .ques h4 {
@@ -1030,6 +1037,7 @@
         border-radius: 5px;
         overflow: hidden;
         background-image: url(/AboutUs/EBImages/card_bg.png);
+        cursor: url('/the-green-spades-hand.png'), pointer;
     }
 
     .imageCard img {
@@ -1080,7 +1088,7 @@
 
     .prevSlide:hover {
         transform: translateX(0) scale(1);
-        cursor: pointer;
+        cursor: url('/the-green-spades-hand.png'), pointer;
     }
 
     .currentSlide {
@@ -1090,7 +1098,7 @@
 
     .currentSlide:hover {
         transform: scale(1.1);
-        cursor: pointer;
+        cursor: url('/the-green-spades-hand.png'), pointer;
     }
 
     .nextNextSlide {

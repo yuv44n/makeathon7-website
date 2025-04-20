@@ -1,0 +1,121 @@
+.hamburger {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: url('/the-green-spades-hand.png'), pointer;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: rgb(142, 142, 142);
+    transition: 0.4s;
+  }
+  .menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.6s ease, background 0.6s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: blurFadeIn 0.6s forwards;
+  }
+  
+  .menuList {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    opacity: 0;
+    animation: fadeTextIn 0.6s ease forwards;
+    animation-delay: 0.6s; /* wait until blur ends */
+  }
+  
+  .menuList li {
+    margin: 1rem 0;
+  }
+  
+  .menuList a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .menuList a:hover {
+    color: #a5670b;
+    cursor: url('/the-green-spades-hand.png'), pointer;
+  }
+  
+  .fadeIn {
+    animation: blurFadeIn 0.6s forwards;
+  }
+  
+  .fadeOut {
+    animation: blurFadeOut 0.6s forwards;
+  }
+  
+  .fadeTextIn {
+    animation: fadeTextIn 0.6s ease forwards;
+    animation-delay: 0.6s;
+  }
+  
+  .fadeTextOut {
+    animation: fadeTextOut 0.4s ease forwards;
+  }
+  
+  @keyframes blurFadeIn {
+    from {
+      backdrop-filter: blur(0px);
+      background: rgba(0, 0, 0, 0);
+    }
+    to {
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+  
+  @keyframes blurFadeOut {
+    from {
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.4);
+    }
+    to {
+      backdrop-filter: blur(0px);
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeTextIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeTextOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  
+  
