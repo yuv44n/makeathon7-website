@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
   }
   
   .bar {
@@ -54,7 +54,7 @@
   
   .menuList a:hover {
     color: #a5670b;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
   }
   
   .fadeIn {

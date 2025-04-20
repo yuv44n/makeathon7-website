@@ -77,7 +77,7 @@
     background: url('../assets/buttons/Compass.png') no-repeat center center;
     background-size: contain;
     border: none;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     position: relative;
     transition: transform 0.3s ease; /* Important for positioning the popup */
 }
@@ -107,7 +107,7 @@
     background: url('../assets/buttons/Search_Magnifying_Glass.png') no-repeat center center;
     background-size: contain;
     border: none;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     position: relative;
     transition: transform 0.3s ease; /* Important for positioning the popup */
 }
@@ -137,7 +137,7 @@
     background: url('../assets/buttons/Close_Square.png') no-repeat center center;
     background-size: contain;
     border: none;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     position: relative;
     transition: transform 0.3s ease; /* Important for positioning the popup */
 }
@@ -167,7 +167,7 @@
     background: url('../assets/buttons/Swatches_Palette.png') no-repeat center center;
     background-size: contain;
     border: none;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     position: relative;
     transition: transform 0.3s ease; /* Important for positioning the popup */
 }
@@ -197,7 +197,7 @@
     background: url('../assets/buttons/Clock.png') no-repeat center center;
     background-size: contain;
     border: none;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     position: relative;
     transition: transform 0.3s ease; /* Important for positioning the popup */
 }
@@ -269,7 +269,7 @@
     background: url('../assets/buttons/Arrow_Undo_Down_Left.png') no-repeat center center;
     background-size: contain;
     border: none;
-    cursor: pointer;
+    cursor: url('/the-green-spades-hand.png'), pointer;
     position: absolute;
     top: 35px;
     left: 39px;
