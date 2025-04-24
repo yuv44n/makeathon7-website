@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "../FullExport/Inside.module.css";
-import SmallBox from "../Polaroid/PolaroidT.jsx";
+import PolaroidTR1 from "../Polaroid/PolaroidTR1.jsx";
 
-const FilesPower = () => {
+const TitleR1 = () => {
   return (
     <>
-      <h1 classname={styles.invi}>&nbsp;</h1>
+      <h1 className={styles.invi}>&nbsp;</h1>
       <h1 align="center">TITLE</h1>
 
       <div className={styles.center}>
-        <SmallBox />
+        <PolaroidTR1 />
       </div>
     </>
   );
 };
 
-export default FilesPower;
+export default TitleR1;

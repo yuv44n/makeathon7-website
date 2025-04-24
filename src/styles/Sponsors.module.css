@@ -2,7 +2,18 @@ html,
 body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
+
+.scrollArrow {
+  position: absolute;
+  bottom: 30px;
+  left: 110%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
 
 .wrapper {
   transition: background 0s ease; 
@@ -88,7 +99,7 @@ body {
     transition: background 0s ease; 
     min-height: 100vh;
     width: 100vw; 
-    background: url('Sponsors/ClosedFile/BgOfWhySUs.jpg') no-repeat center center;
+    background: url('/Sponsors/ClosedFile/BgOfWhySUs.jpg') no-repeat center center;
     background-size: 200vw;
     background-position: center 60vw;
     background-attachment: fixed;
