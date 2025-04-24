@@ -90,9 +90,9 @@ const Home = () => {
       <div className={styles.button_container}>
         <div
           className="apply-button"
-          data-hackathon-slug="makeathon-7"
+          data-hackathon-slug="hackspire-1"
           data-button-theme="light"
-          style={{ height: "44px", width: "312px" }} // Change this line
+          style={{ height: "44px", width: "312px" }} 
         ></div>
         <Buttons
           iconType="download"

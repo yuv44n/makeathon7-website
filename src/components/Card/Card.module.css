@@ -12,10 +12,33 @@
     transform-origin: bottom center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
-  }
+}
   
-  .card:hover {
+.card:hover {
     transform: rotate(var(--angle)) translate(var(--x-offset), -25px);
     background-color: #c5c5c5;
   }
-  
+
+.comingSoonBanner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffd700; /* Gold color */
+    text-align: center;
+    padding: 8px 0;
+    font-family: "Casino", serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
