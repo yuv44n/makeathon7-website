@@ -65,13 +65,27 @@ const Home = () => {
       className={styles.home}
       onScroll={(e) => handleScroll(homeRef, e)}
     >
+      <Banner />
+      <div style={{ position: "relative", height: "100%", width: "100%" }}>
       <a href="https://makeathon7.mlsctiet.com" rel="noopener noreferrer">
       <img
-        src="../../mlsclogo.png"
-        alt="mlsc_logo"
-        className={styles.mlsc_logo}
-      /> </a>
-      <Banner />
+        src="https://res.cloudinary.com/dljpfochn/image/upload/v1745520987/mlsclogo_wbhck3.png"
+        alt="Top Left Logo"
+        className={`${styles.logo} ${styles.logoTopLeft}`}
+      />
+      <img
+        src="https://res.cloudinary.com/dljpfochn/image/upload/v1745520985/acm_1_dwbfik.png"
+        alt="Top Right Logo"
+        className={`${styles.logo} ${styles.logoTopRight}`}
+      />
+      <img
+        src="https://res.cloudinary.com/dljpfochn/image/upload/v1745520986/hackspire_flex-removebg-preview_vu18rv.png"
+        alt="Center Logo"
+        className={`${styles.logo} ${styles.logoCenter}`}
+      />
+
+      </div>
+
       <div className={styles.flickerEffect}></div>
       <div className={stylesLogo.logoContainer}>
         {" "}
