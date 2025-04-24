@@ -5,11 +5,12 @@ import CardContainer from "../components/CardContainer/CardContainer";
 import StackedCardContainer from "../components/StackedCardContainer/StackedCardContainer";
 import stackedStyles from "../components/StackedCardContainer/StackedCardContainer.module.css";
 import styles from "../styles/Home.module.css";
-import stylesLogo from "./IDK.module.css";
+import stylesLogo from "../styles/logo.module.css";
+
 
 const Home = () => {
   const homeRef = useRef(null);
-  const [isScrolledDown, setIsScrolledDown] = useState(false); // Track scroll state
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
 
   useEffect(() => {
     const flickerElement = document.querySelector(`.${styles.home}`);
@@ -49,14 +50,12 @@ const Home = () => {
         behavior: "smooth",
       });
     } else {
-      // Scroll down to a specific point (e.g., 90% of the page height)
       homeRef?.current.scrollTo({
         left: 0,
         top: 95 * (window.innerHeight / 100),
         behavior: "smooth",
       });
     }
-    // Toggle the scroll state
     setIsScrolledDown(!isScrolledDown);
   };
 
@@ -66,16 +65,16 @@ const Home = () => {
       className={styles.home}
       onScroll={(e) => handleScroll(homeRef, e)}
     >
+      <a href="https://makeathon7.mlsctiet.com" rel="noopener noreferrer">
       <img
         src="../../mlsclogo.png"
         alt="mlsc_logo"
         className={styles.mlsc_logo}
-      />
+      /> </a>
       <Banner />
       <div className={styles.flickerEffect}></div>
       <div className={stylesLogo.logoContainer}>
         {" "}
-        {/* Wrap logos inside a div */}
         <img
           className={stylesLogo.devfolio}
           src="/Sponsors/Devfolio-white.png"
@@ -92,11 +91,11 @@ const Home = () => {
           className="apply-button"
           data-hackathon-slug="hackspire-1"
           data-button-theme="light"
-          style={{ height: "44px", width: "312px" }} 
+          style={{ height: "44px", width: "312px" }}
         ></div>
         <Buttons
           iconType="download"
-          onClick={() => alert("Well.....i work for now?")}
+          // onClick={() => alert("Well.....i work for now?")}
           style={{
             size: "48px",
             height: "44px",
@@ -104,11 +103,12 @@ const Home = () => {
             fontSize: "18px",
           }}
         >
-          Download Our App
+         Coming Soon
         </Buttons>
       </div>
       <CardContainer />
       <StackedCardContainer scrollToTop={scrollToTop} />
+
     </div>
   );
 };
