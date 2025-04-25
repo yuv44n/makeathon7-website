@@ -6,10 +6,13 @@ import AboutUs from './pages/AboutUs';
 import Tracks from './pages/Tracks';
 import Sponsors from './pages/Sponsors';
 import AppPolicy from './pages/AppPolicy';
+import HamburgerMenu from './components/Hamburger/HamburgerMenu';
+import { Ham } from 'lucide-react';
 
 function App() {
   return (
     <Router>
+        <HamburgerMenu />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/timeline" element={<Navigate to="/" />} />

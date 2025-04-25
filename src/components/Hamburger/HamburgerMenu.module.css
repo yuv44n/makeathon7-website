@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+<<<<<<< HEAD
     cursor: url('/the-green-spades-hand.png'), pointer;
     width: 30px;
     height: 30px;
@@ -14,10 +15,17 @@
 }
   
 .bar {
+=======
+    cursor: pointer;
+  }
+  
+  .bar {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     width: 30px;
     height: 3px;
     background-color: rgb(142, 142, 142);
     transition: 0.4s;
+<<<<<<< HEAD
     position: absolute;
 }
 
@@ -48,6 +56,10 @@
 }
 
 .menuOverlay {
+=======
+  }
+  .menuOverlay {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     position: fixed;
     top: 0;
     left: 0;
@@ -61,15 +73,22 @@
     align-items: center;
     justify-content: center;
     animation: blurFadeIn 0.6s forwards;
+<<<<<<< HEAD
 }
   
 .menuList {
+=======
+  }
+  
+  .menuList {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     list-style: none;
     text-align: center;
     padding: 0;
     opacity: 0;
     animation: fadeTextIn 0.6s ease forwards;
     animation-delay: 0.6s; /* wait until blur ends */
+<<<<<<< HEAD
 }
   
 .menuList li {
@@ -77,11 +96,21 @@
 }
   
 .menuList a {
+=======
+  }
+  
+  .menuList li {
+    margin: 1rem 0;
+  }
+  
+  .menuList a {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     text-decoration: none;
     font-size: 2rem;
     color: white;
     font-weight: bold;
     transition: color 0.3s;
+<<<<<<< HEAD
 }
   
 .menuList a:hover {
@@ -107,6 +136,33 @@
 }
   
 @keyframes blurFadeIn {
+=======
+  }
+  
+  .menuList a:hover {
+    color: #a5670b;
+    cursor: pointer;
+  }
+  
+  .fadeIn {
+    animation: blurFadeIn 0.6s forwards;
+  }
+  
+  .fadeOut {
+    animation: blurFadeOut 0.6s forwards;
+  }
+  
+  .fadeTextIn {
+    animation: fadeTextIn 0.6s ease forwards;
+    animation-delay: 0.6s;
+  }
+  
+  .fadeTextOut {
+    animation: fadeTextOut 0.4s ease forwards;
+  }
+  
+  @keyframes blurFadeIn {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     from {
       backdrop-filter: blur(0px);
       background: rgba(0, 0, 0, 0);
@@ -115,9 +171,15 @@
       backdrop-filter: blur(10px);
       background: rgba(0, 0, 0, 0.4);
     }
+<<<<<<< HEAD
 }
   
 @keyframes blurFadeOut {
+=======
+  }
+  
+  @keyframes blurFadeOut {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     from {
       backdrop-filter: blur(10px);
       background: rgba(0, 0, 0, 0.4);
@@ -126,9 +188,15 @@
       backdrop-filter: blur(0px);
       background: rgba(0, 0, 0, 0);
     }
+<<<<<<< HEAD
 }
   
 @keyframes fadeTextIn {
+=======
+  }
+  
+  @keyframes fadeTextIn {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -137,9 +205,15 @@
       opacity: 1;
       transform: translateY(0);
     }
+<<<<<<< HEAD
 }
   
 @keyframes fadeTextOut {
+=======
+  }
+  
+  @keyframes fadeTextOut {
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
     from {
       opacity: 1;
       transform: translateY(0);
@@ -148,5 +222,11 @@
       opacity: 0;
       transform: translateY(20px);
     }
+<<<<<<< HEAD
 }
 
+=======
+  }
+  
+  
+>>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
