@@ -33,11 +33,7 @@ function HamburgerMenu() {
 
   return (
     <>
-<<<<<<< HEAD
-      <div className={`${styles.hamburger} ${open ? styles.active : ''}`} onClick={toggleMenu}>
-=======
       <div className={styles.hamburger} onClick={toggleMenu}>
->>>>>>> d1409466d8de9c9b75ea57ff104c3e10bd3fb532
         <div className={styles.bar}></div>
         <div className={styles.bar}></div>
         <div className={styles.bar}></div>
