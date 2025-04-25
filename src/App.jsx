@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/timeline" element={<Navigate to="/" />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/tracks" element={<Navigate to="/" />} />
+          <Route path="/tracks" element={<Tracks />} /> 
           {/* Redirect /sponsors to the home page */}
           <Route path="/sponsors" element={<Navigate to="/" />} />
           <Route path="/policy" element={<AppPolicy />} />
