@@ -16,7 +16,7 @@ const Card = ({ angle, xOffset, backgroundImage, link }) => {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      {(isSponsorsCard || isTimelineCard) && (
+      {(isSponsorsCard) && (
         <div className={styles.comingSoonBanner}>
           <span>Coming Soon</span>
         </div>

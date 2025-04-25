@@ -17,21 +17,57 @@ import spades from '../components/images/spades.png';
 import diamonds1 from '../components/images/diamonds 1.png';
 import diamonds2 from '../components/images/diamonds 2.png';
 
-
+// Custom hook for responsive breakpoints
+const useResponsiveSize = () => {
+  // Define our breakpoints
+  const breakpoints = {
+    mobile: 600,
+    tablet: 834,
+    smallDesktop: 1024,
+    desktop: 1200
+  };
+  
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Return object with boolean values for each breakpoint
+  return {
+    isMobile: windowSize.width <= breakpoints.mobile,
+    isTablet: windowSize.width > breakpoints.mobile && windowSize.width <= breakpoints.tablet,
+    isSmallDesktop: windowSize.width > breakpoints.tablet && windowSize.width <= breakpoints.smallDesktop,
+    isDesktop: windowSize.width > breakpoints.smallDesktop,
+    windowSize
+  };
+};
 
 // Bigger View port component has display block when media query does not hit
-
 const BiggerViewPort = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const cardRef = useRef(null);
   const buttonRefs = useRef([]);
+  const { isMobile, isTablet, isSmallDesktop } = useResponsiveSize();
+  
   const handleEventClick = (eventId) => {
     setSelectedEvent(eventId);
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (cardRef.current && !cardRef.current.contains(event.target) && !buttonRefs.current.some((button) => button.contains(event.target))) {
+      if (cardRef.current && !cardRef.current.contains(event.target) && !buttonRefs.current.some((button) => button && button.contains(event.target))) {
         setSelectedEvent(null);
       }
     };
@@ -43,10 +79,11 @@ const BiggerViewPort = () => {
     };
   }, []);
 
+  // Define icons for all 9 events (reusing icons as needed)
+  const eventIcons = [icon1, icon2, icon3, icon4, icon5, icon1, icon2, icon3, icon4];
+  
   return (
-    <div
-      className={styles.timeline_container}
-    >
+    <div className={styles.timeline_container}>
       <div className={styles.lines} id="lines"></div>
       <div className={styles.spades} id="spiral1">
         <img src={spades} alt="spades"></img>
@@ -60,83 +97,46 @@ const BiggerViewPort = () => {
       <img className={styles.MLSCLogoBigger} src={logo} alt="MLSC Logo" />
       {selectedEvent && (
         <div className={`${styles.eventcard} ${selectedEvent ? styles.show : ''}`} ref={cardRef}>
-          <Eventcard name={selectedEvent} />
+          <div className={styles.eventCardContent}>
+            <Eventcard name={selectedEvent} />
+          </div>
+          <button 
+            className={styles.backButton}
+            onClick={() => setSelectedEvent(null)}
+            aria-label="Close event details"
+          >
+            <img src={gunRight} alt="Close" />
+          </button>
         </div>
       )}
-      {/* <h1 className={styles.timeline}>TIMELINE PAGE</h1> */}
+
       <div className={styles.menu} id="menu">
         <ul>
-          <li>
-            <button
-              ref={(el) => (buttonRefs.current[0] = el)}
-              style={{ '--icon': 1 }}
-              className={styles.icon}
-              id="b1"
-              onClick={() => handleEventClick('EVENT 1')}
-            >
-              <img src={icon1} alt="Event_1"></img>
-            </button>
-          </li>
-          <li>
-            <button
-              ref={(el) => (buttonRefs.current[1] = el)}
-              style={{ '--icon': 2 }}
-              className={styles.icon}
-              id="b2"
-              onClick={() => handleEventClick('EVENT 2')}
-            >
-              <img src={icon2} alt="Event_2"></img>
-            </button>
-          </li>
-          <li>
-            <button
-              ref={(el) => (buttonRefs.current[2] = el)}
-              style={{ '--icon': 3 }}
-              className={styles.icon}
-              id="b3"
-              onClick={() => handleEventClick('EVENT 3')}
-            >
-              <img src={icon3} alt="Event_3"></img>
-            </button>
-          </li>
-          <li>
-            <button
-              ref={(el) => (buttonRefs.current[3] = el)}
-              style={{ '--icon': 4 }}
-              className={styles.icon}
-              id="b4"
-              onClick={() => handleEventClick('EVENT 4')}
-            >
-              <img src={icon4} alt="Event_4"></img>
-            </button>
-          </li>
-          <li>
-            <button
-              ref={(el) => (buttonRefs.current[4] = el)}
-              style={{ '--icon': 5 }}
-              className={styles.icon}
-              id="b5"
-              onClick={() => handleEventClick('EVENT 5')}
-            >
-              <img src={icon5} alt="Event_5"></img>
-            </button>
-          </li>
+          {[...Array(9)].map((_, index) => (
+            <li key={index}>
+              <button
+                ref={(el) => (buttonRefs.current[index] = el)}
+                style={{ '--icon': index + 1 }}
+                className={`${styles.icon} ${styles.iconHoverEffect}`}
+                id={`b${index + 1}`}
+                onClick={() => handleEventClick(`EVENT ${index + 1}`)}
+                aria-label={`Event ${index + 1}`}
+              >
+                <img src={eventIcons[index]} alt={`Event_${index + 1}`}></img>
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
       <div className={styles.loading_disc} id="disc">
-        <img className={styles.chip} src={chip} alt="Event_5"></img>
-        <img className={styles.MakeathonLogoBigger} src={MakeathonLogo} alt="Makeathon Logo" />
+        <img className={styles.chip} src={chip} alt="Chip"></img>
+        <img className={styles.MakeathonLogoBigger} src="https://res.cloudinary.com/dljpfochn/image/upload/v1745520986/hackspire_flex-removebg-preview_vu18rv.png" alt="Makeathon Logo" />
       </div>
     </div>
   );
 };
 
-
-
-
-
-// Smaller view port components begin 
-
+// Burger menu navigation component
 const BurgerAndNavPortion = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -144,43 +144,36 @@ const BurgerAndNavPortion = () => {
     setIsOpen((prevState) => !prevState);
   };
 
+  // Improve navigation links for better accessibility
+  const navLinks = [
+    { text: "Home", path: "/" },
+    { text: "About", path: "/aboutus" },
+    { text: "Tracks", path: "/tracks" },
+    { text: "Timeline", path: "/timeline" },
+    { text: "Sponsors", path: "/" }
+  ];
+
   return (
     <>
       <div
         className={`${styles.extension} ${isOpen ? styles.leftToRight : ""}`}
         id="extension"
       >
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Home
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            About
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Tracks
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Timeline
-          </a>
-        </div>
-        <div className={styles.navLink}>
-          <a className={`${isOpen ? styles.up : ""}`} href="https://www.google.com/">
-            Sponsors
-          </a>
-        </div>
+        {navLinks.map((link, index) => (
+          <div className={styles.navLink} key={index}>
+            <a 
+              className={`${isOpen ? styles.up : ""}`} 
+              href={link.path}
+            >
+              {link.text}
+            </a>
+          </div>
+        ))}
       </div>
 
       <div className={styles.rightSide}>
         <div
-          className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ""
-            }`}
+          className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ""}`}
           onClick={toggleNav}
         >
           <div
@@ -188,18 +181,15 @@ const BurgerAndNavPortion = () => {
             id="firstLine"
           ></div>
           <div
-            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.disappear : ""
-              }`}
+            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.disappear : ""}`}
             id="secondLine"
           ></div>
           <div
-            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltLeft : ""
-              }`}
+            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltLeft : ""}`}
             id="thirdLine"
           ></div>
           <div
-            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltRight : ""
-              }`}
+            className={`${styles.line} ${styles.absolute} ${isOpen ? styles.tiltRight : ""}`}
             id="fourLine"
           ></div>
           <div
@@ -212,22 +202,28 @@ const BurgerAndNavPortion = () => {
   );
 };
 
-
-
-
-
-
 const SmallerViewPort = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const cardRef = useRef(null);
   const buttonRefs = useRef([]);
+  const { isMobile, windowSize } = useResponsiveSize();
+  
   const handleEventClick = (eventId) => {
     setSelectedEvent(eventId);
   };
 
-  const crossEvent = (event) => {
+  const crossEvent = () => {
     setSelectedEvent(null);
   };
+
+  // Define icons for all 9 events (reusing icons as needed)
+  const eventIcons = [icon1, icon2, icon3, icon4, icon5, icon1, icon2, icon3, icon4];
+  
+  // CSS classes for positioning the icons
+  const iconClasses = [
+    styles.icon1, styles.icon2, styles.icon3, styles.icon4, styles.icon5,
+    styles.icon6, styles.icon7, styles.icon8, styles.icon9
+  ];
 
   return (
     <div
@@ -238,55 +234,29 @@ const SmallerViewPort = () => {
         <img src={logo} alt="MLSC Logo" />
       </div>
 
+      <BurgerAndNavPortion />
+
       {selectedEvent && (
         <div className={`${styles.eventcard} ${selectedEvent ? styles.display : ''}`} ref={cardRef}>
-          <div className={styles.crossButton} onClick={() => crossEvent('event')}></div>
+          <div className={styles.crossButton} onClick={crossEvent}></div>
           <Eventcard name={selectedEvent} />
         </div>
       )}
 
-      <button
-        ref={(el) => (buttonRefs.current[0] = el)}
-        className={styles.icon1}
-        onClick={() => handleEventClick('EVENT 1')}
-      >
-        <img src={icon1} alt="Search Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[1] = el)}
-        className={styles.icon2}
-        onClick={() => handleEventClick('EVENT 2')}
-      >
-        <img src={icon2} alt="Spy Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[2] = el)}
-        className={styles.icon3}
-        onClick={() => handleEventClick('EVENT 3')}
-      >
-        <img src={icon3} alt="Spyware Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[3] = el)}
-        className={styles.icon4}
-        onClick={() => handleEventClick('EVENT 4')}
-      >
-        <img src={icon4} alt="Gun Event" />
-      </button>
-
-      <button
-        ref={(el) => (buttonRefs.current[4] = el)}
-        className={styles.icon5}
-        onClick={() => handleEventClick('EVENT 5')}
-      >
-        <img src={icon5} alt="Air Event" />
-      </button>
+      {/* Dynamic rendering of all event buttons */}
+      {[...Array(9)].map((_, index) => (
+        <button
+          key={index}
+          ref={(el) => (buttonRefs.current[index] = el)}
+          className={iconClasses[index] || styles.additionalIcon}
+          onClick={() => handleEventClick(`EVENT ${index + 1}`)}
+        >
+          <img src={eventIcons[index]} alt={`Event ${index + 1}`} />
+        </button>
+      ))}
 
       <div className={styles.MakeathonLogo}>
-        <img src={MakeathonLogo} alt="MakeathonLogo" />
+        <img src="https://res.cloudinary.com/dljpfochn/image/upload/v1745520986/hackspire_flex-removebg-preview_vu18rv.png" alt="MakeathonLogo" />
       </div>
 
       <div className={styles.Hearts}>
@@ -301,11 +271,15 @@ const SmallerViewPort = () => {
 };
 
 const Timeline = () => {
+  const { isMobile } = useResponsiveSize();
+  
+  // Conditional rendering based on screen size
+  // The CSS media queries will handle hiding/displaying these components,
+  // but this helps with performance by not rendering both on all devices
   return (
     <>
-      <BiggerViewPort />
-      <BurgerAndNavPortion />
-      <SmallerViewPort />
+      {!isMobile && <BiggerViewPort />}
+      {isMobile && <SmallerViewPort />}
     </>
   )
 }

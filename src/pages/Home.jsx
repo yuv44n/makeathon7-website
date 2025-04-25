@@ -29,16 +29,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  React.useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://apply.devfolio.co/v2/sdk.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  // Removed the devfolio script since we're not using the embedded button
 
   const scrollToTop = () => {
     if (isScrolledDown) {
@@ -102,12 +93,19 @@ const Home = () => {
         />
       </div>
       <div className={styles.button_container}>
-        <div
-          className="apply-button"
-          data-hackathon-slug="hackspire-1"
-          data-button-theme="light"
-          style={{ height: "44px", width: "312px" }} 
-        ></div>
+        {/* Replaced the devfolio script button with our custom button */}
+        <Buttons
+          iconType="devfolio"
+          backgroundColor="#3770FF" // Devfolio blue color
+          onClick={() => window.open('https://hackspire-1.devfolio.co/', '_blank')}
+          style={{
+            height: "44px",
+            width: "312px",
+            fontSize: "18px",
+          }}
+        >
+          Apply with Devfolio
+        </Buttons>
         <Buttons
           iconType="download"
           onClick={() => alert("----")}

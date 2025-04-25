@@ -15,7 +15,7 @@ function App() {
         <HamburgerMenu />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/timeline" element={<Navigate to="/" />} />
+          <Route path="/timeline" element={< Timeline/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/tracks" element={<Tracks />} /> 
           {/* Redirect /sponsors to the home page */}

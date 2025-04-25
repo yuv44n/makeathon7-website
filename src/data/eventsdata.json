@@ -1,38 +1,65 @@
-[ {
-    "id":"EVENT 1",
-    "date": "22/02/25",
-    "time":"1:00 pm",
-    "venue":"TAN AUDI",
-    "description":"its going to be fun"
-},
-{
-    "id":"EVENT 2",
-    "date": "24/02/25",
-    "time":"2:00 pm",
-    "venue":"LP-106",
-    "description":"a wonderful experience"
-},
-{
-    "id":"EVENT 3",
-    "date": "26/02/25",
-    "time": "3:00 pm",
-    "venue": "T-104",
-    "description": "Wonders Await."
-
-},
-{
-    "id":"EVENT 4",
-    "date": "28/02/25",
-    "time": "4:00 pm",
-    "venue": "LT-101",
-    "description": "Lets goo"
-
-},
-{
-    "id":"EVENT 5",
-    "date": "1/03/25",
-    "time": "4:00 pm",
-    "venue": "LT-101",
-    "description": "Lets goo"
-}
+[
+  {
+    "id": "EVENT 1",
+    "date": "26/04/25",
+    "time": "12:00 PM",
+    "venue": "TAN AUDI",
+    "description": "Inauguration of Hackspire - Opening ceremony to kickstart the hackathon"
+  },
+  {
+    "id": "EVENT 2",
+    "date": "26/04/25",
+    "time": "3:00 PM",
+    "venue": "HACKATHON VENUE",
+    "description": "Hack Begins - Official start of the hacking period"
+  },
+  {
+    "id": "EVENT 3",
+    "date": "26/04/25",
+    "time": "5:00 PM",
+    "venue": "HACKATHON VENUE",
+    "description": "Undertaking - Commitment and compliance check for all participants"
+  },
+  {
+    "id": "EVENT 4",
+    "date": "26/04/25",
+    "time": "8:00 PM",
+    "venue": "HACKATHON VENUE",
+    "description": "Checkpoint 1 - First progress check (last offline entry)"
+  },
+  {
+    "id": "EVENT 5",
+    "date": "27/04/25",
+    "time": "2:00 AM",
+    "venue": "HACKATHON VENUE",
+    "description": "Checkpoint 2 - Overnight progress evaluation"
+  },
+  {
+    "id": "EVENT 6",
+    "date": "27/04/25",
+    "time": "12:00 PM",
+    "venue": "HACKATHON VENUE",
+    "description": "Checkpoint 3 - Final progress check before submission"
+  },
+  {
+    "id": "EVENT 7",
+    "date": "27/04/25",
+    "time": "3:00 PM",
+    "venue": "HACKATHON VENUE",
+    "description": "Hack Ends - Final submission deadline"
+  },
+  {
+    "id": "EVENT 8",
+    "date": "27/04/25",
+    "time": "4:00 PM",
+    "venue": "PRESENTATION HALL",
+    "description": "Pitching Round - Teams present their projects to judges"
+  },
+  {
+    "id": "EVENT 9",
+    "date": "27/04/25",
+    "time": "7:00 PM",
+    "venue": "TAN AUDI",
+    "description": "Closing Ceremony - Announcement of winners and prize distribution"
+  }
 ]

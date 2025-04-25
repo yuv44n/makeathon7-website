@@ -115,6 +115,7 @@
   display: none;
 }
 
+/* Cleaner, minimalist background */
 .background {
   position: relative;
   background-image: url("../components/images/eventCardBigger.png");
@@ -124,13 +125,15 @@
   transform: scale(0.7);
   flex-shrink: 0;
   z-index: 6;
- 
-  /* background-color: green; */
+  transition: all 0.4s ease;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .card1 {
   position: absolute;
-  border-radius: 12px;
+  border-radius: 10px;
   background: url("../components/images/card1.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -139,19 +142,25 @@
   height: 40vh;
   left: 29%;
   top: 28%;
-  transform: scale(1.15);
+  transform: scale(1.15) translateZ(10px);
   z-index: 6;
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .card1:hover {
-  box-shadow: 0 0 20px yellow;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 10px rgba(228, 167, 0, 0.3);
   cursor: pointer;
+  filter: brightness(1.05);
 }
 
 .card2 {
   position: absolute;
-  border-radius: 12px;
+  border-radius: 10px;
   background: url("../components/images/card2.png") no-repeat center center /
     cover;
   width: 12vw;
@@ -161,16 +170,22 @@
   top: 25%;
   z-index: 5;
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .card2:hover {
-  box-shadow: 0 0 20px yellow;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 10px rgba(228, 167, 0, 0.3);
   cursor: pointer;
+  filter: brightness(1.05);
 }
 
 .card3 {
   position: absolute;
-  border-radius: 12px;
+  border-radius: 10px;
   background: url("../components/images/card3.png") no-repeat center center /
     cover;
   width: 12vw;
@@ -180,11 +195,17 @@
   top: 22%;
   z-index: 4;
   flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .card3:hover {
-  box-shadow: 0 0 20px yellow;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 10px rgba(228, 167, 0, 0.3);
   cursor: pointer;
+  filter: brightness(1.05);
 }
 
 .card1Ani {
@@ -203,33 +224,39 @@
   position: absolute;
   top: 50%;
   right: 7%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(50px);
+  opacity: 0;
   color: #e4a700;
   font-family: "coburn", Arial, sans-serif;
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 400;
-  text-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.5);
-  text-align: left;
-  word-wrap: break-word;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 5;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 35%;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
 .show {
   animation: showEvent 1.25s ease-in-out forwards;
 }
 
+/* Description styling with improved font */
 .description {
-  color: #e4a700;
-  font-family: "Inria Serif";
-  font-size: 0.75em;
+  color: #ffffff;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  font-size: 0.7em;
   font-style: normal;
   font-weight: 300;
-  line-height: normal;
+  line-height: 1.6;
+  text-align: left;
   z-index: 5;
+  letter-spacing: 0.02em;
 }
 
 .eventcard {
@@ -238,6 +265,7 @@
   left: 50vw;
   transform-origin: center;
   z-index: 15;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Added for smoother transitions */
 }
 
 .menu {
@@ -263,23 +291,24 @@
   position: absolute;
   left: 1vw;
   list-style: none;
-  transform: rotate(calc((35deg / 5 * var(--icon))))
-    translateX(calc(-50vw - var(--icon) * 3vw))
-    translateY(calc(101vh + var(--icon) * 2vh));
-  transform-origin: 140px;
+  /* Adjust the rotation and spacing to make icons more compact */
+  transform: rotate(calc((28deg / 6 * var(--icon))))
+    translateX(calc(-48vw - var(--icon) * 2.0vw))
+    translateY(calc(101vh + var(--icon) * 1.75vh));
+  transform-origin: 120px;
   z-index: 6;
 }
 
 .icon img {
-  height: 10vh;
+  height: 8vh;  /* Reduced from 10vh */
   width: auto;
   transition: all 0.25s ease-in-out;
 }
 
 .icon img:hover {
-  height: 11.5vh;
+  height: 9vh;  /* Reduced from 11.5vh */
   opacity: 0.6;
-  transform: translateX(-1vh) translateY(-1vw);
+  transform: translateX(-0.8vh) translateY(-0.8vw);
   cursor: pointer;
 }
 
@@ -303,6 +332,8 @@
   left: 70%;
   z-index: 8;
   scale: 0.85;
+  width: 15%;
+  height: auto;
 }
 
 .MLSCLogoBigger {
@@ -400,29 +431,20 @@
 }
 
 @keyframes animation1 {
-  from {
-    transform: translateX(0px) rotateZ(0deg) scale(1.15);
-  }
   to {
-    transform: translateX(100px) rotateZ(20deg) scale(1.15);
+    transform: translateX(80px) rotateZ(15deg) scale(1.15);
   }
 }
 
 @keyframes animation2 {
-  from {
-    transform: translateY(0px) scale(1.15) rotateZ(-11deg);
-  }
   to {
-    transform: translateY(-100px) scale(1.15) rotateZ(-11deg);
+    transform: translateY(-80px) scale(1.15) rotateZ(-11deg);
   }
 }
 
 @keyframes animation3 {
-  from {
-    transform: translateX(0px) rotateZ(-23deg) scale(1.15);
-  }
   to {
-    transform: translateX(-100px) rotateZ(-43deg) scale(1.15);
+    transform: translateX(-80px) rotateZ(-38deg) scale(1.15);
   }
 }
 
@@ -436,6 +458,338 @@
     transform: scaleX(1);
     opacity: 1;
   }
+}
+
+/* Event card container styles */
+.cardsContainer {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+}
+
+.cardWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* Event header styles */
+.eventHeader {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(228, 167, 0, 0.5);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decorativeIcon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #e4a700, transparent 70%);
+  box-shadow: 0 0 10px #e4a700;
+  border-radius: 50%;
+}
+
+.eventHeader h1 {
+  font-size: 1.4em;
+  color: #e4a700;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(228, 167, 0, 0.5);
+}
+
+/* Date and time information styles */
+.dateTimeInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #e4a700;
+  min-width: 45%;
+  transition: all 0.3s ease;
+}
+
+.infoItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background: rgba(228, 167, 0, 0.1);
+}
+
+.infoLabel {
+  font-size: 0.5em;
+  color: rgba(228, 167, 0, 0.8);
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.infoValue {
+  font-size: 0.7em;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+/* Venue information styles */
+.venueInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #e4a700;
+  transition: all 0.3s ease;
+}
+
+.venueInfo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background: rgba(228, 167, 0, 0.1);
+}
+
+/* Decorative line */
+.decorativeLine {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #e4a700, transparent);
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.decorativeLine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Description container */
+.descriptionContainer {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(228, 167, 0, 0.2);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  max-height: 150px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.descriptionContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+.descriptionContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.descriptionContainer::-webkit-scrollbar-thumb {
+  background: rgba(228, 167, 0, 0.5);
+  border-radius: 5px;
+}
+
+.descriptionContainer:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Event info container */
+.eventInfoContainer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Add fade-in animation for the card */
+.fadeInAnimation {
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  to {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+}
+
+/* Add ambient glow to the card */
+.eventCardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(228, 167, 0, 0.2), transparent 70%);
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Add a subtle glow to cards */
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card1:hover .cardGlow,
+.card2:hover .cardGlow,
+.card3:hover .cardGlow {
+  opacity: 1;
+}
+
+/* Animation for the timeline panel */
+.slideInRight {
+  animation: slideInRight 0.5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes slideInRight {
+  to {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Clean event title */
+.eventTitle {
+  font-size: 1.3em;
+  color: #e4a700;
+  margin: 0 0 20px 0;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Event details with clean layout */
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(228, 167, 0, 0.2);
+}
+
+.detailLabel {
+  font-size: 0.5em;
+  color: rgba(228, 167, 0, 0.9);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detailValue {
+  font-size: 0.6em;
+  color: white;
+  font-weight: 300;
+  text-align: right;
+}
+
+/* Minimal separator */
+.separator {
+  width: 60%;
+  height: 1px;
+  background-color: rgba(228, 167, 0, 0.4);
+  margin: 16px auto;
+}
+
+/* Clean description box */
+.descriptionBox {
+  width: 100%;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.descriptionBox p {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  font-size: 0.6em;
+  line-height: 1.6;
+  margin: 0;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+
+/* Minimal scrollbar */
+.descriptionBox::-webkit-scrollbar {
+  width: 4px;
+}
+
+.descriptionBox::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.descriptionBox::-webkit-scrollbar-thumb {
+  background: rgba(228, 167, 0, 0.4);
+  border-radius: 4px;
 }
 
 /* ***Mobile view activated*** */
@@ -464,12 +818,13 @@
   }
 
   .eventcard {
-    width: 80vw;
+    width: 90vw; /* Made wider for better content display */
     height: 80vh;
     position: absolute;
     top: 10vh;
-    left: 10vw;
+    left: 5vw; /* Centered better */
     z-index: 4;
+    box-shadow: 0 0 20px rgba(228, 167, 0, 0.5); /* Added glow effect */
   }
 
   .selectCards {
@@ -519,15 +874,22 @@
     word-wrap: break-word;
     transform: translateY(0);
     z-index: 4;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(228, 167, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
   }
 
   .description {
     color: #e4a700;
-    font-family: "Inria Serif";
+    font-family: 'Montserrat', 'Roboto', sans-serif;
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 
   .leftHeader {
@@ -764,6 +1126,91 @@
     opacity: 0.8;
   }
 
+  /* New icons for expanded timeline */
+  .icon6 {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 53vh;
+    left: 5vw;
+    z-index: 3;
+  }
+
+  .icon6 img {
+    width: 14vw;
+    height: auto;
+  }
+
+  .icon6:hover {
+    opacity: 0.8;
+  }
+
+  .icon7 {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 65vh;
+    left: 14vw;
+    z-index: 3;
+  }
+
+  .icon7 img {
+    width: 15vw;
+    height: auto;
+  }
+
+  .icon7:hover {
+    opacity: 0.8;
+  }
+
+  .icon8 {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 75vh;
+    left: 29vw;
+    z-index: 3;
+  }
+
+  .icon8 img {
+    width: 14vw;
+    height: auto;
+  }
+
+  .icon8:hover {
+    opacity: 0.8;
+  }
+
+  .icon9 {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    top: 83vh;
+    left: 47vw;
+    z-index: 3;
+  }
+
+  .icon9 img {
+    width: 14vw;
+    height: auto;
+  }
+
+  .icon9:hover {
+    opacity: 0.8;
+  }
+
   .Hearts {
     position: absolute;
     background: none;
@@ -806,7 +1253,7 @@
     cursor: pointer;
     outline: none;
     top: 70.2vh;
-    right: 12.5vw;
+    right: 7.5vw;
   }
   .MakeathonLogo img {
     width: 29.5vw;
@@ -823,5 +1270,240 @@
       transform: scaleY(1);
       opacity: 1;
     }
+  }
+}
+
+/* Medium-sized devices (tablets and small desktops) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .menu li button {
+    transform: rotate(calc((28deg / 6 * var(--icon))))
+      translateX(calc(-42vw - var(--icon) * 2.2vw))
+      translateY(calc(101vh + var(--icon) * 1.5vh));
+  }
+  
+  .icon img {
+    height: 7vh;
+  }
+  
+  .icon img:hover {
+    height: 8vh;
+  }
+  
+  .chip {
+    top: 65%;
+    left: 70%;
+    scale: 2.5;
+  }
+  
+  .MakeathonLogoBigger {
+    top: 65%;
+    left: 35%;
+    width:35%;
+  height: auto;
+  }
+  
+  .MLSCLogoBigger {
+    height: 5rem;
+  }
+
+  .timeline {
+    font-size: 2em;
+    right: 5%;
+  }
+  
+  .eventcard {
+    top: -5vh;
+    left: 45vw;
+  }
+}
+
+/* For iPads and similar tablets in portrait mode */
+@media only screen and (min-width: 601px) and (max-width: 834px) {
+  .menu li button {
+    transform: rotate(calc((35deg / 5 * var(--icon))))
+      translateX(calc(-42vw - var(--icon) * 3vw))
+      translateY(calc(101vh + var(--icon) * 2vh));
+  }
+  
+  .icon img {
+    height: 7vh;
+  }
+  
+  .icon img:hover {
+    height: 8vh;
+  }
+  
+  .chip {
+    top: 60%;
+    left: 65%;
+    scale: 2;
+  }
+  
+  .MakeathonLogoBigger {
+    top: 60%;
+    left: 62%;
+    width: 30%;
+    height: auto;
+  }
+  
+  .timeline {
+    font-size: 1.8em;
+    right: 5%;
+  }
+  
+  .eventcard {
+    top: -2vh;
+    left: 40vw;
+    transform: scale(0.9);
+  }
+
+  .diamonds2 {
+    left: 60vw;
+  }
+
+  .diamonds1 img,
+  .diamonds2 img {
+    height: 90vh;
+  }
+}
+
+/* Small phones and landscape mode for phones */
+@media only screen and (max-width: 480px), (max-height: 480px) and (orientation: landscape) {
+  .icon1 img, 
+  .icon2 img, 
+  .icon3 img,
+  .icon4 img,
+  .icon5 img,
+  .icon6 img,
+  .icon7 img,
+  .icon8 img,
+  .icon9 img {
+    width: 16vw; /* Slightly larger icons for very small screens */
+  }
+
+  .MakeathonLogo img {
+    width: 35vw;
+  }
+
+  .Hearts {
+    top: 12vh;
+  }
+
+  .Hearts img {
+    width: 85vw;
+  }
+
+  .Diamonds {
+    top: 55vh;
+  }
+
+  .Diamonds img {
+    width: 55vw;
+  }
+
+  .timeline {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* Media query adjustments to prevent collisions on different screen sizes */
+@media only screen and (max-width: 1200px) {
+  .timeline {
+    right: 5%;
+    width: 40%;
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .timeline {
+    width: 45%;
+    font-size: 1.8em;
+  }
+  
+  .card1, .card2, .card3 {
+    width: 10vw;
+  }
+}
+
+/* For tablets */
+@media only screen and (max-width: 768px) {
+  .timeline {
+    width: 50%;
+    padding: 15px;
+    font-size: 1.6em;
+    right: 3%;
+  }
+  
+  .cardsContainer {
+    width: 40%;
+  }
+  
+  .card1 {
+    left: 20%;
+  }
+  
+  .card2 {
+    left: 15%;
+  }
+  
+  .card3 {
+    left: 10%;
+  }
+}
+
+/* For mobile devices in landscape mode */
+@media only screen and (max-width: 600px) {
+  .timeline_container_SVP .timeline {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+  }
+  
+  .timeline_container_SVP .eventTitle {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+  
+  .timeline_container_SVP .detailRow {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .timeline_container_SVP .detailLabel {
+    font-size: 0.7em;
+  }
+  
+  .timeline_container_SVP .detailValue {
+    font-size: 0.8em;
+  }
+}
+
+/* Small screens and mobile portrait */
+@media only screen and (max-width: 480px) {
+  .timeline_container_SVP .timeline {
+    width: 85%;
+    left: 7.5%;
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .timeline_container_SVP .dateTimeInfo {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .timeline_container_SVP .infoItem {
+    width: 100%;
   }
 }

@@ -164,21 +164,21 @@ function RewardsSection() {
             alt="second_prize"
             imgClass={styles.prizeImage + " " + styles.secondPrize}
             text="Second Prize"
-            prize="20,000"
+            prize="TO BE DECLARED"
           />
           <PrizeContainer
             img={first_prize}
             alt="first_prize"
             imgClass={styles.prizeImage + " " + styles.firstPrize}
             text="First Prize"
-            prize="30,000"
+            prize="TO BE DECLARED"
           />
           <PrizeContainer
             img={third_prize}
             alt="third_prize"
             imgClass={styles.prizeImage + " " + styles.thirdPrize}
             text="Third Prize"
-            prize="10,000"
+            prize="TO BE DECLARED"
           />
         </div>
       </div>
