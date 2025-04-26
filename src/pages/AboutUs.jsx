@@ -354,45 +354,77 @@ const Executive = () => {
       src: "/AboutUs/EBImages/tanmay.png",
       name: "TANMAY MANN",
       role: "GENERAL SECRETARY",
-      code: "AGENT MANN"
+      code: "AGENT MANN",
     },
     {
       id: 2,
-      src: "/AboutUs/EBImages/tanmay.png",
+      src: "/AboutUs/EBImages/mankirat.png",
       name: "MANKIRAT SINGH",
       role: "TECHNICAL HEAD",
-      code: "AGENT SINGH"
+      code: "AGENT SINGH",
     },
 
     {
       id: 3,
-      src: "/AboutUs/EBImages/tanmay.png",
-      name: "DEV MEHTA",
-      role: "JOINT SECRETARY",
-      code: "AGENT MEHTA"
+      src: "/AboutUs/EBImages/vanika.png",
+      name: "VANIKA SAHNI",
+      role: "CONTENT HEAD",
+      code: "AGENT SAHNI",
     },
     {
       id: 4,
-      src: "/AboutUs/EBImages/tanmay.png",
-      name: "Agrim Goyal",
+      src: "/AboutUs/EBImages/agrim.png",
+      name: "AGRIM GOYAL",
       role: "FINANCE SECRETARY",
-      code: "AGENT GOYAL"
+      code: "AGENT GOYAL",
     },
     {
       id: 5,
-      src: "/AboutUs/EBImages/tanmay.png",
+      src: "/AboutUs/EBImages/ananay.png",
       name: "ANANAY RAMPAL",
       role: "EM & LOGISTICS HEAD",
-      code: "AGENT RAMPAL"
+      code: "AGENT RAMPAL",
     },
     {
       id: 6,
-      src: "/AboutUs/EBImages/tanmay.png",
-      name: "Prisha Kandhari",
+      src: "/AboutUs/EBImages/prisha.png",
+      name: "PRISHA KANDHARI",
       role: "JOINT SECRETARY",
-      code: "AGENT KANDHARI"
+      code: "AGENT KANDHARI",
     },
+
+    {
+      id: 7,
+      src: "/AboutUs/EBImages/preksha.png",
+      name: "PREKSHA JAIN",
+      role: "JOINT SECRETARY",
+      code: "AGENT JAIN",
+    },
+
+    {
+      id: 8,
+      src: "/AboutUs/EBImages/palakpreet.png",
+      name: "PALAKPREET KAUR",
+      role: "MARKETING HEAD",
+      code: "AGENT KAUR",
+    },
+
+    {
+      id: 9,
+      src: "/AboutUs/EBImages/navdeep.png",
+      name: "NAVDEEP SINGH SIDHU",
+      role: "TECHNICAL HEAD",
+      code: "AGENT SIDHU",
+    },
+    {
+      id: 10,
+      src: "/AboutUs/EBImages/krishnam.png",
+      name: "KRISHNAM AGGARWAL",
+      role: "DESIGNING HEAD",
+      code: "AGENT AGGARWAL",
+    }
   ];
+
   
   useEffect(() => {
     if (isPaused) return;
@@ -542,156 +574,80 @@ const MLSCCarousel = () => {
         <div className={styles.carouselLabel}>MADE WITH ❤️ BY MLSC</div>
         <div className={styles.carouselSlide + (animationState === "paused" ? " " + styles.carouselSlidePaused : "")} onClick={()=>{setAnimationState(animationState === "playing" ? "paused" : "playing"); console.log("works")}}>
           <img
-            src="/AboutUs/carouselImages/member1.png"
+            src="/AboutUs/carouselImages/aarav.jpg"
             alt="Member 1"
           />
           <img
-            src="/AboutUs/carouselImages/member2.png"
+            src="/AboutUs/carouselImages/akshat.jpeg"
             alt="Member 2"
           />
           <img
-            src="/AboutUs/carouselImages/member3.png"
+            src="/AboutUs/carouselImages/aniket.jpg"
             alt="Member 3"
           />
           <img
-            src="/AboutUs/carouselImages/member4.png"
+            src="/AboutUs/carouselImages/anshika.jpg"
             alt="Member 4"
           />
           <img
-            src="/AboutUs/carouselImages/member5.png"
+            src="/AboutUs/carouselImages/deepesh.jpeg"
             alt="Member 5"
           />
           <img
-            src="/AboutUs/carouselImages/member6.png"
+            src="/AboutUs/carouselImages/divit.jpg"
             alt="Member 6"
           />
           <img
-            src="/AboutUs/carouselImages/member7.png"
+            src="/AboutUs/carouselImages/eaknoor.jpg"
             alt="Member 7"
           />
           <img
-            src="/AboutUs/carouselImages/member8.png"
+            src="/AboutUs/carouselImages/harshpreet.jpg"
             alt="Member 8"
           />
           <img
-            src="/AboutUs/carouselImages/member9.png"
+            src="/AboutUs/carouselImages/khushi.jpeg"
             alt="Member 9"
           />
           <img
-            src="/AboutUs/carouselImages/member10.png"
+            src="/AboutUs/carouselImages/noor.jpg"
             alt="Member 10"
           />
           <img
-            src="/AboutUs/carouselImages/member11.png"
+            src="/AboutUs/carouselImages/pallika.jpg"
             alt="Member 11"
           />
           <img
-            src="/AboutUs/carouselImages/member12.png"
+            src="/AboutUs/carouselImages/pawan.jpeg"
             alt="Member 12"
           />
           <img
-            src="/AboutUs/carouselImages/member13.png"
+            src="/AboutUs/carouselImages/priyanshi.jpg"
             alt="Member 13"
           />
           <img
-            src="/AboutUs/carouselImages/member14.png"
+            src="/AboutUs/carouselImages/purnika.jpeg"
             alt="Member 14"
           />
           <img
-            src="/AboutUs/carouselImages/member15.png"
+            src="/AboutUs/carouselImages/sanil.jpg"
             alt="Member 15"
           />
           <img
-            src="/AboutUs/carouselImages/member16.png"
+            src="/AboutUs/carouselImages/siya.jpg"
             alt="Member 16"
           />
           <img
-            src="/AboutUs/carouselImages/member17.png"
+            src="/AboutUs/carouselImages/vishard.jpg"
             alt="Member 17"
           />
           <img
-            src="/AboutUs/carouselImages/member18.png"
+            src="/AboutUs/carouselImages/yashi.jpeg"
             alt="Member 18"
           />
           <img
-            src="/AboutUs/carouselImages/member19.png"
+            src="/AboutUs/carouselImages/yuvansh.jpg"
             alt="Member 19"
-          />
-          <img
-            src="/AboutUs/carouselImages/member1.png"
-            alt="Member 1 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member2.png"
-            alt="Member 2 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member3.png"
-            alt="Member 3 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member4.png"
-            alt="Member 4 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member5.png"
-            alt="Member 5 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member6.png"
-            alt="Member 6 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member7.png"
-            alt="Member 7 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member8.png"
-            alt="Member 8 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member9.png"
-            alt="Member 9 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member10.png"
-            alt="Member 10 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member11.png"
-            alt="Member 11 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member12.png"
-            alt="Member 12 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member13.png"
-            alt="Member 13 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member14.png"
-            alt="Member 14 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member15.png"
-            alt="Member 15 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member16.png"
-            alt="Member 16 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member17.png"
-            alt="Member 17 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member18.png"
-            alt="Member 18 Duplicate"
-          />
-          <img
-            src="/AboutUs/carouselImages/member19.png"
-            alt="Member 19 Duplicate"
           />
         </div>
       </div>
