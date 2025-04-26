@@ -136,3 +136,18 @@
   font-weight: bold;
   text-align: center;
   }
+
+  .fadeContainer {
+    transition: opacity 0.4s;
+    opacity: 1;
+  }
+  
+  .fadeOut {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .fadeIn {
+    opacity: 1;
+  }
+  

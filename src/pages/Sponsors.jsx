@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Sponsors.module.css";
+import { useNavigate } from "react-router-dom";
 
 const sponsorData = [
   {
@@ -88,7 +89,26 @@ const sponsorData = [
 ];
 
 export default function SponsorsPage() {
-  const [page, setPage] = useState(0); // 0 = cover, 1 = title, 2 = power, 3 = associate
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (window.innerWidth < 913) {
+      navigate('/msponsors', { replace: true });
+    }
+  }, [navigate]);
+
+
+  const [page, setPage] = useState(0); // 0 = cover, 1 = title, etc.
+  const [isFading, setIsFading] = useState(false);
+
+  // Animation handler
+  const animateToPage = (newPage) => {
+    setIsFading(true);
+    setTimeout(() => {
+      setPage(newPage);
+      setIsFading(false);
+    }, 400); // Match the CSS transition duration
+  };
 
   // Cover page
   if (page === 0) {
@@ -104,11 +124,13 @@ export default function SponsorsPage() {
           alignItems: "center",
           justifyContent: "center",
         }}
+        className={`${styles.fadeContainer} ${isFading ? styles.fadeOut : styles.fadeIn}`}
       >
         <button
           className={styles.arrow}
           style={{ position: "absolute", right: 40, bottom: 40 }}
-          onClick={() => setPage(1)}
+          onClick={() => animateToPage(1)}
+          disabled={isFading}
         >
           &#8594;
         </button>
@@ -122,12 +144,12 @@ export default function SponsorsPage() {
       <div className={styles.container}>
         <button
           className={styles.arrow}
-          onClick={() => setPage(page - 1)}
-          disabled={page === 0}
+          onClick={() => animateToPage(page - 1)}
+          disabled={page === 0 || isFading}
         >
           &#8592;
         </button>
-        <div className={styles.filePages}>
+        <div className={`${styles.filePages} ${styles.fadeContainer} ${isFading ? styles.fadeOut : styles.fadeIn}`}>
           {/* Left Page */}
           <div
             className={styles.pageLeft}
@@ -145,15 +167,15 @@ export default function SponsorsPage() {
               <div className={styles.logoGrid}>
                 {sponsorData[page - 1]?.left.slots.map((slot, idx) => (
                   <div key={idx} className={styles.logoSlot}>
-                      <div className={styles.logoSquare}>
-                        {slot.logo && (
-                          <img
-                            src={slot.logo}
-                            alt={slot.name}
-                            className={styles.logoImage}
-                          />
-                        )}
-                      </div>
+                    <div className={styles.logoSquare}>
+                      {slot.logo && (
+                        <img
+                          src={slot.logo}
+                          alt={slot.name}
+                          className={styles.logoImage}
+                        />
+                      )}
+                    </div>
                     <div className={styles.companyName}>{slot.name}</div>
                   </div>
                 ))}
@@ -171,21 +193,21 @@ export default function SponsorsPage() {
             }}
           >
             <div className={styles.pageContent}>
-            <h2 className={styles.heading}>
+              <h2 className={styles.heading}>
                 {sponsorData[page - 1]?.right.heading}
               </h2>
               <div className={styles.logoGrid}>
                 {sponsorData[page - 1]?.right.slots.map((slot, idx) => (
                   <div key={idx} className={styles.logoSlot}>
                     <div className={styles.logoSquare}>
-                        {slot.logo && (
-                          <img
-                            src={slot.logo}
-                            alt={slot.name}
-                            className={styles.logoImage}
-                          />
-                        )}
-                      </div>
+                      {slot.logo && (
+                        <img
+                          src={slot.logo}
+                          alt={slot.name}
+                          className={styles.logoImage}
+                        />
+                      )}
+                    </div>
                     <div className={styles.companyName}>{slot.name}</div>
                   </div>
                 ))}
@@ -195,8 +217,8 @@ export default function SponsorsPage() {
         </div>
         <button
           className={styles.arrow}
-          onClick={() => setPage(page + 1)}
-          disabled={page === 5}
+          onClick={() => animateToPage(page + 1)}
+          disabled={page === 5 || isFading}
         >
           &#8594;
         </button>
