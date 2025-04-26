@@ -8,10 +8,18 @@ import ClosedFile from '../components/SponsorsPageInside/ClosedFiles/ClosedFile.
 import Whysus from '../components/SponsorsPageInside/Sus/WhySus.jsx';
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const Sponsors = () => {
   const [sectionIndex, setSectionIndex] = useState(0);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (window.innerWidth < 913) {
+      navigate('/msponsors');
+    }
+  }, []);
+  
   const getComponent = () => {
     switch (sectionIndex) {
       case 0: return <ClosedFile key="closedfile" />;
@@ -30,8 +38,8 @@ const Sponsors = () => {
     <div className={`${styles.wrapper} ${sectionIndex > 0 ? styles.scrolled : ""} ${sectionIndex === 4 ? styles.wrapperWSUS : ""}`}>
       <div className={styles.container}>
         <div className={styles.AbsoluteFixed}>
-          <img className={styles.logo} src="/mlsclogo.png" alt="MLSC Logo" />
-          <img className={styles.AnyaF} src="/Sponsors/AnyaF.png" alt="Shh" />
+          {/* <img className={styles.logo} src="/mlsclogo.png" alt="MLSC Logo" /> */}
+          {/* <img className={styles.AnyaF} src="/Sponsors/AnyaF.png" alt="Shh" /> */}
 
           {/* Navigation Arrows */}
           {sectionIndex > 0 && (
