@@ -79,6 +79,31 @@ body {
   height: auto;
 }
 
+.leftArrow, .rightArrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(92, 92, 92, 0.216);
+  color: white;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  cursor: pointer;
+  outline: white solid 2px;
+}
+
+.leftArrow {
+  left: 20px;
+}
+
+.rightArrow {
+  right: 20px;
+}
+
+
 
 @media screen and (max-width:431px) {
   .logo {
@@ -114,4 +139,18 @@ body {
     width: 22vw;
   }
   
+}
+
+@media screen and (max-width: 768px) {
+  .sponsorRow {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .sponsorItem {
+    width: 90%; /* Adjust width so items are not overflowing */
+    margin: 0.5rem 0;
+    text-align: center;
+  }
 }

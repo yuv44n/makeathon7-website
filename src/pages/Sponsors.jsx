@@ -10,63 +10,41 @@ import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Sponsors = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrollPosition(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [sectionIndex, setSectionIndex] = useState(0);
 
   const getComponent = () => {
-    if (scrollPosition > 600) return <Whysus key="whysus" />;
-    if (scrollPosition > 450) return <PagesA key="pagesa" />;
-    if (scrollPosition > 300) return <PagesP key="pagesp" />;
-    if (scrollPosition > 150) return <PagesT key="pagest" />;
-    return <ClosedFile key="closedfile" />;
+    switch (sectionIndex) {
+      case 0: return <ClosedFile key="closedfile" />;
+      case 1: return <PagesT key="pagest" />;
+      case 2: return <PagesP key="pagesp" />;
+      case 3: return <PagesA key="pagesa" />;
+      case 4: return <Whysus key="whysus" />;
+      default: return <ClosedFile key="closedfile" />;
+    }
   };
 
+  const goUp = () => setSectionIndex(prev => Math.max(prev - 1, 0));
+  const goDown = () => setSectionIndex(prev => Math.min(prev + 1, 4));
+
   return (
-    <div
-      className={`${styles.wrapper} ${
-        scrollPosition > 150 ? styles.scrolled : ""
-      } ${scrollPosition > 600 ? styles.wrapperWSUS : ""}`}
-    >
+    <div className={`${styles.wrapper} ${sectionIndex > 0 ? styles.scrolled : ""} ${sectionIndex === 4 ? styles.wrapperWSUS : ""}`}>
       <div className={styles.container}>
         <div className={styles.AbsoluteFixed}>
           <img className={styles.logo} src="/mlsclogo.png" alt="MLSC Logo" />
-          {/* <img className={styles.menu} src="/Sponsors/menu.png" alt="Menu" /> */}
           <img className={styles.AnyaF} src="/Sponsors/AnyaF.png" alt="Shh" />
 
-          {/* Scroll Down Arrow (Only show if near top) */}
-          {scrollPosition < 150 && (
-            <motion.div
-              className={styles.scrollArrow}
-              animate={{ y: [0, 30, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.2,
-                ease: "easeInOut",
-              }}
-            >
-              <ChevronDown size={32} color="#fff" />
-            </motion.div>
+          {/* Navigation Arrows */}
+          {sectionIndex > 0 && (
+            <button onClick={goUp} className={styles.leftArrow}>🞀</button>
           )}
+          {sectionIndex < 4 && (
+            <button onClick={goDown} className={styles.rightArrow}>🞂</button>
+          )}
+
 
           <AnimatePresence mode="wait">
             <motion.div
-              key={getComponent()?.key} // Key based on component identity
+              key={getComponent()?.key}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -80,5 +58,6 @@ const Sponsors = () => {
     </div>
   );
 };
+
 
 export default Sponsors;

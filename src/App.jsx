@@ -19,7 +19,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/tracks" element={<Tracks />} /> 
           {/* Redirect /sponsors to the home page */}
-          <Route path="/sponsors" element={<Navigate to="/" />} />
+          <Route path="/sponsors" element={<Sponsors/>} />
           <Route path="/policy" element={<AppPolicy />} />
         </Routes>
     </Router>
