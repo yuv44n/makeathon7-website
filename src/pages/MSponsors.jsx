@@ -37,7 +37,7 @@ const sponsorsData = [
       "https://res.cloudinary.com/dljpfochn/image/upload/v1745677658/daaura_qcprsz.png",
       "https://res.cloudinary.com/dljpfochn/image/upload/v1745686327/IBlogo_light_geqi9a.png",
       "https://res.cloudinary.com/dljpfochn/image/upload/v1745677663/punjab_x54ord.png",
-      "South Hall",
+      "https://res.cloudinary.com/dljpfochn/image/upload/v1745862640/Screenshot_2025-04-28_232023_zg7b6a.png",
       "https://res.cloudinary.com/dljpfochn/image/upload/v1745677658/Untitled-9-1536x642_gsumr9.jpg",
     ],
   },

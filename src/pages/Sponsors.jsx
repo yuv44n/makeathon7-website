@@ -51,7 +51,7 @@ const sponsorData = [
     right: {
       heading: "",
       slots: [
-        { logo: "South Hall", name: "South Hall" },
+        { logo: "https://res.cloudinary.com/dljpfochn/image/upload/v1745862640/Screenshot_2025-04-28_232023_zg7b6a.png", name: "Southall" },
         { logo: "https://res.cloudinary.com/dljpfochn/image/upload/v1745677658/Untitled-9-1536x642_gsumr9.jpg", name: "Polo Immigration " },
         { logo: "https://res.cloudinary.com/dljpfochn/image/upload/v1745677663/images_gf3dcg.jpg", name: "Event Beep" },
         { logo: "https://res.cloudinary.com/dljpfochn/image/upload/v1745677662/navan_ai_logo_b4p851.jpg", name: "Navan.ai" },
